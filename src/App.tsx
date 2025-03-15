@@ -1,7 +1,5 @@
 const App = () => {
-
   console.log('App loaded')
-
   return (
     <>
       <h1>App</h1>
