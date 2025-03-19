@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.wrapper {
+    @apply min-h-screen flex flex-col;
+}
+
+.mainContent {
+    @apply flex-1 mt-16;
+}
+
+.footer {
+    @apply fixed bottom-0 left-0 right-0 bg-gray-200 py-4 text-center;
+
+    & .copyright {
+        @apply text-gray-700;
+    }
+}

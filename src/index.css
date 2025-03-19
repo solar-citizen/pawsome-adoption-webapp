@@ -2,6 +2,7 @@
 
 #root {
     @apply px-4 lg:px-[5vw] 2xl:px-[18vw] relative;
+    @apply text-gray-700;
 }
 
 :root {
@@ -11,4 +12,11 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+    button:not(:disabled),
+    [role="button"]:not(:disabled) {
+        cursor: pointer;
+    }
 }

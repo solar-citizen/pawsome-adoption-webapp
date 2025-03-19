@@ -1,10 +1,5 @@
-const App = () => {
-  console.log('App loaded')
-  return (
-    <>
-      <h1>App</h1>
-    </>
-  )
-}
+import { AppRouter } from '@/src/routes'
+
+const App = () => <AppRouter />
 
 export default App

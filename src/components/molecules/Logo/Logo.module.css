@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.link {
+    @apply text-gray-700 opacity-85 hover:opacity-100 transition duration-200 ease-in-out;
+
+    & .pawsome {
+        @apply font-semibold text-blue-600;
+    }
+}
