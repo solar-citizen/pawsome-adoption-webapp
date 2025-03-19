@@ -19,6 +19,9 @@ const customRules = {
   'import/first': 'error',
   'import/newline-after-import': 'error',
   'import/no-duplicates': 'error',
+  /* no-unused-vars */
+  '@typescript-eslint/no-unused-vars': 'error',
+  'no-unused-vars': 'off',
 }
 
 const baseConfig = {
