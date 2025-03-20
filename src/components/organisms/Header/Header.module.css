@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .header {
-    @apply fixed top-0 left-0 right-0 bg-white shadow-md z-10 h-16;
+    @apply fixed top-0 left-0 right-0 bg-white shadow-md z-50 h-16;
 }
 
 .container {

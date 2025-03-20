@@ -9,7 +9,8 @@
 }
 
 .footer {
-    @apply fixed bottom-0 left-0 right-0 bg-gray-200 py-4 text-center;
+    @apply bg-gray-200 py-4 text-center relative w-screen left-1/2;
+    transform: translateX(-50%);
 
     & .copyright {
         @apply text-gray-700;

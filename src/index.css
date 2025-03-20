@@ -2,7 +2,7 @@
 
 #root {
     @apply px-4 lg:px-[5vw] 2xl:px-[18vw] relative;
-    @apply text-gray-700;
+    @apply text-gray-700 overflow-x-hidden;
 }
 
 :root {
