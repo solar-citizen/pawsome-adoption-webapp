@@ -1,14 +1,25 @@
+import { useEffect, useState } from 'react'
+
+import { PetAPI } from '@/src/api'
 import { HeroBanner, PetCard } from '@/src/components/organisms'
+import { IPet } from '@/src/lib'
 
 import styles from './HomePage.module.css'
 
-const samplePets = [
-  { name: 'Buddy', breed: 'Golden Retriever', image: '/assets/pet1.jpg' },
-  { name: 'Milo', breed: 'Tabby Cat', image: '/assets/pet2.jpg' },
-  { name: 'Bella', breed: 'Labrador', image: '/assets/pet3.jpg' },
-]
-
 const HomePage = () => {
+  const [pets, setPets] = useState<IPet[]>([])
+
+  useEffect(() => {
+    async function fetchPets() {
+      const data = await PetAPI.getAllPets()
+      setPets(data)
+    }
+
+    fetchPets().catch((error: unknown) => {
+      console.error('Failed to fetch pets:', error)
+    })
+  }, [])
+
   return (
     <>
       <HeroBanner />
@@ -17,8 +28,8 @@ const HomePage = () => {
         <h2 className={styles.title}>Available Pets</h2>
 
         <div className={styles.petGrid}>
-          {samplePets.map((pet, index) => (
-            <PetCard key={index} {...pet} />
+          {pets.map(pet => (
+            <PetCard key={pet.lk_pet_code} {...pet} />
           ))}
         </div>
       </section>
