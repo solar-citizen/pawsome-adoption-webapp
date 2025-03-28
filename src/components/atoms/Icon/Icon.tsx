@@ -111,4 +111,6 @@ const Icon = memo(
   },
 )
 
+Icon.displayName = 'Icon'
+
 export default Icon
