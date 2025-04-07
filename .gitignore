@@ -29,3 +29,6 @@ dist-ssr
 
 # Allow .env.template to be tracked
 !.env.template
+
+# TMP
+src/assets/img/imgs

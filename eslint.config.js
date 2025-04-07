@@ -11,7 +11,7 @@ import simpleImportSort from 'eslint-plugin-simple-import-sort'
 
 const customRules = {
   /* eslint */
-  'max-len': ['warn', { code: 120 }],
+  'max-len': ['warn', { code: 100 }],
   /* eslint-plugin-simple-import-sort */
   'simple-import-sort/imports': 'error',
   'simple-import-sort/exports': 'error',
@@ -19,6 +19,7 @@ const customRules = {
   'import/first': 'error',
   'import/newline-after-import': 'error',
   'import/no-duplicates': 'error',
+  'import/max-dependencies': ['warn', { max: 10, ignoreTypeImports: true }],
   /* no-unused-vars */
   '@typescript-eslint/no-unused-vars': 'error',
   'no-unused-vars': 'off',
@@ -88,4 +89,4 @@ const tsTypeCheckedConfig = tsEslint.configs.strictTypeChecked.map(config => {
   return config
 })
 
-export default [baseConfig, js.configs.recommended, ...tsTypeCheckedConfig, tsConfig]
+export default [baseConfig, js.configs.recommended, tsConfig, ...tsTypeCheckedConfig]
