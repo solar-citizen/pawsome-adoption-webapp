@@ -1,21 +1,21 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 .header {
-    @apply fixed top-0 left-0 right-0 bg-white shadow-md z-50 h-16;
+  @apply fixed top-0 left-0 right-0 bg-white shadow-md z-50 h-16;
 }
 
 .container {
-    @apply container mx-auto h-full flex justify-between items-center px-6;
+  @apply container mx-auto h-full flex justify-between items-center px-6;
 
-    & .logoWrapper {
-        @apply text-2xl;
-    }
+  & .logoWrapper {
+    @apply text-2xl;
+  }
 }
 
 .nav {
-    @apply flex gap-6;
+  @apply flex gap-6;
 }
 
 .link {
-    @apply hover:text-blue-600 transition-colors;
+  @apply hover:text-blue-600 transition-colors;
 }

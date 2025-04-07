@@ -1,37 +1,37 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 .heroBanner {
-    @apply bg-cover bg-top h-[500px] relative mt-6;
+  @apply bg-cover bg-top h-[500px] relative mt-6;
 
-    &::before {
-        @apply absolute inset-0 bg-black opacity-50 content-[''];
-    }
+  &::before {
+    @apply absolute inset-0 bg-black opacity-50 content-[''];
+  }
 }
 
 .overlay {
-    @apply absolute inset-0 bg-black opacity-50;
+  @apply absolute inset-0 bg-black opacity-50;
 }
 
 .heroContainer {
-    @apply absolute mx-auto w-full h-full flex flex-col justify-center items-center text-white z-10;
+  @apply absolute mx-auto w-full h-full flex flex-col justify-center items-center text-white z-10;
 }
 
 .heading {
-    @apply text-4xl md:text-5xl font-bold mb-4 text-center;
+  @apply text-4xl md:text-5xl font-bold mb-4 text-center;
 }
 
 .subheading {
-    @apply text-lg md:text-xl mb-8;
+  @apply text-lg md:text-xl mb-8;
 }
 
 .searchForm {
-    @apply w-full max-w-md flex;
+  @apply w-full max-w-md flex;
 }
 
 .searchInput {
-    @apply flex-1 p-3 rounded-l-md focus:outline-none bg-white text-black;
+  @apply flex-1 p-3 rounded-l-md focus:outline-none bg-white text-black;
 }
 
 .searchButton {
-    @apply bg-blue-600 p-3 rounded-r-md hover:bg-blue-700 transition;
+  @apply bg-blue-600 p-3 rounded-r-md hover:bg-blue-700 transition;
 }
