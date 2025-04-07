@@ -1,3 +1,4 @@
+// FIXME: Move paragraphs and headings to text constants
 import styles from './ContactPage.module.css'
 
 const ContactPage = () => {
@@ -5,8 +6,8 @@ const ContactPage = () => {
     <div className={styles.container}>
       <h2 className={styles.title}>Get in Touch</h2>
       <p className={styles.intro}>
-        We’d love to hear from you! Whether you have questions about our adoption process, need support, or want to
-        share your success story, our team is here to help.
+        We’d love to hear from you! Whether you have questions about our adoption process, need
+        support, or want to share your success story, our team is here to help.
       </p>
 
       <section className={styles.section}>
@@ -50,7 +51,12 @@ const ContactPage = () => {
             <label className={styles.label} htmlFor='message'>
               Message
             </label>
-            <textarea id='message' className={styles.input} rows={5} placeholder='Your Message'></textarea>
+            <textarea
+              id='message'
+              className={styles.input}
+              rows={5}
+              placeholder='Your Message'
+            ></textarea>
           </div>
           <button type='submit' className={styles.button}>
             Send Message

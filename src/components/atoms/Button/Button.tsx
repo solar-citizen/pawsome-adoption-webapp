@@ -54,11 +54,15 @@ const Button = ({
       aria-disabled={isBtnDisabled}
       onClick={onClick}
     >
-      {icon && iconPosition === IconPositions.LEFT && <span className={styles.iconLeft}>{icon}</span>}
+      {icon && iconPosition === IconPositions.LEFT && (
+        <span className={styles.iconLeft}>{icon}</span>
+      )}
 
       <span className={styles.buttonTitle}>{children}</span>
 
-      {icon && iconPosition === IconPositions.RIGHT && <span className={styles.iconRight}>{icon}</span>}
+      {icon && iconPosition === IconPositions.RIGHT && (
+        <span className={styles.iconRight}>{icon}</span>
+      )}
 
       {isLoading && (
         <SpinnerIcon

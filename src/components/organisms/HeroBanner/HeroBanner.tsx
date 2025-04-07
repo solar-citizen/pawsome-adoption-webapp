@@ -1,7 +1,12 @@
 import { useState } from 'react'
 
 import { heroImg } from '@/src/assets'
-import { Search, SearchExpandTriggerVariants, SearchVariants, useSearch } from '@/src/components/molecules'
+import {
+  Search,
+  SearchExpandTriggerVariants,
+  SearchVariants,
+  useSearch,
+} from '@/src/components/molecules'
 
 import styles from './HeroBanner.module.css'
 

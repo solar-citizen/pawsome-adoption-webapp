@@ -75,7 +75,9 @@ const Search = ({
     setSearchValue('')
   }
 
-  const expandTriggerHandlers: Partial<Record<SearchExpandTriggerVariants, { [key: string]: () => void }>> = {
+  const expandTriggerHandlers: Partial<
+    Record<SearchExpandTriggerVariants, { [key: string]: () => void }>
+  > = {
     [SearchExpandTriggerVariants.ON_CLICK]: {
       onClick: handleFocus,
     },
@@ -84,7 +86,8 @@ const Search = ({
     },
   }
 
-  const triggerHandler = expandTriggerHandlers[expandTriggerVariant ?? SearchExpandTriggerVariants.ON_CLICK]
+  const triggerHandler =
+    expandTriggerHandlers[expandTriggerVariant ?? SearchExpandTriggerVariants.ON_CLICK]
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyPress)
@@ -110,7 +113,10 @@ const Search = ({
           type='text'
           ref={inputRef}
           value={searchValue}
-          className={clsx(styles.searchInput, isFocused ? styles.searchInputFocused : getSearchVariantStyles(variant))}
+          className={clsx(
+            styles.searchInput,
+            isFocused ? styles.searchInputFocused : getSearchVariantStyles(variant),
+          )}
           placeholder={getPlaceholderValue()}
           onChange={e => {
             const value = e.target.value
@@ -139,7 +145,9 @@ const Search = ({
           type={ButtonTypes.SUBMIT}
           aria-label='Search'
         >
-          <PiMagnifyingGlassLight className={clsx(styles.searchIcon, { [styles.searchIconFocused]: isFocused })} />
+          <PiMagnifyingGlassLight
+            className={clsx(styles.searchIcon, { [styles.searchIconFocused]: isFocused })}
+          />
         </Button>
       </form>
     </div>

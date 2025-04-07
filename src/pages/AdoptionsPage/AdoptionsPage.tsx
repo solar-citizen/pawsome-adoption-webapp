@@ -1,3 +1,4 @@
+// FIXME: Move paragraphs and headings to text constants
 import styles from './AdoptionsPage.module.css'
 
 const AdoptionsPage = () => {
@@ -5,9 +6,9 @@ const AdoptionsPage = () => {
     <div className={styles.container}>
       <h2 className={styles.title}>Find Your Furry Friend Today!</h2>
       <p className={styles.intro}>
-        Welcome to Pawsome Adoption! Our mission is to connect loving families with pets in need of a forever home.
-        Browse our selection of adorable dogs, cats, and other small animals that are eagerly waiting for a chance to be
-        a part of your life.
+        Welcome to Pawsome Adoption! Our mission is to connect loving families with pets in need of
+        a forever home. Browse our selection of adorable dogs, cats, and other small animals that
+        are eagerly waiting for a chance to be a part of your life.
       </p>
 
       <section className={styles.section}>
@@ -46,13 +47,13 @@ const AdoptionsPage = () => {
       <section>
         <h3 className={styles.sectionHeading}>Success Stories</h3>
         <p>
-          “Adopting Max was the best decision we ever made – he brought joy and laughter into our home.” -{' '}
-          <span className={styles.storyOwner}>Bruce Wayne</span>
+          “Adopting Max was the best decision we ever made – he brought joy and laughter into our
+          home.” - <span className={styles.storyOwner}>Bruce Wayne</span>
         </p>
 
         <p>
-          “Adopting Max was the best decision we ever made – he brought joy and laughter into our home.” -{' '}
-          <span className={styles.storyOwner}>Mark Joker</span>
+          “Adopting Max was the best decision we ever made – he brought joy and laughter into our
+          home.” - <span className={styles.storyOwner}>Mark Joker</span>
         </p>
       </section>
     </div>
