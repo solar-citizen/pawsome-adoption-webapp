@@ -7,7 +7,7 @@ import {
   IconPositions,
 } from './Button'
 import { ReactIcon, type ReactIconProps } from './ReactIcon'
-import { SvgIcon, type SvgIconProps } from './SvgIcon'
+import { type SvgElementProps, SvgIcon, type SvgIconProps } from './SvgIcon'
 
 export {
   BtnTextPosition,
@@ -18,6 +18,7 @@ export {
   IconPositions,
   ReactIcon,
   type ReactIconProps,
+  type SvgElementProps,
   SvgIcon,
   type SvgIconProps,
 }

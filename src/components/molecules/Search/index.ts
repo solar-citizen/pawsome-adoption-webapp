@@ -1,5 +1,5 @@
+import { type SearchExpandTriggerVariant, type SearchVariant, useSearch } from './lib'
 import Search from './Search'
 
-export { Search }
-export { SearchExpandTriggerVariants, SearchVariants } from './lib/enums'
-export { useSearch } from './lib/hooks'
+export { Search, useSearch }
+export type { SearchExpandTriggerVariant, SearchVariant }

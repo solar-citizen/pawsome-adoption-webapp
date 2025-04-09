@@ -2,11 +2,10 @@ import clsx from 'clsx'
 import { FormEvent, useCallback, useEffect, useRef, useState } from 'react'
 import { useMediaQuery } from 'usehooks-ts'
 
-import { IoCloseOutline, PiMagnifyingGlassLight } from '@/src/assets'
 import { Button, ButtonTypes, ButtonVariants } from '@/src/components/atoms'
-import { SearchExpandTriggerVariants, SearchVariants } from '@/src/components/molecules'
+import { Icon } from '@/src/components/molecules'
 
-import { getSearchVariantStyles } from './lib'
+import { getSearchVariantStyles, type SearchExpandTriggerVariant, type SearchVariant } from './lib'
 import styles from './Search.module.css'
 
 type SearchProps = {
@@ -14,8 +13,8 @@ type SearchProps = {
   placeholder?: string
   altPlaceholder?: string
   className?: string
-  variant?: SearchVariants
-  expandTriggerVariant?: SearchExpandTriggerVariants
+  variant?: SearchVariant
+  expandTriggerVariant?: SearchExpandTriggerVariant
   setSearchValue: (value: string) => void
   onSearchSubmit?: () => void
   onChange?: (value: string) => void
@@ -76,18 +75,13 @@ const Search = ({
   }
 
   const expandTriggerHandlers: Partial<
-    Record<SearchExpandTriggerVariants, { [key: string]: () => void }>
+    Record<SearchExpandTriggerVariant, { [key: string]: () => void }>
   > = {
-    [SearchExpandTriggerVariants.ON_CLICK]: {
-      onClick: handleFocus,
-    },
-    [SearchExpandTriggerVariants.ON_MOUSE_ENTER]: {
-      onMouseEnter: handleFocus,
-    },
+    'on-click': { onClick: handleFocus },
+    'on-mouse-enter': { onMouseEnter: handleFocus },
   }
 
-  const triggerHandler =
-    expandTriggerHandlers[expandTriggerVariant ?? SearchExpandTriggerVariants.ON_CLICK]
+  const triggerHandler = expandTriggerHandlers[expandTriggerVariant ?? 'on-click']
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyPress)
@@ -135,7 +129,7 @@ const Search = ({
           className={styles.clearButton}
           aria-label='Clear search'
         >
-          <IoCloseOutline className={styles.clearIcon} />
+          <Icon variant='react-icon' name='close' className={styles.clearIcon} />
         </Button>
 
         <Button
@@ -145,7 +139,9 @@ const Search = ({
           type={ButtonTypes.SUBMIT}
           aria-label='Search'
         >
-          <PiMagnifyingGlassLight
+          <Icon
+            variant='react-icon'
+            name='search'
             className={clsx(styles.searchIcon, { [styles.searchIconFocused]: isFocused })}
           />
         </Button>

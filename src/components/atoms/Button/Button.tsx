@@ -1,7 +1,7 @@
 import { clsx } from 'clsx'
 import { ReactNode } from 'react'
 
-import { SpinnerIcon, SpinnerVariants } from '@/src/assets'
+import { SpinnerIcon } from '@/src/components/molecules'
 
 import styles from './Button.module.css'
 import { BtnTextPosition, ButtonSizes, ButtonTypes, ButtonVariants, IconPositions } from './lib'
@@ -66,7 +66,7 @@ const Button = ({
 
       {isLoading && (
         <SpinnerIcon
-          variant={SpinnerVariants.CIRCLE}
+          variant='circle'
           size={20}
           color={variant.toLowerCase().includes('outline') ? 'gray' : 'white'}
         />
