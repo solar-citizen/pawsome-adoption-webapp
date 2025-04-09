@@ -1,1 +1,0 @@
-export { SpinnerVariants } from './enums'

@@ -1,24 +1,19 @@
 import { clsx } from 'clsx'
 
-import { Icon, SvgElementProps } from '@/src/components/atoms'
+import { Icon } from '@/src/components/molecules'
 
-import { SpinnerVariants } from './lib'
+import { SpinnerVariant, SpinnerVariantConfig } from './lib'
 import styles from './SpinnerIcon.module.css'
 
 type SpinnerProps = {
-  variant?: SpinnerVariants
+  variant?: SpinnerVariant
   size?: number
   color?: string
   className?: string
 }
 
-type SpinnerVariantConfig = {
-  elements: SvgElementProps[]
-  className?: string
-}
-
-const spinnerOptions: Record<SpinnerVariants, SpinnerVariantConfig> = {
-  [SpinnerVariants.CIRCLE]: {
+const spinnerOptions: Record<SpinnerVariant, SpinnerVariantConfig> = {
+  circle: {
     elements: [
       { type: 'circle', props: { cx: 12, cy: 2.5, r: 1.5, opacity: 0.14 } },
       { type: 'circle', props: { cx: 16.75, cy: 3.77, r: 1.5, opacity: 0.29 } },
@@ -30,7 +25,7 @@ const spinnerOptions: Record<SpinnerVariants, SpinnerVariantConfig> = {
     ],
     className: styles.spinnerCircle,
   },
-  [SpinnerVariants.BAR]: {
+  bar: {
     elements: [
       { type: 'rect', props: { x: 1, y: 1, width: 6, height: 22, className: styles.spinnerBar } },
       { type: 'rect', props: { x: 9, y: 1, width: 6, height: 22, className: styles.spinnerBar2 } },
@@ -40,10 +35,11 @@ const spinnerOptions: Record<SpinnerVariants, SpinnerVariantConfig> = {
 }
 
 const SpinnerIcon = ({ variant, size, color, className }: SpinnerProps) => {
-  const { elements, className: variantClass } = spinnerOptions[variant || SpinnerVariants.CIRCLE]
+  const { elements, className: variantClass } = spinnerOptions[variant || 'circle']
 
   return (
     <Icon
+      variant='svg'
       elements={elements}
       width={size || 20}
       height={size || 20}

@@ -1,12 +1,12 @@
 import styles from '../Search.module.css'
-import { SearchVariants } from './enums'
+import { SearchVariant } from './types'
 
-const variantStylesMap: Record<SearchVariants, string> = {
-  [SearchVariants.COLLAPSED]: styles.collapsed,
-  [SearchVariants.EXPANDED]: styles.expanded,
-  [SearchVariants.DEFAULT]: styles.default,
+const variantStylesMap: Record<SearchVariant, string> = {
+  collapsed: styles.collapsed,
+  expanded: styles.expanded,
+  default: styles.default,
 }
 
-export const getSearchVariantStyles = (variant?: SearchVariants) => {
-  return variantStylesMap[variant ?? SearchVariants.DEFAULT]
+export const getSearchVariantStyles = (variant?: SearchVariant) => {
+  return variantStylesMap[variant ?? 'default']
 }
