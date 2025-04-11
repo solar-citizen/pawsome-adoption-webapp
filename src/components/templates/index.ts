@@ -1,3 +1,3 @@
-import MainLayout from '@/src/components/templates/MainLayout'
+import MainLayout from './MainLayout'
 
 export { MainLayout }

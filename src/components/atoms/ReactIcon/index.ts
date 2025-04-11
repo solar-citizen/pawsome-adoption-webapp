@@ -8,13 +8,5 @@ import {
 } from './lib'
 import ReactIcon, { type ReactIconProps } from './ReactIcon'
 
-export {
-  colorClasses,
-  type IconColor,
-  iconMap,
-  type IconName,
-  type IconSize,
-  ReactIcon,
-  type ReactIconProps,
-  sizeClasses,
-}
+export { colorClasses, iconMap, ReactIcon, sizeClasses }
+export type { IconColor, IconName, IconSize, ReactIconProps }

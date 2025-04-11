@@ -1,4 +1,5 @@
 import { colorClasses, iconMap, sizeClasses } from './icons'
-import { type IconColor, type IconName, type IconSize } from './types'
+import type { IconColor, IconName, IconSize } from './types'
 
-export { colorClasses, type IconColor, iconMap, type IconName, type IconSize, sizeClasses }
+export { colorClasses, iconMap, sizeClasses }
+export type { IconColor, IconName, IconSize }

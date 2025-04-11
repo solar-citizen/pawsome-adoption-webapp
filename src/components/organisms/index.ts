@@ -1,3 +1,5 @@
-export * from './Header'
-export * from './HeroBanner'
-export * from './PetCard'
+import { Header } from './Header'
+import { HeroBanner } from './HeroBanner'
+import { PetCard } from './PetCard'
+
+export { Header, HeroBanner, PetCard }

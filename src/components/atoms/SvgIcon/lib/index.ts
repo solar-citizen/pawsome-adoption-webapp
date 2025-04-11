@@ -1,4 +1,5 @@
 import { createSvgElement } from './createSvgElement'
-import { type SvgElementProps } from './types'
+import type { SvgElementProps } from './types'
 
-export { createSvgElement, type SvgElementProps }
+export { createSvgElement }
+export type { SvgElementProps }

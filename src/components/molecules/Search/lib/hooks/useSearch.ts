@@ -9,7 +9,12 @@ type UseSearchProps = {
   onSearch?: (value: string) => void
 }
 
-const useSearch = ({ searchValue, setSearchValue, searchParam, onSearch }: UseSearchProps) => {
+export const useSearch = ({
+  searchValue,
+  setSearchValue,
+  searchParam,
+  onSearch,
+}: UseSearchProps) => {
   const [, setSearchParams] = useSearchParams()
 
   const updateSearchParam = useCallback(
@@ -72,5 +77,3 @@ const useSearch = ({ searchValue, setSearchValue, searchParam, onSearch }: UseSe
     handleClear,
   }
 }
-
-export default useSearch

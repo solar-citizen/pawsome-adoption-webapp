@@ -1,1 +1,3 @@
-export * from './img'
+import { heroImg } from './img'
+
+export { heroImg }
