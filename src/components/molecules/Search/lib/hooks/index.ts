@@ -1,3 +1,3 @@
-import useSearch from './useSearch'
+import { useSearch } from './useSearch'
 
 export { useSearch }

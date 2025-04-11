@@ -1,1 +1,3 @@
-export { type IPet } from './IPet'
+import { type IPet } from './IPet'
+
+export { type IPet }

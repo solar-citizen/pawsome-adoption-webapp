@@ -17,8 +17,6 @@ export {
   ButtonVariants,
   IconPositions,
   ReactIcon,
-  type ReactIconProps,
-  type SvgElementProps,
   SvgIcon,
-  type SvgIconProps,
 }
+export type { ReactIconProps, SvgElementProps, SvgIconProps }

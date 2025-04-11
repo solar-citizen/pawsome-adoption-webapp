@@ -1,4 +1,6 @@
-export * from './AboutPage'
-export * from './AdoptionsPage'
-export * from './ContactPage'
-export * from './HomePage'
+import { AboutPage } from './AboutPage'
+import { AdoptionsPage } from './AdoptionsPage'
+import { ContactPage } from './ContactPage'
+import { HomePage } from './HomePage'
+
+export { AboutPage, AdoptionsPage, ContactPage, HomePage }
