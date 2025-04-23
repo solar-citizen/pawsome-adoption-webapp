@@ -1,6 +1,6 @@
 import { clsx } from 'clsx'
 
-import { Icon } from '@/src/components/molecules'
+import { Icon } from '#/components/molecules'
 
 import { SpinnerVariant, SpinnerVariantConfig } from './lib'
 import styles from './SpinnerIcon.module.css'

@@ -1,6 +1,6 @@
 // TODO: add multilang support
 
-import { AppRouter } from '@/src/routes'
+import { AppRouter } from '#/routes'
 
 const App = () => <AppRouter />
 
