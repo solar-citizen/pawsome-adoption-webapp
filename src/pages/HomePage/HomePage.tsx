@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 
-import { PetAPI } from '@/src/api'
-import { HeroBanner, PetCard } from '@/src/components/organisms'
-import { IPet } from '@/src/lib'
+import { PetAPI } from '#/api'
+import { HeroBanner, PetCard } from '#/components/organisms'
+import { IPet } from '#/lib'
 
 import styles from './HomePage.module.css'
 

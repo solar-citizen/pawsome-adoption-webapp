@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { IPet, staticTxt } from '@/src/lib'
+import { IPet, staticTxt } from '#/lib'
 
 const { baseUrl } = staticTxt
 
