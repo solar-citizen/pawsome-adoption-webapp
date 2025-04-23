@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite --mode development",
     "scan": "vite --mode development & npx react-scan@latest http://localhost:3000",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite --mode production build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview"
