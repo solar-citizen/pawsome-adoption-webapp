@@ -1,4 +1,6 @@
-import { routes, staticTxt } from './constants'
-import { type IPet } from './interfaces'
+import { routes, SearchParams, staticTxt } from './constants'
+import { useSyncURLParams } from './hooks'
+import type { IPet, IPetResponse } from './interfaces'
 
-export { type IPet, routes, staticTxt }
+export { routes, SearchParams, staticTxt, useSyncURLParams }
+export type { IPet, IPetResponse }
