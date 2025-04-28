@@ -5,11 +5,11 @@
   border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ms-[-1px];
 
   &.paginationPrevious {
-    @apply rounded-s-lg disabled:text-gray-400 disabled:bg-gray-200 me-[1px];
+    @apply rounded-s-lg disabled:text-gray-400 disabled:bg-gray-200 me-0;
   }
 
   &.paginationNext {
-    @apply rounded-e-lg disabled:text-gray-400 disabled:bg-gray-200;
+    @apply rounded-e-lg disabled:text-gray-400 disabled:bg-gray-200 ms-0;
   }
 
   &.active {

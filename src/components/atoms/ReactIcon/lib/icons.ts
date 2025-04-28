@@ -1,6 +1,7 @@
 import { IoCloseOutline } from 'react-icons/io5'
 import { IconType } from 'react-icons/lib'
 import { PiMagnifyingGlassLight } from 'react-icons/pi'
+import { TbChevronLeft, TbChevronRight } from 'react-icons/tb'
 
 import { IconColor, IconName, IconSize } from './types'
 
@@ -8,6 +9,8 @@ import { IconColor, IconName, IconSize } from './types'
 export const iconMap: Record<IconName, IconType> = {
   close: IoCloseOutline,
   search: PiMagnifyingGlassLight,
+  'chevron-left': TbChevronLeft,
+  'chevron-right': TbChevronRight,
 }
 
 // Define Tailwind CSS classes for sizing.
