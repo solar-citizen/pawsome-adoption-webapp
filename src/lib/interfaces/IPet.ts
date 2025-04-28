@@ -10,3 +10,17 @@ export interface IPet {
   created_at: Date
   updated_at: Date
 }
+
+export interface IPetMeta {
+  currentPage: number
+  lastPage: number
+  perPage: number
+  petsFrom: number
+  petsTo: number
+  petsTotal: number
+}
+
+export interface IPetResponse {
+  data: IPet[]
+  meta: IPetMeta
+}

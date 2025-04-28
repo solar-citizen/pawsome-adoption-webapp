@@ -1,17 +1,24 @@
-import axios from 'axios'
+import { IPetResponse } from '#/lib'
 
-import { IPet, staticTxt } from '#/lib'
+import { createAxiosInstance } from './createAxiosInstance'
 
-const { baseUrl } = staticTxt
+const api = createAxiosInstance()
+
+type GetPetsParams = {
+  limit?: number
+  page?: number
+  full_text_search?: string | null
+}
 
 export const PetAPI = {
-  async getAllPets(): Promise<IPet[]> {
-    try {
-      const response = await axios.get<IPet[]>(`${baseUrl}/pets`)
-      return response.data
-    } catch (error) {
-      console.error('Error fetching pets:', error)
-      return []
-    }
-  },
+  getPets: (params?: GetPetsParams): Promise<IPetResponse> =>
+    api
+      .get<IPetResponse>('/pets', {
+        params: {
+          limit: params?.limit,
+          page: params?.page,
+          full_text_search: params?.full_text_search,
+        },
+      })
+      .then(resp => resp.data),
 }
