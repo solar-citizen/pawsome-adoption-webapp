@@ -1,5 +1,5 @@
-import { type SearchExpandTriggerVariant, type SearchVariant, useSearch } from './lib'
-import Search from './Search'
+import { type SearchExpandTriggerVariant, type SearchVariant, useSearch } from './lib';
+import Search from './Search';
 
-export { Search, useSearch }
-export type { SearchExpandTriggerVariant, SearchVariant }
+export { Search, useSearch };
+export type { SearchExpandTriggerVariant, SearchVariant };

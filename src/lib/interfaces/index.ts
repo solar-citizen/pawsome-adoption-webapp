@@ -1,3 +1,3 @@
-import type { IPet, IPetMeta, IPetResponse } from './IPet'
+import type { IPet, IPetMeta, IPetResponse } from './IPet';
 
-export type { IPet, IPetMeta, IPetResponse }
+export type { IPet, IPetMeta, IPetResponse };

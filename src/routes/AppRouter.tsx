@@ -1,10 +1,10 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom';
 
-import { MainLayout } from '#/components/templates'
-import { routes } from '#/lib'
-import { AboutPage, AdoptionsPage, ContactPage, HomePage } from '#/pages'
+import { MainLayout } from '#/components/templates';
+import { routes } from '#/lib';
+import { AboutPage, AdoptionsPage, ContactPage, HomePage } from '#/pages';
 
-const { home, adoptions, contact, about } = routes
+const { home, adoptions, contact, about } = routes;
 
 const AppRouter = () => (
   <Routes>
@@ -17,6 +17,6 @@ const AppRouter = () => (
       <Route path='*' element={<Navigate to={home.path} replace />} />
     </Route>
   </Routes>
-)
+);
 
-export default AppRouter
+export default AppRouter;

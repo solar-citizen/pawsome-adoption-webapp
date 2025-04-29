@@ -1,3 +1,3 @@
-import { usePagination } from './usePagination'
+import { usePagination } from './usePagination';
 
-export { usePagination }
+export { usePagination };

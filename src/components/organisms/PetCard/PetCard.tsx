@@ -1,4 +1,4 @@
-import styles from './PetCard.module.css'
+import styles from './PetCard.module.css';
 
 type PetCardProps = {
   name: string
@@ -16,7 +16,7 @@ function PetCard({ name, breed /*, image*/ }: PetCardProps) {
         <p className={styles.petBreed}>{breed}</p>
       </div>
     </div>
-  )
+  );
 }
 
-export default PetCard
+export default PetCard;

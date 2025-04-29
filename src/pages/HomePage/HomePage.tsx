@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
-import { PetAPI } from '#/api'
-import { Pagination, usePagination } from '#/components/molecules'
-import { /*HeroBanner,*/ PetCard } from '#/components/organisms'
-import { IPet, IPetMeta, IPetResponse } from '#/lib'
+import { PetAPI } from '#/api';
+import { Pagination, usePagination } from '#/components/molecules';
+import { /*HeroBanner,*/ PetCard } from '#/components/organisms';
+import { IPet, IPetMeta, IPetResponse } from '#/lib';
 
-import styles from './HomePage.module.css'
+import styles from './HomePage.module.css';
 
 function HomePage() {
-  const [pets, setPets] = useState<IPet[]>([])
+  const [pets, setPets] = useState<IPet[]>([]);
   const [meta, setMeta] = useState<IPetMeta>({
     currentPage: 1,
     perPage: 10,
@@ -16,31 +16,31 @@ function HomePage() {
     petsFrom: 0,
     petsTo: 0,
     petsTotal: 0,
-  })
+  });
 
   const { currentPage, totalPages, handlePageChange } = usePagination({
     itemsPerPage: meta.perPage,
     totalItems: meta.petsTotal,
     pageParam: 'page',
     limitParam: 'limit',
-  })
+  });
 
   useEffect(() => {
     async function fetchPets() {
       const response = await PetAPI.getPets({
         page: currentPage,
         limit: meta.perPage,
-      })
-      const { data, meta: newMeta }: IPetResponse = response
+      });
+      const { data, meta: newMeta }: IPetResponse = response;
 
-      setPets(data)
-      setMeta(newMeta)
+      setPets(data);
+      setMeta(newMeta);
     }
 
     fetchPets().catch((error: unknown) => {
-      console.error('Failed to fetch pets:', error)
-    })
-  }, [currentPage, meta.perPage])
+      console.error('Failed to fetch pets:', error);
+    });
+  }, [currentPage, meta.perPage]);
 
   return (
     <>
@@ -65,7 +65,7 @@ function HomePage() {
         />
       </section>
     </>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;

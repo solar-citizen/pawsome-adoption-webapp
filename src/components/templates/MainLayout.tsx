@@ -1,8 +1,8 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom';
 
-import { Header } from '#/components/organisms'
+import { Header } from '#/components/organisms';
 
-import styles from './MainLayout.module.css'
+import styles from './MainLayout.module.css';
 
 function MainLayout() {
   return (
@@ -17,7 +17,7 @@ function MainLayout() {
         <p className={styles.copyright}>&copy; 2025 Pawsome Adoption - All Rights Reserved</p>
       </footer>
     </div>
-  )
+  );
 }
 
-export default MainLayout
+export default MainLayout;

@@ -1,22 +1,22 @@
-import axios, { AxiosError, AxiosInstance } from 'axios'
+import axios, { AxiosError, AxiosInstance } from 'axios';
 
-import { staticTxt } from '#/lib'
+import { staticTxt } from '#/lib';
 
-const { baseURL } = staticTxt
+const { baseURL } = staticTxt;
 
 export const createAxiosInstance = (): AxiosInstance => {
   const api = axios.create({
     baseURL,
     headers: { 'Content-Type': 'application/json' },
-  })
+  });
 
   api.interceptors.response.use(
     res => res,
     (err: AxiosError) => {
-      console.error('API Error:', err.message)
-      return Promise.reject(err)
+      console.error('API Error:', err.message);
+      return Promise.reject(err);
     },
-  )
+  );
 
-  return api
-}
+  return api;
+};

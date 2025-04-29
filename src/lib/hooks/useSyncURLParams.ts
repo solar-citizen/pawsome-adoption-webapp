@@ -1,5 +1,5 @@
-import { useCallback, useEffect } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useCallback, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 /**
  * Synchronizes a set of key/value pairs with the URL’s query string.
@@ -23,31 +23,31 @@ export function useSyncURLParams(
   initialParams: Record<string, string | null | undefined>,
   replace: boolean = false,
 ) {
-  const [, setSearchParams] = useSearchParams()
+  const [, setSearchParams] = useSearchParams();
 
   const syncParams = useCallback(
     (params: Record<string, string | null | undefined>, replaceOverride?: boolean) => {
       setSearchParams(
         prev => {
-          const next = new URLSearchParams(prev)
+          const next = new URLSearchParams(prev);
           for (const [key, value] of Object.entries(params)) {
             if (value == null || value === '') {
-              next.delete(key)
+              next.delete(key);
             } else if (next.get(key) !== value) {
-              next.set(key, value)
+              next.set(key, value);
             }
           }
-          return next
+          return next;
         },
         { replace: replaceOverride ?? replace },
-      )
+      );
     },
     [replace, setSearchParams],
-  )
+  );
 
   useEffect(() => {
-    syncParams(initialParams, replace)
-  }, [initialParams, replace, syncParams])
+    syncParams(initialParams, replace);
+  }, [initialParams, replace, syncParams]);
 
-  return syncParams
+  return syncParams;
 }

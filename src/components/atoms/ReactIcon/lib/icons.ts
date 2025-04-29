@@ -1,9 +1,9 @@
-import { IoCloseOutline } from 'react-icons/io5'
-import { IconType } from 'react-icons/lib'
-import { PiMagnifyingGlassLight } from 'react-icons/pi'
-import { TbChevronLeft, TbChevronRight } from 'react-icons/tb'
+import { IoCloseOutline } from 'react-icons/io5';
+import { IconType } from 'react-icons/lib';
+import { PiMagnifyingGlassLight } from 'react-icons/pi';
+import { TbChevronLeft, TbChevronRight } from 'react-icons/tb';
 
-import { IconColor, IconName, IconSize } from './types'
+import { IconColor, IconName, IconSize } from './types';
 
 // Map each icon name to a react-icons component.
 export const iconMap: Record<IconName, IconType> = {
@@ -11,7 +11,7 @@ export const iconMap: Record<IconName, IconType> = {
   search: PiMagnifyingGlassLight,
   'chevron-left': TbChevronLeft,
   'chevron-right': TbChevronRight,
-}
+};
 
 // Define Tailwind CSS classes for sizing.
 export const sizeClasses: Record<IconSize, string> = {
@@ -20,7 +20,7 @@ export const sizeClasses: Record<IconSize, string> = {
   md: 'text-base',
   lg: 'text-lg',
   xl: 'text-xl',
-}
+};
 
 // Define Tailwind CSS classes for colors.
 export const colorClasses: Record<IconColor, string> = {
@@ -30,4 +30,4 @@ export const colorClasses: Record<IconColor, string> = {
   danger: 'text-red-500',
   warning: 'text-yellow-500',
   info: 'text-cyan-500',
-}
+};

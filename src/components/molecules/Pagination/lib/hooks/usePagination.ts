@@ -1,7 +1,7 @@
-import { useMemo } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useMemo } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-import { useSyncURLParams } from '#/lib'
+import { useSyncURLParams } from '#/lib';
 
 type UsePaginationProps = {
   itemsPerPage: number
@@ -36,9 +36,9 @@ export function usePagination({
   pageParam,
   limitParam,
 }: UsePaginationProps) {
-  const [searchParams] = useSearchParams()
-  const currentPage = Number(searchParams.get(pageParam)) || 1
-  const totalPages = Math.ceil(totalItems / itemsPerPage)
+  const [searchParams] = useSearchParams();
+  const currentPage = Number(searchParams.get(pageParam)) || 1;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   const initialQuery = useMemo(
     () => ({
@@ -46,15 +46,15 @@ export function usePagination({
       [pageParam]: currentPage.toString(),
     }),
     [limitParam, itemsPerPage, pageParam, currentPage],
-  )
+  );
 
-  const syncParams = useSyncURLParams(initialQuery, true)
+  const syncParams = useSyncURLParams(initialQuery, true);
 
   const handlePageChange = (pageNumber: number) => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
-      syncParams({ [pageParam]: pageNumber.toString() })
+      syncParams({ [pageParam]: pageNumber.toString() });
     }
-  }
+  };
 
-  return { currentPage, totalPages, handlePageChange }
+  return { currentPage, totalPages, handlePageChange };
 }

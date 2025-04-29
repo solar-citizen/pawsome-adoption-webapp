@@ -1,3 +1,3 @@
-import { PetAPI } from './PetAPI'
+import { PetAPI } from './PetAPI';
 
-export { PetAPI }
+export { PetAPI };

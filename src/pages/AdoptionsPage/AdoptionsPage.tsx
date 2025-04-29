@@ -1,5 +1,5 @@
 // FIXME: Move paragraphs and headings to text constants
-import styles from './AdoptionsPage.module.css'
+import styles from './AdoptionsPage.module.css';
 
 function AdoptionsPage() {
   return (
@@ -57,7 +57,7 @@ function AdoptionsPage() {
         </p>
       </section>
     </div>
-  )
+  );
 }
 
-export default AdoptionsPage
+export default AdoptionsPage;

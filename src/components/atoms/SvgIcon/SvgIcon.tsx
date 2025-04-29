@@ -1,6 +1,6 @@
-import { memo, type SVGProps } from 'react'
+import { memo, type SVGProps } from 'react';
 
-import { createSvgElement, SvgElementProps } from './lib'
+import { createSvgElement, SvgElementProps } from './lib';
 
 export type SvgIconProps = SVGProps<SVGSVGElement> & {
   elements?: SvgElementProps[]
@@ -41,7 +41,7 @@ function SvgIcon({
 
       {elements?.map((element, index) => createSvgElement(element, index, color))}
     </svg>
-  )
+  );
 }
 
-export default memo(SvgIcon)
+export default memo(SvgIcon);

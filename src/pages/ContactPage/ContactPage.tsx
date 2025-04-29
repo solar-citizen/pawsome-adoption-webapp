@@ -1,5 +1,5 @@
 // FIXME: Move paragraphs and headings to text constants
-import styles from './ContactPage.module.css'
+import styles from './ContactPage.module.css';
 
 function ContactPage() {
   return (
@@ -83,7 +83,7 @@ function ContactPage() {
         </p>
       </section>
     </div>
-  )
+  );
 }
 
-export default ContactPage
+export default ContactPage;

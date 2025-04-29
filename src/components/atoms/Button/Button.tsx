@@ -1,10 +1,10 @@
-import { clsx } from 'clsx'
-import { ReactNode } from 'react'
+import { clsx } from 'clsx';
+import { ReactNode } from 'react';
 
-import { SpinnerIcon } from '#/components/molecules'
+import { SpinnerIcon } from '#/components/molecules';
 
-import styles from './Button.module.css'
-import { BtnTextPosition, ButtonSizes, ButtonTypes, ButtonVariants, IconPositions } from './lib'
+import styles from './Button.module.css';
+import { BtnTextPosition, ButtonSizes, ButtonTypes, ButtonVariants, IconPositions } from './lib';
 
 type ButtonProps = {
   children: ReactNode
@@ -35,8 +35,8 @@ function Button({
   className,
   onClick,
 }: ButtonProps) {
-  const isBtnDisabled = isDisabled || isLoading
-  const isBtnSimpleVariant = variant === ButtonVariants.SIMPLE
+  const isBtnDisabled = isDisabled || isLoading;
+  const isBtnSimpleVariant = variant === ButtonVariants.SIMPLE;
 
   return (
     <button
@@ -72,7 +72,7 @@ function Button({
         />
       )}
     </button>
-  )
+  );
 }
 
-export default Button
+export default Button;

@@ -1,9 +1,9 @@
-import { clsx } from 'clsx'
-import { NavLink } from 'react-router-dom'
+import { clsx } from 'clsx';
+import { NavLink } from 'react-router-dom';
 
-import { routes } from '#/lib'
+import { routes } from '#/lib';
 
-import styles from './Logo.module.css'
+import styles from './Logo.module.css';
 
 type LogoProps = {
   containerCls?: string
@@ -11,7 +11,7 @@ type LogoProps = {
   onClick?: () => void
 }
 
-const { home } = routes
+const { home } = routes;
 
 function Logo({ containerCls, linkCls, onClick }: LogoProps) {
   return (
@@ -20,7 +20,7 @@ function Logo({ containerCls, linkCls, onClick }: LogoProps) {
         <span className={styles.pawsome}>Pawsome</span> Adoption
       </NavLink>
     </h1>
-  )
+  );
 }
 
-export default Logo
+export default Logo;

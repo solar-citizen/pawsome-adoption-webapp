@@ -1,6 +1,6 @@
-import { createElement, JSX, SVGProps } from 'react'
+import { createElement, JSX, SVGProps } from 'react';
 
-import { SvgElementProps } from './types'
+import { SvgElementProps } from './types';
 
 const tagMap: Record<SvgElementProps['type'], keyof JSX.IntrinsicElements> = {
   path: 'path',
@@ -10,7 +10,7 @@ const tagMap: Record<SvgElementProps['type'], keyof JSX.IntrinsicElements> = {
   ellipse: 'ellipse',
   polygon: 'polygon',
   polyline: 'polyline',
-}
+};
 
 /**
  * Factory function that creates a React SVG element based on the provided element definition.
@@ -32,14 +32,14 @@ export function createSvgElement(
   index: number,
   defaultColor?: string,
 ): JSX.Element {
-  const Tag = tagMap[element.type]
+  const Tag = tagMap[element.type];
 
-  const { props } = element
+  const { props } = element;
 
   const newProps: SVGProps<SVGElement> =
     element.type === 'line'
       ? { ...props, stroke: props.stroke ?? defaultColor }
-      : { ...props, fill: props.fill ?? defaultColor, stroke: props.stroke ?? defaultColor }
+      : { ...props, fill: props.fill ?? defaultColor, stroke: props.stroke ?? defaultColor };
 
-  return createElement(Tag, { key: index, ...newProps })
+  return createElement(Tag, { key: index, ...newProps });
 }

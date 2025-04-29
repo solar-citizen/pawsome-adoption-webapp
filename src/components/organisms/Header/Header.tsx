@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-import { Logo } from '#/components/molecules'
-import { routes } from '#/lib'
+import { Logo } from '#/components/molecules';
+import { routes } from '#/lib';
 
-import styles from './Header.module.css'
+import styles from './Header.module.css';
 
-const { adoptions, contact, about } = routes
+const { adoptions, contact, about } = routes;
 
 function Header() {
   return (
@@ -26,7 +26,7 @@ function Header() {
         </nav>
       </div>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

@@ -1,3 +1,3 @@
-import SpinnerIcon from './SpinnerIcon'
+import SpinnerIcon from './SpinnerIcon';
 
-export { SpinnerIcon }
+export { SpinnerIcon };

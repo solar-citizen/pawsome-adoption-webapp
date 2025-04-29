@@ -1,8 +1,8 @@
-import { IPetResponse } from '#/lib'
+import { IPetResponse } from '#/lib';
 
-import { createAxiosInstance } from './createAxiosInstance'
+import { createAxiosInstance } from './createAxiosInstance';
 
-const api = createAxiosInstance()
+const api = createAxiosInstance();
 
 type GetPetsParams = {
   limit?: number
@@ -21,4 +21,4 @@ export const PetAPI = {
         },
       })
       .then(resp => resp.data),
-}
+};

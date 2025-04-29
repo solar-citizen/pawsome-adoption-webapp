@@ -1,9 +1,9 @@
-import { clsx } from 'clsx'
+import { clsx } from 'clsx';
 
-import { Icon } from '#/components/molecules'
+import { Icon } from '#/components/molecules';
 
-import { createSpinnerOptions, SpinnerVariant } from './lib'
-import styles from './SpinnerIcon.module.css'
+import { createSpinnerOptions, SpinnerVariant } from './lib';
+import styles from './SpinnerIcon.module.css';
 
 type SpinnerProps = {
   variant?: SpinnerVariant
@@ -15,7 +15,7 @@ type SpinnerProps = {
 const options = createSpinnerOptions({
   spinnerCircle: styles.spinnerCircle,
   spinnerBar: [styles.spinnerBar, styles.spinnerBar2, styles.spinnerBar3],
-})
+});
 
 function SpinnerIcon({
   variant = 'circle',
@@ -23,7 +23,7 @@ function SpinnerIcon({
   color = 'white',
   className = '',
 }: SpinnerProps) {
-  const { elements, className: variantClass } = options[variant]
+  const { elements, className: variantClass } = options[variant];
 
   return (
     <Icon
@@ -34,7 +34,7 @@ function SpinnerIcon({
       color={color}
       className={clsx(variantClass, className)}
     />
-  )
+  );
 }
 
-export default SpinnerIcon
+export default SpinnerIcon;

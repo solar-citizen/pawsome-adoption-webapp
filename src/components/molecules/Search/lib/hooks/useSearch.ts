@@ -1,6 +1,6 @@
-import { useDebouncedCallback } from 'use-debounce'
+import { useDebouncedCallback } from 'use-debounce';
 
-import { useSyncURLParams } from '#/lib'
+import { useSyncURLParams } from '#/lib';
 
 type UseSearchProps = {
   searchValue: string
@@ -27,30 +27,30 @@ type UseSearchProps = {
  *    An object of handlers: handleChange, handleImmediateSearch, handleClear
  */
 export function useSearch({ searchValue, setSearchValue, searchParam, onSearch }: UseSearchProps) {
-  const syncParams = useSyncURLParams({}, false)
+  const syncParams = useSyncURLParams({}, false);
 
   const performSearch = useDebouncedCallback((value: string) => {
-    const trimmed = value.trim()
-    syncParams({ [searchParam]: trimmed || null })
-    if (trimmed && onSearch) onSearch(trimmed)
-  }, 2000)
+    const trimmed = value.trim();
+    syncParams({ [searchParam]: trimmed || null });
+    if (trimmed && onSearch) onSearch(trimmed);
+  }, 2000);
 
   const handleChange = (value: string) => {
-    setSearchValue(value)
-    performSearch(value)
-  }
+    setSearchValue(value);
+    performSearch(value);
+  };
 
   const handleImmediateSearch = () => {
-    performSearch.cancel()
-    const trimmed = searchValue.trim()
-    syncParams({ [searchParam]: trimmed || null })
-    if (trimmed && onSearch) onSearch(trimmed)
-  }
+    performSearch.cancel();
+    const trimmed = searchValue.trim();
+    syncParams({ [searchParam]: trimmed || null });
+    if (trimmed && onSearch) onSearch(trimmed);
+  };
 
   const handleClear = () => {
-    setSearchValue('')
-    syncParams({ [searchParam]: null })
-  }
+    setSearchValue('');
+    syncParams({ [searchParam]: null });
+  };
 
-  return { handleChange, handleImmediateSearch, handleClear }
+  return { handleChange, handleImmediateSearch, handleClear };
 }
