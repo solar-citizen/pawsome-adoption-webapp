@@ -2,10 +2,12 @@ import { ReactIcon, ReactIconProps, SvgIcon, SvgIconProps } from '#/components/a
 
 type IconProps = ({ variant: 'react-icon' } & ReactIconProps) | ({ variant: 'svg' } & SvgIconProps)
 
-const Icon = ({ variant, ...restProps }: IconProps) => {
-  if (variant === 'react-icon') return <ReactIcon {...(restProps as ReactIconProps)} />
-
-  return <SvgIcon {...(restProps as SvgIconProps)} />
+function Icon({ variant, ...restProps }: IconProps) {
+  return variant === 'react-icon' ? (
+    <ReactIcon {...(restProps as ReactIconProps)} />
+  ) : (
+    <SvgIcon {...(restProps as SvgIconProps)} />
+  )
 }
 
 export default Icon

@@ -19,10 +19,10 @@ import { useSearchParams } from 'react-router-dom'
  *   update or delete specific params.  The second boolean argument
  *   overrides the default `replace` behavior.
  */
-export const useSyncURLParams = (
+export function useSyncURLParams(
   initialParams: Record<string, string | null | undefined>,
   replace: boolean = false,
-) => {
+) {
   const [, setSearchParams] = useSearchParams()
 
   const syncParams = useCallback(

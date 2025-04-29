@@ -7,6 +7,6 @@ const variantStylesMap: Record<SearchVariant, string> = {
   default: styles.default,
 }
 
-export const getSearchVariantStyles = (variant?: SearchVariant) => {
+export function getSearchVariantStyles(variant?: SearchVariant) {
   return variantStylesMap[variant ?? 'default']
 }

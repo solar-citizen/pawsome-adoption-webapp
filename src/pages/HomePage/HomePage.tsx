@@ -7,7 +7,7 @@ import { IPet, IPetMeta, IPetResponse } from '#/lib'
 
 import styles from './HomePage.module.css'
 
-const HomePage = () => {
+function HomePage() {
   const [pets, setPets] = useState<IPet[]>([])
   const [meta, setMeta] = useState<IPetMeta>({
     currentPage: 1,

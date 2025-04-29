@@ -5,7 +5,7 @@ import { Search, useSearch } from '#/components/molecules'
 
 import styles from './HeroBanner.module.css'
 
-const HeroBanner = () => {
+function HeroBanner() {
   const [searchValue, setSearchValue] = useState('')
 
   const { handleChange, handleImmediateSearch, handleClear } = useSearch({

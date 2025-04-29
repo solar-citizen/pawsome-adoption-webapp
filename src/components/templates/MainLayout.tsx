@@ -4,7 +4,7 @@ import { Header } from '#/components/organisms'
 
 import styles from './MainLayout.module.css'
 
-const MainLayout = () => {
+function MainLayout() {
   return (
     <div className={styles.wrapper}>
       <Header />

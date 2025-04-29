@@ -30,12 +30,12 @@ type UsePaginationProps = {
  *    - totalPages: The total number of pages calculated from totalItems/itemsPerPage
  *    - handlePageChange: Function to navigate to a given page (updates URL param)
  */
-export const usePagination = ({
+export function usePagination({
   itemsPerPage,
   totalItems,
   pageParam,
   limitParam,
-}: UsePaginationProps) => {
+}: UsePaginationProps) {
   const [searchParams] = useSearchParams()
   const currentPage = Number(searchParams.get(pageParam)) || 1
   const totalPages = Math.ceil(totalItems / itemsPerPage)

@@ -18,14 +18,14 @@ type PaginationProps = {
 
 const { ellipsis } = staticTxt
 
-const Pagination = ({
+function Pagination({
   currentPage,
   totalPages,
   onPageChange,
   displayedPages,
   isVisibleOnOnePageCount,
   isDetacheableArrows,
-}: PaginationProps) => {
+}: PaginationProps) {
   const paginationRange = getPaginationRange(currentPage, totalPages, displayedPages)
 
   const handlePageChange = (page: number) => {

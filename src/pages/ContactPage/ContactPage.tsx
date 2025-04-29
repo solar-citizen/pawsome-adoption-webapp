@@ -1,7 +1,7 @@
 // FIXME: Move paragraphs and headings to text constants
 import styles from './ContactPage.module.css'
 
-const ContactPage = () => {
+function ContactPage() {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Get in Touch</h2>

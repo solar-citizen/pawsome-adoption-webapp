@@ -13,12 +13,14 @@ type LogoProps = {
 
 const { home } = routes
 
-const Logo = ({ containerCls, linkCls, onClick }: LogoProps) => (
-  <h1 className={containerCls}>
-    <NavLink to={home.path} className={clsx(styles.link, linkCls)} onClick={onClick}>
-      <span className={styles.pawsome}>Pawsome</span> Adoption
-    </NavLink>
-  </h1>
-)
+function Logo({ containerCls, linkCls, onClick }: LogoProps) {
+  return (
+    <h1 className={containerCls}>
+      <NavLink to={home.path} className={clsx(styles.link, linkCls)} onClick={onClick}>
+        <span className={styles.pawsome}>Pawsome</span> Adoption
+      </NavLink>
+    </h1>
+  )
+}
 
 export default Logo

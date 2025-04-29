@@ -21,7 +21,7 @@ type SearchProps = {
   onClear?: () => void
 }
 
-const Search = ({
+function Search({
   searchValue,
   placeholder,
   altPlaceholder,
@@ -32,7 +32,7 @@ const Search = ({
   onSearchSubmit,
   onChange,
   onClear,
-}: SearchProps) => {
+}: SearchProps) {
   const [isFocused, setIsFocused] = useState(false)
 
   const inputRef = useRef<HTMLInputElement | null>(null)

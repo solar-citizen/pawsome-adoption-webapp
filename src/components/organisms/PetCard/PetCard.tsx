@@ -6,15 +6,17 @@ type PetCardProps = {
   // image: string
 }
 
-const PetCard = ({ name, breed /*, image*/ }: PetCardProps) => (
-  <div className={styles.wrapper}>
-    {/*<img src={image} alt={name} className={styles.petImg} />*/}
+function PetCard({ name, breed /*, image*/ }: PetCardProps) {
+  return (
+    <div className={styles.wrapper}>
+      {/*<img src={image} alt={name} className={styles.petImg} />*/}
 
-    <div className={styles.petDetails}>
-      <h3 className={styles.petName}>{name}</h3>
-      <p className={styles.petBreed}>{breed}</p>
+      <div className={styles.petDetails}>
+        <h3 className={styles.petName}>{name}</h3>
+        <p className={styles.petBreed}>{breed}</p>
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 export default PetCard

@@ -9,7 +9,7 @@ export type ReactIconProps = {
   className?: string
 }
 
-const ReactIcon = ({ name, size = 'md', color = 'primary', className = '' }: ReactIconProps) => {
+function ReactIcon({ name, size = 'md', color = 'primary', className = '' }: ReactIconProps) {
   const IconComponent = iconMap[name]
   return <IconComponent className={clsx(sizeClasses[size], colorClasses[color], className)} />
 }

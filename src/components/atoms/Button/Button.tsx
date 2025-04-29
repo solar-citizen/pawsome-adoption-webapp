@@ -21,7 +21,7 @@ type ButtonProps = {
   onClick?: () => void
 }
 
-const Button = ({
+function Button({
   children,
   type = ButtonTypes.BUTTON,
   variant = ButtonVariants.PRIMARY,
@@ -34,7 +34,7 @@ const Button = ({
   isActive,
   className,
   onClick,
-}: ButtonProps) => {
+}: ButtonProps) {
   const isBtnDisabled = isDisabled || isLoading
   const isBtnSimpleVariant = variant === ButtonVariants.SIMPLE
 

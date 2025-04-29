@@ -13,7 +13,7 @@ export type SvgIconProps = SVGProps<SVGSVGElement> & {
   title?: string
 }
 
-const SvgIcon = ({
+function SvgIcon({
   elements,
   size = '20px',
   color,
@@ -23,7 +23,7 @@ const SvgIcon = ({
   ariaHidden = true,
   ref,
   ...rest
-}: SvgIconProps) => {
+}: SvgIconProps) {
   return (
     <svg
       ref={ref}

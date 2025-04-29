@@ -24,11 +24,11 @@ const { ellipsis } = staticTxt
  * // Returns [1, '...', 8, 9, 10, 11, 12, '...', 20] for a large pagination
  * getPaginationRange(10, 20, 5);
  */
-export const getPaginationRange = (
+export function getPaginationRange(
   currentPage: number,
   totalPages: number,
   displayedPages: number,
-): (number | string)[] => {
+): (number | string)[] {
   const totalPageNumbers = displayedPages + 2
 
   if (totalPages <= totalPageNumbers) {
