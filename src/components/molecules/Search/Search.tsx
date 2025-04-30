@@ -9,17 +9,17 @@ import { getSearchVariantStyles, type SearchExpandTriggerVariant, type SearchVar
 import styles from './Search.module.css';
 
 type SearchProps = {
-  searchValue: string
-  placeholder?: string
-  altPlaceholder?: string
-  className?: string
-  variant?: SearchVariant
-  expandTriggerVariant?: SearchExpandTriggerVariant
-  setSearchValue: (value: string) => void
-  onSearchSubmit?: () => void
-  onChange?: (value: string) => void
-  onClear?: () => void
-}
+  searchValue: string;
+  placeholder?: string;
+  altPlaceholder?: string;
+  className?: string;
+  variant?: SearchVariant;
+  expandTriggerVariant?: SearchExpandTriggerVariant;
+  setSearchValue: (value: string) => void;
+  onSearchSubmit?: () => void;
+  onChange?: (value: string) => void;
+  onClear?: () => void;
+};
 
 function Search({
   searchValue,

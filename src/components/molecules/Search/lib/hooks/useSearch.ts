@@ -1,16 +1,17 @@
+import { useMemo } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 
 import { useSyncURLParams } from '#/lib';
 
 type UseSearchProps = {
-  searchValue: string
-  setSearchValue: (value: string) => void
-  searchParam: string
-  onSearch?: (value: string) => void
-}
+  searchValue: string;
+  setSearchValue: (value: string) => void;
+  searchParam: string;
+  onSearch?: (value: string) => void;
+};
 
 /**
- * Manages local searchValue state, debounces updates, synchronizes the `searchParam` in URL,
+ * Manages local `searchValue` state, debounces updates, synchronizes the `searchParam` in URL,
  * and invokes an optional `onSearch` callback with the final trimmed value.
  *
  * @param props
@@ -27,7 +28,9 @@ type UseSearchProps = {
  *    An object of handlers: handleChange, handleImmediateSearch, handleClear
  */
 export function useSearch({ searchValue, setSearchValue, searchParam, onSearch }: UseSearchProps) {
-  const syncParams = useSyncURLParams({}, false);
+  const syncParams = useSyncURLParams({
+    initialParams: useMemo(() => ({}), []),
+  });
 
   const performSearch = useDebouncedCallback((value: string) => {
     const trimmed = value.trim();

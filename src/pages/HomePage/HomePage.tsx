@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { PetAPI } from '#/api';
 import { Pagination, usePagination } from '#/components/molecules';
-import { /*HeroBanner,*/ PetCard } from '#/components/organisms';
+import { HeroBanner, PetCard } from '#/components/organisms';
 import { IPet, IPetMeta, IPetResponse } from '#/lib';
 
 import styles from './HomePage.module.css';
@@ -44,7 +44,7 @@ function HomePage() {
 
   return (
     <>
-      {/* <HeroBanner /> */}
+      <HeroBanner />
 
       <section className={styles.container}>
         <h2 className={styles.title}>Available Pets</h2>
