@@ -1,6 +1,11 @@
 import { useCallback, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
+type UseSyncURLParamsProps = {
+  initialParams: Record<string, string | null | undefined>;
+  replace?: boolean;
+};
+
 /**
  * Synchronizes a set of key/value pairs with the URL’s query string.
  *
@@ -19,10 +24,7 @@ import { useSearchParams } from 'react-router-dom';
  *   update or delete specific params.  The second boolean argument
  *   overrides the default `replace` behavior.
  */
-export function useSyncURLParams(
-  initialParams: Record<string, string | null | undefined>,
-  replace: boolean = false,
-) {
+export function useSyncURLParams({ initialParams, replace = false }: UseSyncURLParamsProps) {
   const [, setSearchParams] = useSearchParams();
 
   const syncParams = useCallback(

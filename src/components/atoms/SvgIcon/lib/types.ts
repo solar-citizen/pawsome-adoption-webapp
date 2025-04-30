@@ -7,4 +7,4 @@ export type SvgElementProps =
   | { type: 'line'; props: SVGProps<SVGLineElement> }
   | { type: 'ellipse'; props: SVGProps<SVGEllipseElement> }
   | { type: 'polygon'; props: SVGProps<SVGPolygonElement> }
-  | { type: 'polyline'; props: SVGProps<SVGPolylineElement> }
+  | { type: 'polyline'; props: SVGProps<SVGPolylineElement> };

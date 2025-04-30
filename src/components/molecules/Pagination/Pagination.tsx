@@ -8,13 +8,13 @@ import { getPaginationRange } from './lib';
 import styles from './Pagination.module.css';
 
 type PaginationProps = {
-  totalPages: number
-  currentPage: number
-  displayedPages: number
-  isVisibleOnOnePageCount?: boolean
-  isDetacheableArrows?: boolean
-  onPageChange: (pageNumber: number) => void
-}
+  totalPages: number;
+  currentPage: number;
+  displayedPages: number;
+  isVisibleOnOnePageCount?: boolean;
+  isDetacheableArrows?: boolean;
+  onPageChange: (pageNumber: number) => void;
+};
 
 const { ellipsis } = staticTxt;
 

@@ -6,11 +6,11 @@ import { createSpinnerOptions, SpinnerVariant } from './lib';
 import styles from './SpinnerIcon.module.css';
 
 type SpinnerProps = {
-  variant?: SpinnerVariant
-  size?: number
-  color?: string
-  className?: string
-}
+  variant?: SpinnerVariant;
+  size?: number;
+  color?: string;
+  className?: string;
+};
 
 const options = createSpinnerOptions({
   spinnerCircle: styles.spinnerCircle,

@@ -6,10 +6,10 @@ import { routes } from '#/lib';
 import styles from './Logo.module.css';
 
 type LogoProps = {
-  containerCls?: string
-  linkCls?: string
-  onClick?: () => void
-}
+  containerCls?: string;
+  linkCls?: string;
+  onClick?: () => void;
+};
 
 const { home } = routes;
 

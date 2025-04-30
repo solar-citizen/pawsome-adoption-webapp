@@ -1,21 +1,21 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 .wrapper {
-    @apply bg-white rounded shadow hover:shadow-lg transition p-4;
+  @apply bg-white rounded shadow hover:shadow-lg transition p-4;
 }
 
 .petImg {
-    @apply w-full h-48 object-cover rounded;
+  @apply w-full h-48 object-cover rounded;
 }
 
 .petDetails {
-    @apply mt-4;
+  @apply mt-4;
 
-    & .petName {
-        @apply text-xl font-bold;
-    }
+  & .petName {
+    @apply text-xl font-bold;
+  }
 
-    & .petBreed {
-        @apply text-gray-600;
-    }
+  & .petBreed {
+    @apply text-gray-600;
+  }
 }

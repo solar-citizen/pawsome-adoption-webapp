@@ -4,11 +4,11 @@ import { useSearchParams } from 'react-router-dom';
 import { useSyncURLParams } from '#/lib';
 
 type UsePaginationProps = {
-  itemsPerPage: number
-  totalItems: number
-  pageParam: string
-  limitParam: string
-}
+  itemsPerPage: number;
+  totalItems: number;
+  pageParam: string;
+  limitParam: string;
+};
 
 /**
  * Reads `page` and `limit` (or custom param keys) from the URL, calculates current page
@@ -40,15 +40,16 @@ export function usePagination({
   const currentPage = Number(searchParams.get(pageParam)) || 1;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-  const initialQuery = useMemo(
-    () => ({
-      [limitParam]: itemsPerPage.toString(),
-      [pageParam]: currentPage.toString(),
-    }),
-    [limitParam, itemsPerPage, pageParam, currentPage],
-  );
-
-  const syncParams = useSyncURLParams(initialQuery, true);
+  const syncParams = useSyncURLParams({
+    initialParams: useMemo(
+      () => ({
+        [limitParam]: itemsPerPage.toString(),
+        [pageParam]: currentPage.toString(),
+      }),
+      [limitParam, itemsPerPage, pageParam, currentPage],
+    ),
+    replace: true,
+  });
 
   const handlePageChange = (pageNumber: number) => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {

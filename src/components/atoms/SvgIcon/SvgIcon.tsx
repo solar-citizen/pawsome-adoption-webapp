@@ -3,15 +3,15 @@ import { memo, type SVGProps } from 'react';
 import { createSvgElement, SvgElementProps } from './lib';
 
 export type SvgIconProps = SVGProps<SVGSVGElement> & {
-  elements?: SvgElementProps[]
-  size?: string | number
-  color?: string
-  className?: string
-  viewBox?: string
-  ariaHidden?: boolean
-  ariaLabel?: string
-  title?: string
-}
+  elements?: SvgElementProps[];
+  size?: string | number;
+  color?: string;
+  className?: string;
+  viewBox?: string;
+  ariaHidden?: boolean;
+  ariaLabel?: string;
+  title?: string;
+};
 
 function SvgIcon({
   elements,

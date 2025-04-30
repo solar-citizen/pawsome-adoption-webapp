@@ -5,10 +5,10 @@ import { createAxiosInstance } from './createAxiosInstance';
 const api = createAxiosInstance();
 
 type GetPetsParams = {
-  limit?: number
-  page?: number
-  full_text_search?: string | null
-}
+  limit?: number;
+  page?: number;
+  full_text_search?: string | null;
+};
 
 export const PetAPI = {
   getPets: (params?: GetPetsParams): Promise<IPetResponse> =>

@@ -1,10 +1,10 @@
 import styles from './PetCard.module.css';
 
 type PetCardProps = {
-  name: string
-  breed: string
-  // image: string
-}
+  name: string;
+  breed: string;
+  // image: string;
+};
 
 function PetCard({ name, breed /*, image*/ }: PetCardProps) {
   return (

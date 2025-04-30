@@ -1,18 +1,18 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 .wrapper {
-    @apply min-h-screen flex flex-col;
+  @apply min-h-screen flex flex-col;
 }
 
 .mainContent {
-    @apply flex-1 mt-16;
+  @apply flex-1 mt-16;
 }
 
 .footer {
-    @apply bg-gray-200 py-4 text-center relative w-screen left-1/2;
-    transform: translateX(-50%);
+  @apply bg-gray-200 py-4 text-center relative w-screen left-1/2;
+  transform: translateX(-50%);
 
-    & .copyright {
-        @apply text-gray-700;
-    }
+  & .copyright {
+    @apply text-gray-700;
+  }
 }

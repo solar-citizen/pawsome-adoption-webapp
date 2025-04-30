@@ -1,9 +1,9 @@
 import { SpinnerVariant, SpinnerVariantConfig } from './types';
 
 export type SpinnerStylesProps = {
-  spinnerCircle?: string
-  spinnerBar?: string[]
-}
+  spinnerCircle?: string;
+  spinnerBar?: string[];
+};
 
 /**
  * Creates a configuration object for different spinner variants with their styling options.

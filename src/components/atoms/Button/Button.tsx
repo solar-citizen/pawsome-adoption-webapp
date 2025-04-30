@@ -7,19 +7,19 @@ import styles from './Button.module.css';
 import { BtnTextPosition, ButtonSizes, ButtonTypes, ButtonVariants, IconPositions } from './lib';
 
 type ButtonProps = {
-  children: ReactNode
-  type?: ButtonTypes
-  variant?: ButtonVariants
-  size?: ButtonSizes
-  textPosition?: BtnTextPosition
-  iconPosition?: IconPositions
-  icon?: ReactNode
-  isLoading?: boolean
-  isDisabled?: boolean
-  isActive?: boolean
-  className?: string
-  onClick?: () => void
-}
+  children: ReactNode;
+  type?: ButtonTypes;
+  variant?: ButtonVariants;
+  size?: ButtonSizes;
+  textPosition?: BtnTextPosition;
+  iconPosition?: IconPositions;
+  icon?: ReactNode;
+  isLoading?: boolean;
+  isDisabled?: boolean;
+  isActive?: boolean;
+  className?: string;
+  onClick?: () => void;
+};
 
 function Button({
   children,
