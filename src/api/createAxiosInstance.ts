@@ -1,8 +1,6 @@
 import axios, { AxiosError, AxiosInstance } from 'axios';
 
-import { staticTxt } from '#/lib';
-
-const { baseURL } = staticTxt;
+import { baseURL } from '#/lib';
 
 export const createAxiosInstance = (): AxiosInstance => {
   const api = axios.create({

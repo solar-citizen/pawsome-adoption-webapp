@@ -1,7 +1,8 @@
+export const baseURL = import.meta.env.VITE_API_BASE_URL;
+
 export const staticTxt = {
   siteTitle: 'Pawsome Adoption',
   ellipsis: '...',
-  baseURL: import.meta.env.VITE_API_BASE_URL,
 };
 
 export const routes = {

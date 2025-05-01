@@ -1,3 +1,4 @@
-import { PetAPI } from './PetAPI';
+import { type GetPetsParams, PetAPI, useSyncPets } from './pets';
 
-export { PetAPI };
+export { PetAPI, useSyncPets };
+export type { GetPetsParams };

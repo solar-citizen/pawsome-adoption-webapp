@@ -1,10 +1,10 @@
 import { IPetResponse } from '#/lib';
 
-import { createAxiosInstance } from './createAxiosInstance';
+import { createAxiosInstance } from '../createAxiosInstance';
 
 const api = createAxiosInstance();
 
-type GetPetsParams = {
+export type GetPetsParams = {
   limit?: number;
   page?: number;
   full_text_search?: string | null;
