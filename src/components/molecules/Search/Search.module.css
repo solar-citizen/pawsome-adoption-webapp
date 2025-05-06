@@ -1,52 +1,55 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 .searchContainer {
-    @apply flex justify-center items-center;
+  @apply flex justify-center items-center;
 }
 
 .inputWrapper {
-    @apply relative flex flex-row-reverse justify-center;
+  @apply relative flex flex-row-reverse justify-center;
 }
 
-.searchInput, .searchInputFocused {
-    @apply bg-white h-10 px-5 pr-16 rounded-full text-sm focus:outline-none
+.searchInput,
+.searchInputFocused {
+  @apply bg-white h-10 px-5 pr-16 rounded-full text-sm focus:outline-none
     transition-all duration-300 ease-in-out lg:grow-0 grow border border-transparent
     focus:ring-2 focus:ring-inset focus:border-blue-500 hover:border-blue-500 focus:ring-blue-500 text-gray-500;
 }
 
 .searchInputFocused {
-    @apply w-[80vw] lg:w-4xl;
+  @apply w-[80vw] lg:w-4xl;
 }
 
 .default {
-    @apply w-80;
+  @apply w-80;
 }
 
 .collapsed {
-    @apply w-48 sm:w-72;
+  @apply w-48 sm:w-72;
 }
 
 .expanded {
-    @apply w-full;
+  @apply w-full;
 }
 
-.searchButton, .clearButton {
-    @apply absolute right-0 top-0 mt-[10px] mr-3;
+.searchButton,
+.clearButton {
+  @apply absolute right-0 top-0 mt-[10px] mr-3;
 }
 
 .clearButton {
-    @apply right-6 mt-[8px];
+  @apply right-6 mt-[8px];
 }
 
-.searchIcon, .clearIcon {
-    @apply h-5 w-5 fill-current hover:text-sky-400;
+.searchIcon,
+.clearIcon {
+  @apply h-5 w-5 fill-current hover:text-sky-400;
 }
 
 .clearIcon {
-    @apply h-6 w-6;
-    @apply hover:text-red-300;
+  @apply h-6 w-6;
+  @apply hover:text-red-300;
 }
 
 .searchIconFocused {
-    @apply text-sky-500;
+  @apply text-sky-500;
 }

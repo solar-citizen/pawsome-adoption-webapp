@@ -1,6 +1,6 @@
-import { staticTxt } from '#/lib'
+import { staticTxt } from '#/lib';
 
-const { ellipsis } = staticTxt
+const { ellipsis } = staticTxt;
 
 /**
  * Generates an array representing the pagination range to be displayed.
@@ -24,50 +24,50 @@ const { ellipsis } = staticTxt
  * // Returns [1, '...', 8, 9, 10, 11, 12, '...', 20] for a large pagination
  * getPaginationRange(10, 20, 5);
  */
-export const getPaginationRange = (
+export function getPaginationRange(
   currentPage: number,
   totalPages: number,
   displayedPages: number,
-): (number | string)[] => {
-  const totalPageNumbers = displayedPages + 2
+): (number | string)[] {
+  const totalPageNumbers = displayedPages + 2;
 
   if (totalPages <= totalPageNumbers) {
-    return Array.from({ length: totalPages }, (_, i) => i + 1)
+    return Array.from({ length: totalPages }, (_, i) => i + 1);
   }
 
-  const range: (number | string)[] = []
+  const range: (number | string)[] = [];
 
-  range.push(1)
+  range.push(1);
 
-  const halfDisplayedCount = Math.floor(displayedPages / 2)
-  let leftSiblingIndex = Math.max(currentPage - halfDisplayedCount, 2)
-  let rightSiblingIndex = Math.min(currentPage + halfDisplayedCount, totalPages - 1)
+  const halfDisplayedCount = Math.floor(displayedPages / 2);
+  let leftSiblingIndex = Math.max(currentPage - halfDisplayedCount, 2);
+  let rightSiblingIndex = Math.min(currentPage + halfDisplayedCount, totalPages - 1);
 
-  const siblingsCount = rightSiblingIndex - leftSiblingIndex + 1
+  const siblingsCount = rightSiblingIndex - leftSiblingIndex + 1;
 
   if (currentPage <= halfDisplayedCount) {
-    rightSiblingIndex = displayedPages
-    leftSiblingIndex = 2
+    rightSiblingIndex = displayedPages;
+    leftSiblingIndex = 2;
   } else if (totalPages - currentPage < halfDisplayedCount) {
-    leftSiblingIndex = totalPages - displayedPages + 1
-    rightSiblingIndex = totalPages - 1
+    leftSiblingIndex = totalPages - displayedPages + 1;
+    rightSiblingIndex = totalPages - 1;
   } else if (siblingsCount > displayedPages) {
-    rightSiblingIndex = leftSiblingIndex + displayedPages - 1
+    rightSiblingIndex = leftSiblingIndex + displayedPages - 1;
   }
 
   if (leftSiblingIndex > 2) {
-    range.push(ellipsis)
+    range.push(ellipsis);
   }
 
   for (let i = leftSiblingIndex; i <= rightSiblingIndex; i++) {
-    range.push(i)
+    range.push(i);
   }
 
   if (rightSiblingIndex < totalPages - 1) {
-    range.push(ellipsis)
+    range.push(ellipsis);
   }
 
-  range.push(totalPages)
+  range.push(totalPages);
 
-  return range
+  return range;
 }

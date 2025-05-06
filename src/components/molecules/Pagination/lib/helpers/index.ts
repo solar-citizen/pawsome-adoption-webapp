@@ -1,3 +1,3 @@
-import { getPaginationRange } from './getPaginationRange'
+import { getPaginationRange } from './getPaginationRange';
 
-export { getPaginationRange }
+export { getPaginationRange };

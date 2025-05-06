@@ -1,3 +1,3 @@
-import ContactPage from './ContactPage'
+import ContactPage from './ContactPage';
 
-export { ContactPage }
+export { ContactPage };

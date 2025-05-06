@@ -1,4 +1,4 @@
-import { getPaginationRange, usePagination } from './lib'
-import Pagination from './Pagination'
+import { getPaginationRange, usePagination } from './lib';
+import Pagination from './Pagination';
 
-export { getPaginationRange, Pagination, usePagination }
+export { getPaginationRange, Pagination, usePagination };

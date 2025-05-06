@@ -1,19 +1,19 @@
-import { memo, type SVGProps } from 'react'
+import { memo, type SVGProps } from 'react';
 
-import { createSvgElement, SvgElementProps } from './lib'
+import { createSvgElement, SvgElementProps } from './lib';
 
 export type SvgIconProps = SVGProps<SVGSVGElement> & {
-  elements?: SvgElementProps[]
-  size?: string | number
-  color?: string
-  className?: string
-  viewBox?: string
-  ariaHidden?: boolean
-  ariaLabel?: string
-  title?: string
-}
+  elements?: SvgElementProps[];
+  size?: string | number;
+  color?: string;
+  className?: string;
+  viewBox?: string;
+  ariaHidden?: boolean;
+  ariaLabel?: string;
+  title?: string;
+};
 
-const SvgIcon = ({
+function SvgIcon({
   elements,
   size = '20px',
   color,
@@ -23,7 +23,7 @@ const SvgIcon = ({
   ariaHidden = true,
   ref,
   ...rest
-}: SvgIconProps) => {
+}: SvgIconProps) {
   return (
     <svg
       ref={ref}
@@ -41,7 +41,7 @@ const SvgIcon = ({
 
       {elements?.map((element, index) => createSvgElement(element, index, color))}
     </svg>
-  )
+  );
 }
 
-export default memo(SvgIcon)
+export default memo(SvgIcon);

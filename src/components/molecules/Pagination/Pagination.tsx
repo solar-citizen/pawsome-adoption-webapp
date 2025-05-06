@@ -1,40 +1,40 @@
-import clsx from 'clsx'
+import clsx from 'clsx';
 
-import { Button, ButtonVariants } from '#/components/atoms'
-import { Icon } from '#/components/molecules'
-import { staticTxt } from '#/lib'
+import { Button, ButtonVariants } from '#/components/atoms';
+import { Icon } from '#/components/molecules';
+import { staticTxt } from '#/lib';
 
-import { getPaginationRange } from './lib'
-import styles from './Pagination.module.css'
+import { getPaginationRange } from './lib';
+import styles from './Pagination.module.css';
 
 type PaginationProps = {
-  totalPages: number
-  currentPage: number
-  displayedPages: number
-  isVisibleOnOnePageCount?: boolean
-  isDetacheableArrows?: boolean
-  onPageChange: (pageNumber: number) => void
-}
+  totalPages: number;
+  currentPage: number;
+  displayedPages: number;
+  isVisibleOnOnePageCount?: boolean;
+  isDetacheableArrows?: boolean;
+  onPageChange: (pageNumber: number) => void;
+};
 
-const { ellipsis } = staticTxt
+const { ellipsis } = staticTxt;
 
-const Pagination = ({
+function Pagination({
   currentPage,
   totalPages,
   onPageChange,
   displayedPages,
   isVisibleOnOnePageCount,
   isDetacheableArrows,
-}: PaginationProps) => {
-  const paginationRange = getPaginationRange(currentPage, totalPages, displayedPages)
+}: PaginationProps) {
+  const paginationRange = getPaginationRange(currentPage, totalPages, displayedPages);
 
   const handlePageChange = (page: number) => {
     if (page > 0 && page <= totalPages && page !== currentPage) {
-      onPageChange(page)
+      onPageChange(page);
     }
-  }
+  };
 
-  const isPaginationVisible: boolean = totalPages > 1 && !isVisibleOnOnePageCount
+  const isPaginationVisible: boolean = totalPages > 1 && !isVisibleOnOnePageCount;
 
   return (
     isPaginationVisible && (
@@ -49,7 +49,7 @@ const Pagination = ({
           className={clsx(styles.paginationItem, styles.paginationPrevious)}
           isDisabled={currentPage === 1}
           onClick={() => {
-            handlePageChange(currentPage - 1)
+            handlePageChange(currentPage - 1);
           }}
         >
           <span className='sr-only'>Previous</span>
@@ -64,15 +64,15 @@ const Pagination = ({
                   variant={ButtonVariants.SIMPLE}
                   onClick={() => {
                     if (paginationItem === ellipsis) {
-                      const isLeftEllipsis = index === 1
-                      const isRightEllipsis = index === paginationRange.length - 2
+                      const isLeftEllipsis = index === 1;
+                      const isRightEllipsis = index === paginationRange.length - 2;
 
                       if (isLeftEllipsis) {
-                        const previousPageBlock = Math.max(currentPage - displayedPages, 1)
-                        handlePageChange(previousPageBlock)
+                        const previousPageBlock = Math.max(currentPage - displayedPages, 1);
+                        handlePageChange(previousPageBlock);
                       } else if (isRightEllipsis) {
-                        const nextPageBlock = Math.min(currentPage + displayedPages, totalPages)
-                        handlePageChange(nextPageBlock)
+                        const nextPageBlock = Math.min(currentPage + displayedPages, totalPages);
+                        handlePageChange(nextPageBlock);
                       }
                     }
                   }}
@@ -84,7 +84,7 @@ const Pagination = ({
                 <Button
                   variant={ButtonVariants.SIMPLE}
                   onClick={() => {
-                    handlePageChange(paginationItem)
+                    handlePageChange(paginationItem);
                   }}
                   className={clsx(
                     styles.paginationItem,
@@ -103,7 +103,7 @@ const Pagination = ({
           className={clsx(styles.paginationItem, styles.paginationNext)}
           isDisabled={currentPage === totalPages}
           onClick={() => {
-            handlePageChange(currentPage + 1)
+            handlePageChange(currentPage + 1);
           }}
         >
           <span className='sr-only'>Next</span>
@@ -111,7 +111,7 @@ const Pagination = ({
         </Button>
       </nav>
     )
-  )
+  );
 }
 
-export default Pagination
+export default Pagination;

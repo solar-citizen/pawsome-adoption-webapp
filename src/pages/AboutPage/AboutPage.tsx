@@ -1,7 +1,7 @@
 // FIXME: Move paragraphs and headings to text constants
-import styles from './AboutPage.module.css'
+import styles from './AboutPage.module.css';
 
-const AboutPage = () => {
+function AboutPage() {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>About Pawsome Adoption</h2>
@@ -62,7 +62,7 @@ const AboutPage = () => {
         </p>
       </section>
     </div>
-  )
+  );
 }
 
-export default AboutPage
+export default AboutPage;

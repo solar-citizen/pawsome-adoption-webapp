@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-import { Logo } from '#/components/molecules'
-import { routes } from '#/lib'
+import { Logo } from '#/components/molecules';
+import { routes } from '#/lib';
 
-import styles from './Header.module.css'
+import styles from './Header.module.css';
 
-const { adoptions, contact, about } = routes
+const { adoptions, contact, about } = routes;
 
-const Header = () => {
+function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -26,7 +26,7 @@ const Header = () => {
         </nav>
       </div>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

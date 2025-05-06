@@ -1,27 +1,27 @@
-import { clsx } from 'clsx'
-import { ReactNode } from 'react'
+import { clsx } from 'clsx';
+import { ReactNode } from 'react';
 
-import { SpinnerIcon } from '#/components/molecules'
+import { SpinnerIcon } from '#/components/molecules';
 
-import styles from './Button.module.css'
-import { BtnTextPosition, ButtonSizes, ButtonTypes, ButtonVariants, IconPositions } from './lib'
+import styles from './Button.module.css';
+import { BtnTextPosition, ButtonSizes, ButtonTypes, ButtonVariants, IconPositions } from './lib';
 
 type ButtonProps = {
-  children: ReactNode
-  type?: ButtonTypes
-  variant?: ButtonVariants
-  size?: ButtonSizes
-  textPosition?: BtnTextPosition
-  iconPosition?: IconPositions
-  icon?: ReactNode
-  isLoading?: boolean
-  isDisabled?: boolean
-  isActive?: boolean
-  className?: string
-  onClick?: () => void
-}
+  children: ReactNode;
+  type?: ButtonTypes;
+  variant?: ButtonVariants;
+  size?: ButtonSizes;
+  textPosition?: BtnTextPosition;
+  iconPosition?: IconPositions;
+  icon?: ReactNode;
+  isLoading?: boolean;
+  isDisabled?: boolean;
+  isActive?: boolean;
+  className?: string;
+  onClick?: () => void;
+};
 
-const Button = ({
+function Button({
   children,
   type = ButtonTypes.BUTTON,
   variant = ButtonVariants.PRIMARY,
@@ -34,9 +34,9 @@ const Button = ({
   isActive,
   className,
   onClick,
-}: ButtonProps) => {
-  const isBtnDisabled = isDisabled || isLoading
-  const isBtnSimpleVariant = variant === ButtonVariants.SIMPLE
+}: ButtonProps) {
+  const isBtnDisabled = isDisabled || isLoading;
+  const isBtnSimpleVariant = variant === ButtonVariants.SIMPLE;
 
   return (
     <button
@@ -72,7 +72,7 @@ const Button = ({
         />
       )}
     </button>
-  )
+  );
 }
 
-export default Button
+export default Button;

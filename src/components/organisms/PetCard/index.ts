@@ -1,3 +1,3 @@
-import PetCard from './PetCard'
+import PetCard from './PetCard';
 
-export { PetCard }
+export { PetCard };

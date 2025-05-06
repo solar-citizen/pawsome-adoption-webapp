@@ -1,21 +1,21 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 .container {
-    @apply container mx-auto py-10 px-6;
+  @apply container mx-auto py-10 px-6;
 }
 
 .title {
-    @apply text-4xl font-bold mb-4;
+  @apply text-4xl font-bold mb-4;
 }
 
 .section {
-    @apply mb-6;
+  @apply mb-6;
 }
 
 .sectionHeading {
-    @apply text-2xl font-semibold mb-2;
+  @apply text-2xl font-semibold mb-2;
 }
 
 .list {
-    @apply list-disc ml-6;
+  @apply list-disc ml-6;
 }

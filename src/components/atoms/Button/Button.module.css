@@ -1,124 +1,124 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 .button {
-    @apply inline-flex justify-center items-center gap-2 text-gray-500;
-    @apply border border-transparent transition-colors duration-100 ease-in-out;
+  @apply inline-flex justify-center items-center gap-2 text-gray-500;
+  @apply border border-transparent transition-colors duration-100 ease-in-out;
 
-    &[disabled],
-    &[aria-disabled='true'] {
-        @apply bg-gray-400 cursor-not-allowed opacity-65;
+  &[disabled],
+  &[aria-disabled='true'] {
+    @apply bg-gray-400 cursor-not-allowed opacity-65;
+  }
+
+  &.primary {
+    @apply bg-sky-600 text-white;
+    @apply hover:bg-sky-500;
+
+    &.active {
+      @apply bg-sky-500;
     }
+  }
 
-    &.primary {
-        @apply bg-sky-600 text-white;
-        @apply hover:bg-sky-500;
+  &.primaryOutline {
+    @apply bg-transparent text-sky-600 border border-solid border-sky-600;
+    @apply hover:bg-sky-600 hover:text-white;
 
-        &.active {
-            @apply bg-sky-500;
-        }
+    &.active {
+      @apply bg-sky-600 text-white;
     }
+  }
 
-    &.primaryOutline {
-        @apply bg-transparent text-sky-600 border border-solid border-sky-600;
-        @apply hover:bg-sky-600 hover:text-white;
+  &.secondary {
+    @apply bg-gray-900 text-white;
+    @apply hover:bg-gray-700;
 
-        &.active {
-            @apply bg-sky-600 text-white;
-        }
+    &.active {
+      @apply bg-gray-700;
     }
+  }
 
-    &.secondary {
-        @apply bg-gray-900 text-white;
-        @apply hover:bg-gray-700;
+  &.secondaryOutline {
+    @apply bg-transparent text-gray-900 border border-solid border-gray-500;
+    @apply hover:bg-gray-900 hover:text-white;
 
-        &.active {
-            @apply bg-gray-700;
-        }
+    &.active {
+      @apply bg-gray-900 text-white;
     }
+  }
 
-    &.secondaryOutline {
-        @apply bg-transparent text-gray-900 border border-solid border-gray-500;
-        @apply hover:bg-gray-900 hover:text-white;
+  &.success {
+    @apply bg-emerald-500 text-white;
+    @apply hover:bg-emerald-400;
 
-        &.active {
-            @apply bg-gray-900 text-white;
-        }
+    &.active {
+      @apply bg-emerald-400;
     }
+  }
 
-    &.success {
-        @apply bg-emerald-500 text-white;
-        @apply hover:bg-emerald-400;
+  &.successOutline {
+    @apply bg-transparent text-emerald-500 border border-solid border-emerald-500;
+    @apply hover:bg-emerald-500 hover:text-white;
 
-        &.active {
-            @apply bg-emerald-400;
-        }
+    &.active {
+      @apply bg-emerald-500 text-white;
     }
+  }
 
-    &.successOutline {
-        @apply bg-transparent text-emerald-500 border border-solid border-emerald-500;
-        @apply hover:bg-emerald-500 hover:text-white;
+  &.danger {
+    @apply bg-red-400 text-white;
+    @apply hover:bg-red-500;
 
-        &.active {
-            @apply bg-emerald-500 text-white;
-        }
+    &.active {
+      @apply bg-red-500;
     }
+  }
 
-    &.danger {
-        @apply bg-red-400 text-white;
-        @apply hover:bg-red-500;
+  &.dangerOutline {
+    @apply bg-transparent text-red-400 border border-solid border-red-400;
+    @apply hover:bg-red-500 hover:text-white;
 
-        &.active {
-            @apply bg-red-500;
-        }
+    &.active {
+      @apply bg-red-500 text-white;
     }
+  }
 
-    &.dangerOutline {
-        @apply bg-transparent text-red-400 border border-solid border-red-400;
-        @apply hover:bg-red-500 hover:text-white;
+  &.simple {
+    @apply bg-transparent;
+  }
 
-        &.active {
-            @apply bg-red-500 text-white;
-        }
-    }
+  &.extraSmall {
+    @apply py-[2px] px-[5px] text-xs rounded-sm;
+  }
 
-    &.simple {
-        @apply bg-transparent;
-    }
+  &.small {
+    @apply py-[4px] px-[8px] text-sm rounded-sm;
+  }
 
-    &.extraSmall {
-        @apply py-[2px] px-[5px] text-xs rounded-sm;
-    }
+  &.medium {
+    @apply py-[6px] px-[12px] text-base rounded-md;
+  }
 
-    &.small {
-        @apply py-[4px] px-[8px] text-sm rounded-sm;
-    }
+  &.large {
+    @apply py-[8px] px-[16px] text-lg rounded-md;
+  }
 
-    &.medium {
-        @apply py-[6px] px-[12px] text-base rounded-md;
-    }
-
-    &.large {
-        @apply py-[8px] px-[16px] text-lg rounded-md;
-    }
-
-    &.fullWidth {
-        @apply py-[6px] px-[12px] text-base;
-        @apply w-full rounded-md;
-    }
+  &.fullWidth {
+    @apply py-[6px] px-[12px] text-base;
+    @apply w-full rounded-md;
+  }
 }
 
 &.center {
-    @apply justify-center;
+  @apply justify-center;
 }
 
 &.start .buttonTitle {
-    @apply w-full inline-block text-start;
+  @apply w-full inline-block text-start;
 }
 
 .loading {
-    @apply pointer-events-none;
+  @apply pointer-events-none;
 }
 
 .buttonTitle {
-    @apply inline-flex items-center;
+  @apply inline-flex items-center;
 }

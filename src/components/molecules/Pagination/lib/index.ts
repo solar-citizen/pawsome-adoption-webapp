@@ -1,4 +1,4 @@
-import { getPaginationRange } from './helpers'
-import { usePagination } from './hooks'
+import { getPaginationRange } from './helpers';
+import { usePagination } from './hooks';
 
-export { getPaginationRange, usePagination }
+export { getPaginationRange, usePagination };

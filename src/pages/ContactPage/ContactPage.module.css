@@ -1,41 +1,41 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 .container {
-    @apply container mx-auto py-10 px-6;
+  @apply container mx-auto py-10 px-6;
 }
 
 .title {
-    @apply text-4xl font-bold mb-4;
+  @apply text-4xl font-bold mb-4;
 }
 
 .intro {
-    @apply mb-6;
+  @apply mb-6;
 }
 
 .section {
-    @apply mb-6;
+  @apply mb-6;
 }
 
 .sectionHeading {
-    @apply text-2xl font-semibold mb-2;
+  @apply text-2xl font-semibold mb-2;
 }
 
 .link {
-    @apply text-blue-600;
+  @apply text-blue-600;
 }
 
 .form {
-    @apply space-y-4;
+  @apply space-y-4;
 }
 
 .label {
-    @apply block text-sm font-medium mb-1;
+  @apply block text-sm font-medium mb-1;
 }
 
 .input {
-    @apply w-full border border-gray-300 p-2 rounded;
+  @apply w-full border border-gray-300 p-2 rounded;
 }
 
 .button {
-    @apply bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition;
+  @apply bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition;
 }

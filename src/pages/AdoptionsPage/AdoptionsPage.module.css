@@ -1,37 +1,37 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 .container {
-    @apply container mx-auto py-10 px-6;
+  @apply container mx-auto py-10 px-6;
 }
 
 .title {
-    @apply text-4xl font-bold mb-4;
+  @apply text-4xl font-bold mb-4;
 }
 
 .intro {
-    @apply mb-6;
+  @apply mb-6;
 }
 
 .section {
-    @apply mb-8;
+  @apply mb-8;
 }
 
 .sectionHeading {
-    @apply text-2xl font-semibold mb-2;
+  @apply text-2xl font-semibold mb-2;
 }
 
 .sectionText {
-    @apply mb-4;
+  @apply mb-4;
 }
 
 .list {
-    @apply list-disc ml-6;
+  @apply list-disc ml-6;
 }
 
 .orderedList {
-    @apply list-decimal ml-6;
+  @apply list-decimal ml-6;
 }
 
 .storyOwner {
-    @apply font-semibold;
+  @apply font-semibold;
 }

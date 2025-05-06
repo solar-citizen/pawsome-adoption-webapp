@@ -1,7 +1,7 @@
 // TODO: add multilang support
 
-import { AppRouter } from '#/routes'
+import { AppRouter } from '#/routes';
 
-const App = () => <AppRouter />
+const App = () => <AppRouter />;
 
-export default App
+export default App;

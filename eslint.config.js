@@ -1,17 +1,18 @@
-import js from '@eslint/js'
-import ts from '@typescript-eslint/parser'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import tsEslint from 'typescript-eslint'
-import react from 'eslint-plugin-react'
-import prettier from 'eslint-config-prettier'
-import esLintImport from 'eslint-plugin-import'
-import simpleImportSort from 'eslint-plugin-simple-import-sort'
+import js from '@eslint/js';
+import ts from '@typescript-eslint/parser';
+import globals from 'globals';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import tsEslint from 'typescript-eslint';
+import react from 'eslint-plugin-react';
+import prettier from 'eslint-config-prettier';
+import esLintImport from 'eslint-plugin-import';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
 
 const customRules = {
   /* eslint */
   'max-len': ['warn', { code: 100 }],
+  semi: [2, 'always'],
   /* eslint-plugin-simple-import-sort */
   'simple-import-sort/imports': 'error',
   'simple-import-sort/exports': 'error',
@@ -23,14 +24,14 @@ const customRules = {
   /* no-unused-vars */
   '@typescript-eslint/no-unused-vars': 'error',
   'no-unused-vars': 'off',
-}
+};
 
 const baseConfig = {
   ignores: ['dist'],
   linterOptions: {
     reportUnusedDisableDirectives: true,
   },
-}
+};
 
 const tsConfig = {
   files: ['**/*.{ts,tsx}'],
@@ -77,16 +78,16 @@ const tsConfig = {
       },
     ],
   },
-}
+};
 
 const tsTypeCheckedConfig = tsEslint.configs.strictTypeChecked.map(config => {
   if (config.rules) {
     return {
       ...config,
       files: ['**/*.{ts,tsx}'],
-    }
+    };
   }
-  return config
-})
+  return config;
+});
 
-export default [baseConfig, js.configs.recommended, tsConfig, ...tsTypeCheckedConfig]
+export default [baseConfig, js.configs.recommended, tsConfig, ...tsTypeCheckedConfig];

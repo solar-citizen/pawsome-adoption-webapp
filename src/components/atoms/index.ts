@@ -5,9 +5,9 @@ import {
   ButtonTypes,
   ButtonVariants,
   IconPositions,
-} from './Button'
-import { ReactIcon, type ReactIconProps } from './ReactIcon'
-import { type SvgElementProps, SvgIcon, type SvgIconProps } from './SvgIcon'
+} from './Button';
+import { ReactIcon, type ReactIconProps } from './ReactIcon';
+import { type SvgElementProps, SvgIcon, type SvgIconProps } from './SvgIcon';
 
 export {
   BtnTextPosition,
@@ -18,5 +18,5 @@ export {
   IconPositions,
   ReactIcon,
   SvgIcon,
-}
-export type { ReactIconProps, SvgElementProps, SvgIconProps }
+};
+export type { ReactIconProps, SvgElementProps, SvgIconProps };

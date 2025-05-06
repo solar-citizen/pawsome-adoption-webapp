@@ -1,3 +1,3 @@
-import { useSyncURLParams } from './useSyncURLParams'
+import { useSyncURLParams } from './useSyncURLParams';
 
-export { useSyncURLParams }
+export { useSyncURLParams };
