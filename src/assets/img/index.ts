@@ -1,3 +1,3 @@
-import heroImg from './hero.jpg';
+import heroImg from './hero.avif';
 
 export { heroImg };
