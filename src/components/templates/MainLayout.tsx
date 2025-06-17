@@ -2,19 +2,17 @@ import { Outlet } from 'react-router-dom';
 
 import { Header } from '#src/components/organisms';
 
-import styles from './MainLayout.module.css';
-
 function MainLayout() {
   return (
-    <div className={styles.wrapper}>
+    <div className='min-h-screen flex flex-col'>
       <Header />
 
-      <main className={styles.mainContent}>
+      <main className='flex-1 mt-16'>
         <Outlet />
       </main>
 
-      <footer className={styles.footer}>
-        <p className={styles.copyright}>&copy; 2025 Pawsome Adoption - All Rights Reserved</p>
+      <footer className='bg-gray-200 py-4 text-center relative w-screen left-1/2 -translate-x-3/6'>
+        <p className='text-gray-700'>&copy; 2025 Pawsome Adoption - All Rights Reserved</p>
       </footer>
     </div>
   );

@@ -1,8 +1,9 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import { MainLayout } from '#src/components/templates';
 import { routes } from '#src/lib';
 import { AboutPage, AdoptionsPage, ContactPage, HomePage } from '#src/pages';
+
+import MainLayout from '#src/components/templates/MainLayout';
 
 const { home, adoptions, contact, about } = routes;
 
