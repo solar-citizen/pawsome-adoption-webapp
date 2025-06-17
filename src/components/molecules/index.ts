@@ -1,6 +1,5 @@
 import Icon from './Icon';
-import { Logo } from './Logo';
-import MasterLink from './MasterLink';
+import NavItems from './NavItems/NavItems';
 import { getPaginationRange, Pagination, usePagination } from './Pagination';
 import {
   Search,
@@ -14,8 +13,7 @@ import { SpinnerIcon } from './SpinnerIcon';
 export {
   getPaginationRange,
   Icon,
-  Logo,
-  MasterLink,
+  NavItems,
   Pagination,
   Search,
   SpinnerIcon,

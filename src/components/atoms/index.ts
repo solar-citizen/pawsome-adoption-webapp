@@ -6,6 +6,8 @@ import {
   ButtonVariants,
   IconPositions,
 } from './Button';
+import Logo from './Logo';
+import MasterLink from './MasterLink';
 import { ReactIcon, type ReactIconProps } from './ReactIcon';
 import { type SvgElementProps, SvgIcon, type SvgIconProps } from './SvgIcon';
 
@@ -16,6 +18,8 @@ export {
   ButtonTypes,
   ButtonVariants,
   IconPositions,
+  Logo,
+  MasterLink,
   ReactIcon,
   SvgIcon,
 };

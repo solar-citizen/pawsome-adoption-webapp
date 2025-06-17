@@ -38,5 +38,5 @@
 }
 
 .searchButton {
-  @apply bg-blue-600 p-3 rounded-r-md hover:bg-blue-700 transition;
+  @apply bg-blue-600 p-3 rounded-r-md hover:bg-blue-700;
 }

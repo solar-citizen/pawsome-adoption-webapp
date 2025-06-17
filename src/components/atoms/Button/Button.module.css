@@ -1,8 +1,10 @@
 @import 'tailwindcss';
 
 .button {
-  @apply inline-flex justify-center items-center gap-2 text-gray-500;
-  @apply border border-transparent transition-colors duration-100 ease-in-out;
+  @apply inline-flex justify-center items-center gap-2 text-gray-500 border border-transparent 
+  transition;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 
   &[disabled],
   &[aria-disabled='true'] {

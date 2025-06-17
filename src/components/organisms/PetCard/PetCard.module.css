@@ -2,6 +2,8 @@
 
 .wrapper {
   @apply bg-white rounded shadow hover:shadow-lg transition p-4;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .petImg {
