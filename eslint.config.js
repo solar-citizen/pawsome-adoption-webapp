@@ -1,6 +1,5 @@
 import js from '@eslint/js';
 import ts from '@typescript-eslint/parser';
-import type { ESLint } from 'eslint';
 import prettier from 'eslint-config-prettier';
 import esLintImport from 'eslint-plugin-import';
 import react from 'eslint-plugin-react';
@@ -31,7 +30,6 @@ const customRules = {
 };
 
 const baseConfig = {
-  ignores: ['dist'],
   linterOptions: {
     reportUnusedDisableDirectives: true,
   },
@@ -61,7 +59,7 @@ const tsConfig = {
     'simple-import-sort': simpleImportSort,
     'react-hooks': reactHooks,
     'react-refresh': reactRefresh,
-    import: esLintImport as ESLint.Plugin,
+    import: esLintImport,
     react,
   },
   rules: {
@@ -94,4 +92,6 @@ const tsTypeCheckedConfig = tsEslint.configs.strictTypeChecked.map(config => {
   return config;
 });
 
-export default [baseConfig, js.configs.recommended, tsConfig, ...tsTypeCheckedConfig];
+const ignoreConfig = { ignores: ['dist/**/*'] };
+
+export default [ignoreConfig, baseConfig, js.configs.recommended, tsConfig, ...tsTypeCheckedConfig];
