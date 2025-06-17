@@ -9,6 +9,7 @@ import {
   useSearchParamSync,
 } from './Search';
 import { SpinnerIcon } from './SpinnerIcon';
+import MasterLink from './MasterLink';
 
 export {
   getPaginationRange,
@@ -20,5 +21,6 @@ export {
   usePagination,
   useSearch,
   useSearchParamSync,
+  MasterLink,
 };
 export type { SearchExpandTriggerVariant, SearchVariant };
