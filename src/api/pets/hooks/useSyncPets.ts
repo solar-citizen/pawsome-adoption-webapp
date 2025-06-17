@@ -2,7 +2,7 @@ import { SerializedError } from '@reduxjs/toolkit';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import { useSearchParams } from 'react-router-dom';
 
-import { type IPet, type IPetMeta, useGetPetsQuery } from '#src/lib';
+import { type IPet, type IPetMeta, SearchParams, useGetPetsQuery } from '#src/lib';
 
 type UseSyncPetsResult = {
   pets: IPet[];
@@ -11,6 +11,9 @@ type UseSyncPetsResult = {
   isError: boolean;
   error?: FetchBaseQueryError | SerializedError | undefined;
 };
+
+const { fullTextSearch, pagination } = SearchParams.herobanner;
+const { limit, page } = pagination;
 
 /**
  * Synchronizes pet data with the URL's query string.:
@@ -25,9 +28,9 @@ type UseSyncPetsResult = {
 export function useSyncPets(): UseSyncPetsResult {
   const [searchParams] = useSearchParams();
 
-  const page = Number(searchParams.get('page')) || 1;
-  const limit = Number(searchParams.get('limit')) || 10;
-  const fullTextSearch = searchParams.get('full_text_search') || null;
+  const pageParam = Number(searchParams.get(page)) || 1;
+  const limitParam = Number(searchParams.get(limit)) || 10;
+  const fullTextSearchParam = searchParams.get(fullTextSearch) || null;
 
   const {
     data: response,
@@ -35,15 +38,15 @@ export function useSyncPets(): UseSyncPetsResult {
     isError,
     error,
   } = useGetPetsQuery({
-    page,
-    limit,
-    full_text_search: fullTextSearch,
+    page: pageParam,
+    limit: limitParam,
+    full_text_search: fullTextSearchParam,
   });
 
   const pets: IPet[] = response?.data ?? [];
   const meta: IPetMeta = response?.meta ?? {
-    currentPage: page,
-    perPage: limit,
+    currentPage: pageParam,
+    perPage: limitParam,
     lastPage: 1,
     petsFrom: 0,
     petsTo: 0,

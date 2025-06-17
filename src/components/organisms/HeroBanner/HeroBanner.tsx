@@ -1,9 +1,11 @@
 import { useState } from 'react';
 
-import { heroImg } from '#src/assets';
-import { Search, useSearch } from '#src/components/molecules';
+import { Search, useSearch, useSearchParamSync } from '#src/components/molecules';
+import { SearchParams } from '#src/lib';
 
 import styles from './HeroBanner.module.css';
+
+const { fullTextSearch } = SearchParams.herobanner;
 
 function HeroBanner() {
   const [searchValue, setSearchValue] = useState('');
@@ -11,11 +13,13 @@ function HeroBanner() {
   const { handleChange, handleImmediateSearch, handleClear } = useSearch({
     searchValue,
     setSearchValue,
-    searchParam: 'full_text_search',
+    searchParam: fullTextSearch,
   });
 
+  useSearchParamSync({ searchParam: fullTextSearch, setSearchValue });
+
   return (
-    <section className={styles.heroBanner} style={{ backgroundImage: `url(${heroImg})` }}>
+    <section className={styles.heroBanner}>
       <div className={styles.heroContainer}>
         <h2 className={styles.heading}>Find Your Perfect Companion</h2>
         <p className={styles.subheading}>Explore thousands of pets waiting for a loving home.</p>

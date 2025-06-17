@@ -13,13 +13,11 @@ export const routes = {
 };
 
 export const SearchParams = {
-  pagination: {
-    heroBanner: {
+  herobanner: {
+    pagination: {
       limit: 'limit',
       page: 'page',
     },
-  },
-  search: {
-    fullTextSearch: 'fullTextSearch',
+    fullTextSearch: 'full_text_search',
   },
 };

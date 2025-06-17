@@ -42,14 +42,9 @@
 
 .searchIcon,
 .clearIcon {
-  @apply h-5 w-5 fill-current hover:text-sky-400;
+  @apply h-5 w-5 fill-current text-sky-300 hover:text-sky-400;
 }
 
 .clearIcon {
-  @apply h-6 w-6;
-  @apply hover:text-red-300;
-}
-
-.searchIconFocused {
-  @apply text-sky-500;
+  @apply h-6 w-6 text-red-300 hover:text-red-400;
 }

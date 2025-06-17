@@ -139,11 +139,7 @@ function Search({
           type={ButtonTypes.SUBMIT}
           aria-label='Search'
         >
-          <Icon
-            variant='react-icon'
-            name='search'
-            className={clsx(styles.searchIcon, { [styles.searchIconFocused]: isFocused })}
-          />
+          <Icon variant='react-icon' name='search' className={styles.searchIcon} />
         </Button>
       </form>
     </div>

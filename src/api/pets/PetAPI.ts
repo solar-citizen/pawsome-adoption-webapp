@@ -1,13 +1,16 @@
-import { IPetResponse } from '#src/lib';
+import { IPetResponse, SearchParams } from '#src/lib';
 
 import { createAxiosInstance } from '../createAxiosInstance';
 
 const api = createAxiosInstance();
 
+const { fullTextSearch, pagination } = SearchParams.herobanner;
+const { limit, page } = pagination;
+
 export type GetPetsParams = {
-  limit?: number;
-  page?: number;
-  full_text_search?: string | null;
+  [limit]?: number;
+  [page]?: number;
+  [fullTextSearch]?: string | null;
 };
 
 export const PetAPI = {
@@ -15,9 +18,9 @@ export const PetAPI = {
     api
       .get<IPetResponse>('/pets', {
         params: {
-          limit: params?.limit,
-          page: params?.page,
-          full_text_search: params?.full_text_search,
+          [limit]: params?.[limit],
+          [page]: params?.[page],
+          [fullTextSearch]: params?.[fullTextSearch],
         },
       })
       .then(resp => resp.data),

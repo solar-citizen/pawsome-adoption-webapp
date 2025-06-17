@@ -1,10 +1,15 @@
 @import 'tailwindcss';
 
 .heroBanner {
-  @apply bg-cover bg-top h-[500px] relative mt-6;
+  @apply bg-cover bg-top h-[500px] relative mt-6 rounded-md;
+  background-image: var(--hero-bg);
 
   &::before {
-    @apply absolute inset-0 bg-black opacity-50 content-[''];
+    @apply absolute inset-0 bg-black opacity-50 content-[''] rounded-md;
+  }
+
+  @media (max-width: 768px) {
+    background-image: var(--hero-bg-mobile);
   }
 }
 
