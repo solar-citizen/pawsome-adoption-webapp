@@ -26,5 +26,5 @@ export function useSearchParamSync({ searchParam, setSearchValue }: UseSearchPar
   useEffect(() => {
     const param = searchParams.get(searchParam) ?? '';
     setSearchValue(param);
-  }, [searchParams]);
+  }, [searchParams, searchParam, setSearchValue]);
 }
