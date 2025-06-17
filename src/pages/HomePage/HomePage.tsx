@@ -1,6 +1,6 @@
-import { useSyncPets } from '#/api';
-import { Pagination, usePagination } from '#/components/molecules';
-import { HeroBanner, PetCard } from '#/components/organisms';
+import { useSyncPets } from '#src/api';
+import { Pagination, usePagination } from '#src/components/molecules';
+import { HeroBanner, PetCard } from '#src/components/organisms';
 
 import styles from './HomePage.module.css';
 

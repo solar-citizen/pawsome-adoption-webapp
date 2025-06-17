@@ -1,4 +1,4 @@
-import { staticTxt } from '#/lib';
+import { staticTxt } from '#src/lib';
 
 const { ellipsis } = staticTxt;
 

@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-import { Header } from '#/components/organisms';
+import { Header } from '#src/components/organisms';
 
 import styles from './MainLayout.module.css';
 

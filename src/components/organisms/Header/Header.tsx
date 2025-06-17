@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import { Logo } from '#/components/molecules';
-import { routes } from '#/lib';
+import { Logo } from '#src/components/molecules';
+import { routes } from '#src/lib';
 
 import styles from './Header.module.css';
 

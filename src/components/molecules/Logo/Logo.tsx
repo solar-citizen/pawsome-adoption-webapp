@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 import { NavLink } from 'react-router-dom';
 
-import { routes } from '#/lib';
+import { routes } from '#src/lib';
 
 import styles from './Logo.module.css';
 

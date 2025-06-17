@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { useSyncURLParams } from '#/lib';
+import { useSyncURLParams } from '#src/lib';
 
 type UseSearchProps = {
   searchValue: string;

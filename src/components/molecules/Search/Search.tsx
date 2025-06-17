@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import { FormEvent, useCallback, useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'usehooks-ts';
 
-import { Button, ButtonTypes, ButtonVariants } from '#/components/atoms';
-import { Icon } from '#/components/molecules';
+import { Button, ButtonTypes, ButtonVariants } from '#src/components/atoms';
+import { Icon } from '#src/components/molecules';
 
 import { getSearchVariantStyles, type SearchExpandTriggerVariant, type SearchVariant } from './lib';
 import styles from './Search.module.css';

@@ -2,7 +2,7 @@ import { SerializedError } from '@reduxjs/toolkit';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import { useSearchParams } from 'react-router-dom';
 
-import { type IPet, type IPetMeta, useGetPetsQuery } from '#/lib';
+import { type IPet, type IPetMeta, useGetPetsQuery } from '#src/lib';
 
 type UseSyncPetsResult = {
   pets: IPet[];

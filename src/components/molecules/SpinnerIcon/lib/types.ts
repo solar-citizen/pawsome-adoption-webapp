@@ -1,4 +1,4 @@
-import { SvgElementProps } from '#/components/atoms';
+import { SvgElementProps } from '#src/components/atoms';
 
 export type SpinnerVariant = 'circle' | 'bar';
 

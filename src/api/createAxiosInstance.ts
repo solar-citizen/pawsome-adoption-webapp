@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosInstance } from 'axios';
 
-import { baseURL } from '#/lib';
+import { baseURL } from '#src/lib';
 
 export const createAxiosInstance = (): AxiosInstance => {
   const api = axios.create({

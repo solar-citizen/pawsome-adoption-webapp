@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { GetPetsParams } from '#/api';
-import { baseURL, IPet, IPetResponse } from '#/lib';
+import { GetPetsParams } from '#src/api';
+import { baseURL, IPet, IPetResponse } from '#src/lib';
 
 import { isValidParamValue } from './lib';
 

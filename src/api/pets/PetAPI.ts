@@ -1,4 +1,4 @@
-import { IPetResponse } from '#/lib';
+import { IPetResponse } from '#src/lib';
 
 import { createAxiosInstance } from '../createAxiosInstance';
 

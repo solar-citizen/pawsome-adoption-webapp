@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { useSyncURLParams } from '#/lib';
+import { useSyncURLParams } from '#src/lib';
 
 type UsePaginationProps = {
   itemsPerPage: number;
