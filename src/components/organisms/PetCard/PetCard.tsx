@@ -14,7 +14,6 @@ function PetCard({ name, breed /*, image*/ }: PetCardProps) {
       <div className={styles.petDetails}>
         <h3 className={styles.petName}>{name}</h3>
         <p className={styles.petBreed}>{breed}</p>
-        <a href='#'>kek</a>
       </div>
     </div>
   );
