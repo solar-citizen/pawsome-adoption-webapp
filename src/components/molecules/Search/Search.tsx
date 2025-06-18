@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { FormEvent, useCallback, useEffect, useRef, useState } from 'react';
+import { type FormEvent, useCallback, useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'usehooks-ts';
 
 import { Button, ButtonTypes, ButtonVariants } from '#src/components/atoms';

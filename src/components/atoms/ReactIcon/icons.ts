@@ -3,7 +3,7 @@ import { IconType } from 'react-icons/lib';
 import { PiMagnifyingGlassLight } from 'react-icons/pi';
 import { TbChevronLeft, TbChevronRight } from 'react-icons/tb';
 
-import { IconColor, IconName, IconSize } from './types';
+import type { IconColor, IconName, IconSize } from './types';
 
 // Map each icon name to a react-icons component.
 export const iconMap: Record<IconName, IconType> = {

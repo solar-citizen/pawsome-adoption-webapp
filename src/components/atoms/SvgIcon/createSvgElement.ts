@@ -1,6 +1,6 @@
 import { createElement, JSX, SVGProps } from 'react';
 
-import { SvgElementProps } from './types';
+import type { SvgElementProps } from './types';
 
 const tagMap: Record<SvgElementProps['type'], keyof JSX.IntrinsicElements> = {
   path: 'path',

@@ -1,4 +1,4 @@
-import { SpinnerVariant, SpinnerVariantConfig } from './types';
+import type { SpinnerVariant, SpinnerVariantConfig } from './types';
 
 export type SpinnerStylesProps = {
   spinnerCircle?: string;

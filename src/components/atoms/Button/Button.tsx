@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 import { SpinnerIcon } from '#src/components/molecules';
 
 import styles from './Button.module.css';
-import { BtnTextPosition, ButtonSizes, ButtonTypes, ButtonVariants, IconPositions } from './lib';
+import { BtnTextPosition, ButtonSizes, ButtonTypes, ButtonVariants, IconPositions } from './enums';
 
 type ButtonProps = {
   children: ReactNode;

@@ -8,7 +8,7 @@ import {
   useSearch,
   useSearchParamSync,
 } from './Search';
-import { SpinnerIcon } from './SpinnerIcon';
+import SpinnerIcon from './SpinnerIcon/SpinnerIcon';
 
 export {
   getPaginationRange,

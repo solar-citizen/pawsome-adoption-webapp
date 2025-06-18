@@ -1,6 +1,5 @@
+import { createAxiosInstance } from '#src/api';
 import { IPetResponse, SearchParams } from '#src/lib';
-
-import { createAxiosInstance } from '../createAxiosInstance';
 
 const api = createAxiosInstance();
 

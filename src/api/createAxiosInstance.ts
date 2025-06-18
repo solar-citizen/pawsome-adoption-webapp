@@ -2,7 +2,7 @@ import axios, { AxiosError, AxiosInstance } from 'axios';
 
 import { baseURL } from '#src/lib';
 
-export const createAxiosInstance = (): AxiosInstance => {
+export function createAxiosInstance(): AxiosInstance {
   const api = axios.create({
     baseURL,
     headers: { 'Content-Type': 'application/json' },
@@ -17,4 +17,4 @@ export const createAxiosInstance = (): AxiosInstance => {
   );
 
   return api;
-};
+}
