@@ -12,6 +12,7 @@ export const routes = {
   contact: { path: 'contact', label: 'Contact' },
 };
 
+// toDo: rename, because it confuses
 export const SearchParams = {
   herobanner: {
     pagination: {
@@ -19,5 +20,8 @@ export const SearchParams = {
       page: 'page',
     },
     fullTextSearch: 'full_text_search',
+    representation: {
+      detailed: 'detailed',
+    },
   },
 };

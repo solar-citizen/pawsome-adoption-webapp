@@ -4,12 +4,20 @@ import { useSearchParams } from 'react-router-dom';
 
 import { type IPet, type IPetMeta, SearchParams, useGetPetsQuery } from '#src/lib';
 
+type ApiError = {
+  status: number;
+  data: {
+    error: string;
+  };
+};
+
 type UseSyncPetsResult = {
   pets: IPet[];
   meta: IPetMeta;
   isLoading: boolean;
   isError: boolean;
-  error?: FetchBaseQueryError | SerializedError | undefined;
+  error?: FetchBaseQueryError | SerializedError | ApiError | undefined;
+  errorMessage?: string;
 };
 
 const { fullTextSearch, pagination } = SearchParams.herobanner;
@@ -48,17 +56,44 @@ export function useSyncPets(): UseSyncPetsResult {
     currentPage: pageParam,
     perPage: limitParam,
     lastPage: 1,
-    petsFrom: 0,
-    petsTo: 0,
-    petsTotal: 0,
+    from: 0,
+    to: 0,
+    total: 0,
   };
+
+  const getErrorMessage = (error: unknown): string | undefined => {
+    if (!error) return undefined;
+
+    if (typeof error === 'object') {
+      // Check for FetchBaseQueryError pattern
+      if (
+        'status' in error &&
+        'data' in error &&
+        error.data &&
+        typeof error.data === 'object' &&
+        'error' in error.data
+      ) {
+        return (error.data as { error: string }).error;
+      }
+
+      // Check for SerializedError pattern
+      if ('message' in error && typeof error.message === 'string') {
+        return error.message;
+      }
+    }
+
+    return 'An error occurred while fetching pets';
+  };
+
+  const errorMessage = getErrorMessage(error);
 
   return {
     pets,
     meta,
     isLoading,
     isError,
-    error,
+    error: error as FetchBaseQueryError | SerializedError | ApiError | undefined,
+    errorMessage,
   };
 }
 

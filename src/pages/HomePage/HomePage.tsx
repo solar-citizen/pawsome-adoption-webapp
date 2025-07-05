@@ -9,7 +9,7 @@ function HomePage() {
 
   const { currentPage, totalPages, handlePageChange } = usePagination({
     itemsPerPage: meta.perPage,
-    totalItems: meta.petsTotal,
+    totalItems: meta.total,
     pageParam: 'page',
     limitParam: 'limit',
   });
