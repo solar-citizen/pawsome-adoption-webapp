@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 
-import { colorClasses, IconColor, iconMap, IconName, IconSize, sizeClasses } from './lib';
+import { colorClasses, iconMap, sizeClasses } from './icons';
+import type { IconColor, IconName, IconSize } from './types';
 
 export type ReactIconProps = {
   name: IconName;

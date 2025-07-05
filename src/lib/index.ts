@@ -1,8 +1,8 @@
 import { baseURL, routes, SearchParams, staticTxt } from './constants';
 import { isNotEmptyString } from './helpers';
 import { useSyncURLParams } from './hooks';
-import type { IPet, IPetMeta, IPetResponse } from './interfaces';
-import { store, useGetPetByIdQuery, useGetPetsQuery } from './store';
+import type { IPet, IPetMeta, IPetResponse, IPetWithDetailsResponse } from './interfaces';
+import { store, useGetPetByIdQuery, useGetPetsQuery, useGetPetsWithDetailsQuery } from './store';
 
 export {
   baseURL,
@@ -13,6 +13,7 @@ export {
   store,
   useGetPetByIdQuery,
   useGetPetsQuery,
+  useGetPetsWithDetailsQuery,
   useSyncURLParams,
 };
-export type { IPet, IPetMeta, IPetResponse };
+export type { IPet, IPetMeta, IPetResponse, IPetWithDetailsResponse };

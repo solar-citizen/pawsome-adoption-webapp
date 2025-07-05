@@ -1,9 +1,8 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi } from '@reduxjs/toolkit/query/react';
 
-import { GetPetsParams } from '#/api';
-import { baseURL, IPet, IPetResponse } from '#/lib';
-
-import { isValidParamValue } from './lib';
+import type { GetPetsParams } from '#src/api';
+import { PetAPI } from '#src/api';
+import { type IPet, type IPetResponse, type IPetWithDetailsResponse } from '#src/lib';
 
 export const petSlice = createApi({
   reducerPath: 'petSlice',
@@ -11,22 +10,28 @@ export const petSlice = createApi({
   refetchOnMountOrArgChange: false,
   refetchOnFocus: true,
   refetchOnReconnect: true,
-  baseQuery: fetchBaseQuery({ baseUrl: baseURL }),
+  baseQuery: () => ({ data: null }),
   endpoints: builder => ({
     getPets: builder.query<IPetResponse, GetPetsParams | undefined>({
-      query: (params = {}) => {
-        const queryParams = new URLSearchParams();
-
-        Object.entries(params).forEach(([key, value]) => {
-          if (isValidParamValue(value)) {
-            queryParams.append(key, value.toString());
-          }
-        });
-
-        return {
-          url: 'pets',
-          params: queryParams,
-        };
+      queryFn: async params => {
+        try {
+          const data = await PetAPI.getPets(params);
+          return { data };
+        } catch (error) {
+          const message = error instanceof Error ? error.message : String(error);
+          return { error: { status: 'FETCH_ERROR', error: message } };
+        }
+      },
+    }),
+    getPetsWithDetails: builder.query<IPetWithDetailsResponse, GetPetsParams | undefined>({
+      queryFn: async params => {
+        try {
+          const data = await PetAPI.getPetsWithDetails(params);
+          return { data };
+        } catch (error) {
+          const message = error instanceof Error ? error.message : String(error);
+          return { error: { status: 'FETCH_ERROR', error: message } };
+        }
       },
     }),
 
@@ -37,4 +42,4 @@ export const petSlice = createApi({
   }),
 });
 
-export const { useGetPetsQuery, useGetPetByIdQuery } = petSlice;
+export const { useGetPetsQuery, useGetPetsWithDetailsQuery, useGetPetByIdQuery } = petSlice;

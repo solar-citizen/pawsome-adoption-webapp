@@ -1,17 +1,24 @@
 import Icon from './Icon';
-import { Logo } from './Logo';
+import NavItems from './NavItems/NavItems';
 import { getPaginationRange, Pagination, usePagination } from './Pagination';
-import { Search, type SearchExpandTriggerVariant, type SearchVariant, useSearch } from './Search';
-import { SpinnerIcon } from './SpinnerIcon';
+import {
+  Search,
+  type SearchExpandTriggerVariant,
+  type SearchVariant,
+  useSearch,
+  useSearchParamSync,
+} from './Search';
+import SpinnerIcon from './SpinnerIcon/SpinnerIcon';
 
 export {
   getPaginationRange,
   Icon,
-  Logo,
+  NavItems,
   Pagination,
   Search,
   SpinnerIcon,
   usePagination,
   useSearch,
+  useSearchParamSync,
 };
 export type { SearchExpandTriggerVariant, SearchVariant };

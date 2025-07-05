@@ -1,9 +1,10 @@
 import { clsx } from 'clsx';
 
-import { Icon } from '#/components/molecules';
+import { Icon } from '#src/components/molecules';
 
-import { createSpinnerOptions, SpinnerVariant } from './lib';
+import { createSpinnerOptions } from './createSpinnerOptions';
 import styles from './SpinnerIcon.module.css';
+import { SpinnerVariant } from './types';
 
 type SpinnerProps = {
   variant?: SpinnerVariant;

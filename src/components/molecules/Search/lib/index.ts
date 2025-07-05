@@ -1,6 +1,7 @@
 import { getSearchVariantStyles } from './getSearchVariantStyles';
-import { useSearch } from './hooks';
 import type { SearchExpandTriggerVariant, SearchVariant } from './types';
+import { useSearch } from './useSearch';
+import { useSearchParamSync } from './useSearchParamSync';
 
-export { getSearchVariantStyles, useSearch };
+export { getSearchVariantStyles, useSearch, useSearchParamSync };
 export type { SearchExpandTriggerVariant, SearchVariant };

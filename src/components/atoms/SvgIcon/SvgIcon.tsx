@@ -1,6 +1,7 @@
 import { memo, type SVGProps } from 'react';
 
-import { createSvgElement, SvgElementProps } from './lib';
+import { createSvgElement } from './createSvgElement';
+import type { SvgElementProps } from './types';
 
 export type SvgIconProps = SVGProps<SVGSVGElement> & {
   elements?: SvgElementProps[];

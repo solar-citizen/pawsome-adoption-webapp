@@ -1,6 +1,6 @@
-import { AboutPage } from './AboutPage';
-import { AdoptionsPage } from './AdoptionsPage';
-import { ContactPage } from './ContactPage';
-import { HomePage } from './HomePage';
+import AboutPage from './AboutPage/AboutPage';
+import AdoptionsPage from './AdoptionsPage/AdoptionsPage';
+import ContactPage from './ContactPage/ContactPage';
+import HomePage from './HomePage/HomePage';
 
 export { AboutPage, AdoptionsPage, ContactPage, HomePage };

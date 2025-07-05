@@ -1,5 +1,5 @@
-import { Header } from './Header';
-import { HeroBanner } from './HeroBanner';
-import { PetCard } from './PetCard';
+import Header from './Header';
+import HeroBanner from './HeroBanner/HeroBanner';
+import PetCard from './PetCard/PetCard';
 
 export { Header, HeroBanner, PetCard };

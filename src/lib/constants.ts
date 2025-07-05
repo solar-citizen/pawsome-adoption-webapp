@@ -12,14 +12,16 @@ export const routes = {
   contact: { path: 'contact', label: 'Contact' },
 };
 
+// toDo: rename, because it confuses
 export const SearchParams = {
-  pagination: {
-    heroBanner: {
+  herobanner: {
+    pagination: {
       limit: 'limit',
       page: 'page',
     },
-  },
-  search: {
-    fullTextSearch: 'fullTextSearch',
+    fullTextSearch: 'full_text_search',
+    representation: {
+      detailed: 'detailed',
+    },
   },
 };

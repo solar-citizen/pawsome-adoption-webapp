@@ -1,4 +1,4 @@
-import { ReactIcon, ReactIconProps, SvgIcon, SvgIconProps } from '#/components/atoms';
+import { ReactIcon, type ReactIconProps, SvgIcon, type SvgIconProps } from '#src/components/atoms';
 
 type IconProps = ({ variant: 'react-icon' } & ReactIconProps) | ({ variant: 'svg' } & SvgIconProps);
 

@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 
-import { Button, ButtonVariants } from '#/components/atoms';
-import { Icon } from '#/components/molecules';
-import { staticTxt } from '#/lib';
+import { Button, ButtonVariants } from '#src/components/atoms';
+import { Icon } from '#src/components/molecules';
+import { staticTxt } from '#src/lib';
 
-import { getPaginationRange } from './lib';
+import { getPaginationRange } from './getPaginationRange';
 import styles from './Pagination.module.css';
 
 type PaginationProps = {

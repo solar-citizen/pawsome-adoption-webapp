@@ -1,25 +1,25 @@
 @import 'tailwindcss';
 
-.paginationItem {
-  @apply flex items-center justify-center px-3 xl:px-4 h-8 xl:h-10 leading-tight text-gray-500 bg-white 
-  border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ms-[-1px];
-
-  &.paginationPrevious {
-    @apply rounded-s-lg disabled:text-gray-400 disabled:bg-gray-200 me-0;
-  }
-
-  &.paginationNext {
-    @apply rounded-e-lg disabled:text-gray-400 disabled:bg-gray-200 ms-0;
-  }
-
-  &.active {
-    @apply text-sky-600 border border-sky-400 bg-sky-50 hover:bg-sky-100 hover:text-sky-700
-    relative ms-[-1px];
-  }
-}
-
 .paginationContainer {
   @apply flex items-center -space-x-px text-sm my-8;
+
+  & .paginationItem {
+    @apply flex items-center justify-center px-3 xl:px-4 h-8 xl:h-10 leading-tight text-gray-500 bg-white 
+    border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ms-[-1px];
+
+    &.paginationPrevious {
+      @apply rounded-s-lg disabled:text-gray-400 disabled:bg-gray-200 me-0;
+    }
+
+    &.paginationNext {
+      @apply rounded-e-lg disabled:text-gray-400 disabled:bg-gray-200 ms-0;
+    }
+
+    &.active {
+      @apply text-sky-600 border border-sky-400 bg-sky-50 hover:bg-sky-100 hover:text-sky-700
+      relative ms-[-1px];
+    }
+  }
 }
 
 .paginationList {
