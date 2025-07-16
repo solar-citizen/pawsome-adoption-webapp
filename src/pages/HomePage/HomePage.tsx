@@ -1,6 +1,6 @@
 import { useSyncPets } from '#src/api';
-import { Pagination, usePagination } from '#src/components/molecules';
-import { HeroBanner, PetCard } from '#src/components/organisms';
+import { Pagination, PetCard, usePagination } from '#src/components/molecules';
+import { HeroBanner } from '#src/components/organisms';
 
 import styles from './HomePage.module.css';
 
@@ -14,6 +14,9 @@ function HomePage() {
     limitParam: 'limit',
   });
 
+  if (isLoading) return <p>Loading...</p>;
+  if (isError) return <p>Error: {errorMessage}</p>;
+
   return (
     <>
       <HeroBanner />
@@ -21,15 +24,14 @@ function HomePage() {
       <section className={styles.container}>
         <h2 className={styles.title}>Available Pets</h2>
 
-        {isLoading && <p>Loading...</p>}
-        {isError && <p>Error: {errorMessage}</p>}
-
-        {pets.length && !isLoading && !isError && (
+        {pets.length ? (
           <div className={styles.petGrid}>
             {pets.map(pet => (
               <PetCard key={pet.lk_pet_code} {...pet} />
             ))}
           </div>
+        ) : (
+          <div>No pets available now.</div>
         )}
 
         <Pagination
