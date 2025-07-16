@@ -1,7 +1,14 @@
-import { baseURL, routes, SearchParams, staticTxt } from './constants';
+import { baseURL, routes, SearchParams, staticTxt, unionValues } from './constants';
 import { isNotEmptyString } from './helpers';
-import { useSyncURLParams } from './hooks';
-import type { IPet, IPetMeta, IPetResponse, IPetWithDetailsResponse } from './interfaces';
+import { useAdaptiveThumbnail, useSyncURLParams } from './hooks';
+import type {
+  IPet,
+  IPetMeta,
+  IPetResponse,
+  IPetWithDetailsResponse,
+  Thumbnails,
+  ThumbnailSizes,
+} from './interfaces';
 import { store, useGetPetByIdQuery, useGetPetsQuery, useGetPetsWithDetailsQuery } from './store';
 
 export {
@@ -11,9 +18,11 @@ export {
   SearchParams,
   staticTxt,
   store,
+  unionValues,
+  useAdaptiveThumbnail,
   useGetPetByIdQuery,
   useGetPetsQuery,
   useGetPetsWithDetailsQuery,
   useSyncURLParams,
 };
-export type { IPet, IPetMeta, IPetResponse, IPetWithDetailsResponse };
+export type { IPet, IPetMeta, IPetResponse, IPetWithDetailsResponse, Thumbnails, ThumbnailSizes };

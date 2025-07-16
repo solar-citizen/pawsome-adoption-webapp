@@ -25,3 +25,9 @@ export const SearchParams = {
     },
   },
 };
+
+export const unionValues = {
+  SPECIES: ['cat', 'dog', 'horse', 'farm-animal', 'other'] as const,
+  TRAINING_LEVELS: ['basic', 'intermediate', 'advanced'] as const,
+  ENERGY_LEVELS: ['low', 'moderate', 'high', 'very_high'] as const,
+};

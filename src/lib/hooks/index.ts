@@ -1,3 +1,4 @@
+import { useAdaptiveThumbnail } from './useAdaptiveThumbnail';
 import { useSyncURLParams } from './useSyncURLParams';
 
-export { useSyncURLParams };
+export { useAdaptiveThumbnail, useSyncURLParams };

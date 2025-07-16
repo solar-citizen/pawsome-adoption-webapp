@@ -1,4 +1,12 @@
-import type { IPet, IPetMeta, IPetResponse } from './IPet';
+import type { IPet, IPetMeta, IPetResponse, Thumbnails, ThumbnailSizes } from './IPet';
 import type { IPetWithDetails, IPetWithDetailsResponse } from './IPetWithDetails';
 
-export type { IPet, IPetMeta, IPetResponse, IPetWithDetails, IPetWithDetailsResponse };
+export type {
+  IPet,
+  IPetMeta,
+  IPetResponse,
+  IPetWithDetails,
+  IPetWithDetailsResponse,
+  Thumbnails,
+  ThumbnailSizes,
+};
