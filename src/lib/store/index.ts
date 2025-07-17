@@ -1,4 +1,4 @@
-import { useGetPetByIdQuery, useGetPetsQuery, useGetPetsWithDetailsQuery } from './petSlice';
+import { useGetPetByCodeQuery, useGetPetsQuery, useGetPetsWithDetailsQuery } from './petSlice';
 import { store } from './store';
 
-export { store, useGetPetByIdQuery, useGetPetsQuery, useGetPetsWithDetailsQuery };
+export { store, useGetPetByCodeQuery, useGetPetsQuery, useGetPetsWithDetailsQuery };

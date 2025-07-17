@@ -10,6 +10,10 @@ export const routes = {
   adoptions: { path: 'adoptions', label: 'Adoptions' },
   about: { path: 'about', label: 'About' },
   contact: { path: 'contact', label: 'Contact' },
+
+  dynamic: {
+    petDetails: { route: 'pets/:lk_pet_code' },
+  },
 };
 
 // toDo: rename, because it confuses

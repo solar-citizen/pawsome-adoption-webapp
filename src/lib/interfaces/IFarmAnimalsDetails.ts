@@ -1,6 +1,6 @@
 import type { IPet, IPetFiles } from './IPet';
 
-export type IFarmAnimalDetails = {
+export type IFarmAnimalsDetails = {
   id: number;
   lk_pet_code: string;
   pet_id: number;

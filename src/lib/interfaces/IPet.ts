@@ -2,7 +2,7 @@ import { unionValues } from '#src/lib';
 
 import type { ICatDetails } from './ICatDetails';
 import type { IDogDetails } from './IDogDetails';
-import type { IFarmAnimalDetails } from './IFarmDetails';
+import type { IFarmAnimalsDetails } from './IFarmAnimalsDetails';
 import type { IHorseDetails } from './IHorseDetails';
 
 export type Specie = (typeof unionValues.SPECIES)[number];
@@ -20,7 +20,7 @@ export type IPetWithHorseDetails = IPet & {
 };
 
 export type IPetWithFarmAnimalDetails = IPet & {
-  farmAnimalDetails: IFarmAnimalDetails;
+  farmAnimalDetails: IFarmAnimalsDetails;
 };
 
 export type IPetFiles = {
@@ -50,7 +50,7 @@ export type IPet = {
   dogDetails?: IDogDetails;
   catDetails?: ICatDetails;
   horseDetails?: IHorseDetails;
-  farmAnimalDetails?: IFarmAnimalDetails;
+  farmAnimalDetails?: IFarmAnimalsDetails;
 };
 
 export type IPetMeta = {

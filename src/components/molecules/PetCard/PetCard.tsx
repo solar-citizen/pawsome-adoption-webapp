@@ -1,21 +1,32 @@
+import { Badge, MasterLink } from '#src/components/atoms';
 import { type IPet, useAdaptiveThumbnail } from '#src/lib';
 
 import styles from './PetCard.module.css';
 
-type PetCardProps = Pick<IPet, 'name' | 'specie' | 'breed' | 'sex_txt' | 'age_int' | 'thumbnails'>;
+type PetCardProps = Pick<
+  IPet,
+  'lk_pet_code' | 'name' | 'specie' | 'breed' | 'sex_txt' | 'age_int' | 'thumbnails'
+>;
 
-function PetCard({ name, specie, breed, sex_txt, age_int, thumbnails }: PetCardProps) {
-  const thumbnailSrc = useAdaptiveThumbnail(thumbnails);
+function PetCard(props: PetCardProps) {
+  const { lk_pet_code, name, specie, breed, sex_txt, age_int, thumbnails } = props;
+  const imageUrl = useAdaptiveThumbnail(thumbnails);
+
   return (
     <div className={styles.wrapper}>
-      <div className={styles.petDetails}>
-        <h3 className={styles.petName}>{name}</h3>
-        <img src={thumbnailSrc} alt={name} />
+      <MasterLink type='link' to={`/pets/${lk_pet_code}`}>
+        <img src={imageUrl} alt={name} className='w-full h-64 object-cover rounded-t-md' />
+      </MasterLink>
 
-        <p className={styles.petBreed}>{specie}</p>
-        <p className={styles.petBreed}>{breed}</p>
-        <p className={styles.petBreed}>{sex_txt}</p>
-        <p className={styles.petBreed}>{age_int}</p>
+      <div className='p-4'>
+        <h3 className='text-xl font-bold mt-2 text-gray-800'>{name}</h3>
+
+        <div className='flex flex-wrap gap-2 mt-3'>
+          <Badge variant='primary'>{specie}</Badge>
+          <Badge variant='outline'>{breed}</Badge>
+          <Badge variant='outline'>{sex_txt}</Badge>
+          <Badge variant='outline'>{age_int}</Badge>
+        </div>
       </div>
     </div>
   );

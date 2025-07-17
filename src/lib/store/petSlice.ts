@@ -23,6 +23,7 @@ export const petSlice = createApi({
         }
       },
     }),
+
     getPetsWithDetails: builder.query<IPetWithDetailsResponse, GetPetsParams | undefined>({
       queryFn: async params => {
         try {
@@ -35,11 +36,18 @@ export const petSlice = createApi({
       },
     }),
 
-    getPetById: builder.query<IPet, string>({
-      keepUnusedDataFor: 1200,
-      query: petCode => `pets/${petCode}`,
+    getPetByCode: builder.query<IPet, string>({
+      queryFn: async (lk_pet_code: string) => {
+        try {
+          const data = await PetAPI.getPetById(lk_pet_code);
+          return { data };
+        } catch (error) {
+          const message = error instanceof Error ? error.message : String(error);
+          return { error: { status: 'FETCH_ERROR', error: message } };
+        }
+      },
     }),
   }),
 });
 
-export const { useGetPetsQuery, useGetPetsWithDetailsQuery, useGetPetByIdQuery } = petSlice;
+export const { useGetPetsQuery, useGetPetsWithDetailsQuery, useGetPetByCodeQuery } = petSlice;

@@ -2,6 +2,10 @@ import { baseURL, routes, SearchParams, staticTxt, unionValues } from './constan
 import { isNotEmptyString } from './helpers';
 import { useAdaptiveThumbnail, useSyncURLParams } from './hooks';
 import type {
+  ICatDetails,
+  IDogDetails,
+  IFarmAnimalsDetails,
+  IHorseDetails,
   IPet,
   IPetMeta,
   IPetResponse,
@@ -9,7 +13,7 @@ import type {
   Thumbnails,
   ThumbnailSizes,
 } from './interfaces';
-import { store, useGetPetByIdQuery, useGetPetsQuery, useGetPetsWithDetailsQuery } from './store';
+import { store, useGetPetByCodeQuery, useGetPetsQuery, useGetPetsWithDetailsQuery } from './store';
 
 export {
   baseURL,
@@ -20,9 +24,20 @@ export {
   store,
   unionValues,
   useAdaptiveThumbnail,
-  useGetPetByIdQuery,
+  useGetPetByCodeQuery,
   useGetPetsQuery,
   useGetPetsWithDetailsQuery,
   useSyncURLParams,
 };
-export type { IPet, IPetMeta, IPetResponse, IPetWithDetailsResponse, Thumbnails, ThumbnailSizes };
+export type {
+  ICatDetails,
+  IDogDetails,
+  IFarmAnimalsDetails,
+  IHorseDetails,
+  IPet,
+  IPetMeta,
+  IPetResponse,
+  IPetWithDetailsResponse,
+  Thumbnails,
+  ThumbnailSizes,
+};
