@@ -1,4 +1,4 @@
-import { Badge, MasterLink } from '#src/components/atoms';
+import { Badge, GlareHover, MasterLink } from '#src/components/atoms';
 import { type IPet, useAdaptiveThumbnail } from '#src/lib';
 
 import styles from './PetCard.module.css';
@@ -15,7 +15,19 @@ function PetCard(props: PetCardProps) {
   return (
     <div className={styles.wrapper}>
       <MasterLink type='link' to={`/pets/${lk_pet_code}`}>
-        <img src={imageUrl} alt={name} className='w-full h-64 object-cover rounded-t-md' />
+        <GlareHover
+          width='auto'
+          height='auto'
+          glareColor='#fff'
+          glareOpacity={0.3}
+          glareAngle={-30}
+          glareSize={300}
+          transitionDuration={800}
+          playOnce={false}
+          className='rounded-t-md'
+        >
+          <img src={imageUrl} alt={name} className='w-full h-64 object-cover rounded-t-md' />
+        </GlareHover>
       </MasterLink>
 
       <div className='p-4'>
@@ -25,7 +37,10 @@ function PetCard(props: PetCardProps) {
           <Badge variant='primary'>{specie}</Badge>
           <Badge variant='outline'>{breed}</Badge>
           <Badge variant='outline'>{sex_txt}</Badge>
-          <Badge variant='outline'>{age_int}</Badge>
+
+          {/* TODO: Change age to months and make months parser, 
+          which returns (age: < 1 mo, 1 mo, 6 mo, 1 yr) etc */}
+          {age_int && <Badge variant='outline'>age: {age_int}</Badge>}
         </div>
       </div>
     </div>

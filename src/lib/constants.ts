@@ -6,10 +6,12 @@ export const staticTxt = {
 };
 
 export const routes = {
-  home: { path: 'home', label: 'Home' },
-  adoptions: { path: 'adoptions', label: 'Adoptions' },
-  about: { path: 'about', label: 'About' },
-  contact: { path: 'contact', label: 'Contact' },
+  mainNav: {
+    home: { path: 'home', label: 'Home' },
+    adoptions: { path: 'adoptions', label: 'Adoptions' },
+    about: { path: 'about', label: 'About' },
+    contact: { path: 'contact', label: 'Contact' },
+  },
 
   dynamic: {
     petDetails: { route: 'pets/:lk_pet_code' },

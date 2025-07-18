@@ -1,4 +1,4 @@
-import Badge from './Badge';
+import Badge from './Badge/Badge';
 import {
   BtnTextPosition,
   Button,
@@ -8,6 +8,7 @@ import {
   IconPositions,
 } from './Button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './Card';
+import GlareHover from './GlareHover';
 import Logo from './Logo';
 import MasterLink from './MasterLink';
 import { ReactIcon, type ReactIconProps } from './ReactIcon';
@@ -25,6 +26,7 @@ export {
   CardDescription,
   CardHeader,
   CardTitle,
+  GlareHover,
   IconPositions,
   Logo,
   MasterLink,
