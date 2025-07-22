@@ -66,3 +66,14 @@ export type IPetResponse = {
   data: IPet[];
   meta: IPetMeta;
 };
+
+export type IPetByCodeResponse = {
+  data: IPet;
+};
+
+export type IPetByCodeWithSimilarPetsResponse = {
+  main: IPet;
+  photos: string[];
+  documents: string[];
+  similar: IPet[];
+};

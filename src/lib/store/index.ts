@@ -1,4 +1,17 @@
-import { useGetPetByCodeQuery, useGetPetsQuery, useGetPetsWithDetailsQuery } from './petSlice';
+import {
+  useGetPetByCodeQuery,
+  useGetPetByCodeWithSpeciesDetailsAndSimilarPetsQuery,
+  useGetPetByCodeWithSpeciesDetailsQuery,
+  useGetPetsQuery,
+  useGetPetsWithDetailsQuery,
+} from './petSlice';
 import { store } from './store';
 
-export { store, useGetPetByCodeQuery, useGetPetsQuery, useGetPetsWithDetailsQuery };
+export {
+  store,
+  useGetPetByCodeQuery,
+  useGetPetByCodeWithSpeciesDetailsAndSimilarPetsQuery,
+  useGetPetByCodeWithSpeciesDetailsQuery,
+  useGetPetsQuery,
+  useGetPetsWithDetailsQuery,
+};

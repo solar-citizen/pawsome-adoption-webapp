@@ -2,7 +2,13 @@ import { SerializedError } from '@reduxjs/toolkit';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import { useSearchParams } from 'react-router-dom';
 
-import { type IPet, type IPetMeta, SearchParams, useGetPetsQuery } from '#src/lib';
+import {
+  type IPet,
+  type IPetMeta,
+  resolveApiErrorMessage,
+  SearchParams,
+  useGetPetsQuery,
+} from '#src/lib';
 
 type ApiError = {
   status: number;
@@ -61,31 +67,7 @@ export function useSyncPets(): UseSyncPetsResult {
     total: 0,
   };
 
-  const getErrorMessage = (error: unknown): string | undefined => {
-    if (!error) return undefined;
-
-    if (typeof error === 'object') {
-      // Check for FetchBaseQueryError pattern
-      if (
-        'status' in error &&
-        'data' in error &&
-        error.data &&
-        typeof error.data === 'object' &&
-        'error' in error.data
-      ) {
-        return (error.data as { error: string }).error;
-      }
-
-      // Check for SerializedError pattern
-      if ('message' in error && typeof error.message === 'string') {
-        return error.message;
-      }
-    }
-
-    return 'An error occurred while fetching pets';
-  };
-
-  const errorMessage = getErrorMessage(error);
+  const errorMessage = resolveApiErrorMessage(error);
 
   return {
     pets,
