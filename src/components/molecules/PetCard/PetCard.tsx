@@ -6,10 +6,12 @@ import styles from './PetCard.module.css';
 type PetCardProps = Pick<
   IPet,
   'lk_pet_code' | 'name' | 'specie' | 'breed' | 'sex_txt' | 'age_int' | 'thumbnails'
->;
+> & {
+  isLazyLoadImg: boolean;
+};
 
 function PetCard(props: PetCardProps) {
-  const { lk_pet_code, name, specie, breed, sex_txt, age_int, thumbnails } = props;
+  const { lk_pet_code, name, specie, breed, sex_txt, age_int, thumbnails, isLazyLoadImg } = props;
   const imageUrl = useAdaptiveThumbnail(thumbnails);
 
   return (
@@ -30,6 +32,7 @@ function PetCard(props: PetCardProps) {
             src={imageUrl}
             alt={name}
             className='w-full aspect-video object-cover rounded-t-md'
+            loading={isLazyLoadImg ? 'lazy' : 'eager'}
           />
         </GlareHover>
       </MasterLink>

@@ -1,6 +1,6 @@
 import { baseURL, routes, SearchParams, staticTxt, unionValues } from './constants';
 import { isNotEmptyString, resolveApiErrorMessage } from './helpers';
-import { useAdaptiveThumbnail, useSyncURLParams } from './hooks';
+import { useAdaptiveThumbnail, useResponsiveLazyLoad, useSyncURLParams } from './hooks';
 import type {
   ICatDetails,
   IDogDetails,
@@ -39,6 +39,7 @@ export {
   useGetPetByCodeWithSpeciesDetailsQuery,
   useGetPetsQuery,
   useGetPetsWithDetailsQuery,
+  useResponsiveLazyLoad,
   useSyncURLParams,
 };
 export type {

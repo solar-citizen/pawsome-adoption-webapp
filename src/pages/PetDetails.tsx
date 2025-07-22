@@ -10,6 +10,7 @@ import {
   CardHeader,
   //   CardTitle,
 } from '#src/components/atoms';
+import { SimilarPets } from '#src/components/organisms';
 import {
   type ICatDetails,
   type IDogDetails,
@@ -349,6 +350,8 @@ function PetDetails() {
 
       {/* Species-specific panel */}
       {renderSpeciesPanel()}
+
+      {<SimilarPets title='You can also adopt' pets={pet?.similar} />}
     </div>
   );
 }

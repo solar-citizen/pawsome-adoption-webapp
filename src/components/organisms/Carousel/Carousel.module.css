@@ -1,0 +1,99 @@
+@import 'tailwindcss';
+
+/*------------------------------------*/
+/* 1. Basic container & slide styling */
+/*------------------------------------*/
+
+.emblaContainer {
+  margin-left: calc(var(--slide-spacing, 1rem) * -1);
+}
+
+.emblaSlide {
+  transform: translate3d(0, 0, 0);
+  padding-left: var(--slide-spacing, 1rem);
+}
+
+/*-------------------------------------*/
+/* 2. Fixed-width behavior (itemWidth) */
+/*-------------------------------------*/
+/* Use :global(...) so that .carousel-fixed-width remains un-hashed */
+
+:global(.carousel-fixed-width) .emblaSlide {
+  flex: 0 0 var(--slide-width);
+  max-width: var(--slide-width);
+}
+
+/*---------------------------------------*/
+/* 3. Responsive behavior (no itemWidth) */
+/*---------------------------------------*/
+/* Base: one slide at 100% width */
+
+:global(.carousel-responsive) .emblaSlide {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* ≥640px: two slides at 50% */
+@media (min-width: 640px) {
+  :global(.carousel-responsive) .emblaSlide {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* ≥1024px: three slides at 33.3333% */
+@media (min-width: 1024px) {
+  :global(.carousel-responsive) .emblaSlide {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
+/* ≥1280px: four slides at 25% */
+@media (min-width: 1280px) {
+  :global(.carousel-responsive) .emblaSlide {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+/*-------------------------------------*/
+/* 4. Controls styling (module-scoped) */
+/*-------------------------------------*/
+
+.emblaControls {
+  transform: translateY(-50%);
+
+  .emblaBtn {
+    @apply flex items-center justify-center w-10 h-10 rounded-full border-none cursor-pointer 
+    pointer-events-auto transition-all duration-200 bg-slate-50 shadow-sm;
+
+    &:hover:not(:disabled) {
+      @apply bg-white transform scale-105 inset-shadow-xs shadow-none;
+    }
+
+    &:disabled {
+      @apply opacity-40 cursor-not-allowed;
+    }
+  }
+
+  .emblaBtnIcon {
+    @apply w-4 h-4 text-gray-700;
+  }
+}
+
+/*---------------------------------*/
+/* 5. Dots styling (module-scoped) */
+/*---------------------------------*/
+
+.emblaDotInner {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.emblaDot:hover .emblaDotInner {
+  @apply transform scale-110 bg-gray-950;
+}
+
+.emblaDotSelected .emblaDotInner {
+  @apply bg-sky-500 transform scale-125;
+}
