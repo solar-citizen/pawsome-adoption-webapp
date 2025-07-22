@@ -26,7 +26,11 @@ function PetCard(props: PetCardProps) {
           playOnce={false}
           className='rounded-t-md'
         >
-          <img src={imageUrl} alt={name} className='w-full h-64 object-cover rounded-t-md' />
+          <img
+            src={imageUrl}
+            alt={name}
+            className='w-full aspect-video object-cover rounded-t-md'
+          />
         </GlareHover>
       </MasterLink>
 

@@ -9,13 +9,13 @@ type LogoProps = {
   onClick?: () => void;
 };
 
-const { mainNav } = routes;
+const { rStatic } = routes;
 
 function Logo({ containerCls, linkCls, onClick }: LogoProps) {
   return (
     <div className={containerCls}>
       <NavLink
-        to={mainNav.home.path}
+        to={rStatic.mainNav.home.path}
         className={clsx(
           `text-gray-700 opacity-85 hover:opacity-100 transition 
           duration-(--transition-duration) 
