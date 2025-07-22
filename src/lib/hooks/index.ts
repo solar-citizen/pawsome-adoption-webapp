@@ -1,3 +1,5 @@
+import { useAdaptiveThumbnail } from './useAdaptiveThumbnail';
+import { useResponsiveLazyLoad } from './useResponsiveLazyLoad';
 import { useSyncURLParams } from './useSyncURLParams';
 
-export { useSyncURLParams };
+export { useAdaptiveThumbnail, useResponsiveLazyLoad, useSyncURLParams };

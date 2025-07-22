@@ -1,6 +1,7 @@
 import Icon from './Icon';
 import NavItems from './NavItems/NavItems';
 import { getPaginationRange, Pagination, usePagination } from './Pagination';
+import PetCard from './PetCard/PetCard';
 import {
   Search,
   type SearchExpandTriggerVariant,
@@ -15,6 +16,7 @@ export {
   Icon,
   NavItems,
   Pagination,
+  PetCard,
   Search,
   SpinnerIcon,
   usePagination,

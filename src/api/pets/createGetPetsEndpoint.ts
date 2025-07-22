@@ -37,7 +37,7 @@ export type GetPetsParams = {
  *   .then(banners => console.log(banners));
  * ```
  */
-export function createGetPetEndpoint<T>(
+export function createGetPetsEndpoint<T>(
   endpoint: string,
   isDetailed: boolean,
 ): (params?: GetPetsParams) => Promise<T> {

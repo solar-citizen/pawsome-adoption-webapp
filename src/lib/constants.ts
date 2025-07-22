@@ -6,10 +6,18 @@ export const staticTxt = {
 };
 
 export const routes = {
-  home: { path: 'home', label: 'Home' },
-  adoptions: { path: 'adoptions', label: 'Adoptions' },
-  about: { path: 'about', label: 'About' },
-  contact: { path: 'contact', label: 'Contact' },
+  rStatic: {
+    mainNav: {
+      home: { path: 'home', label: 'Home' },
+      adoptions: { path: 'adoptions', label: 'Adoptions' },
+      about: { path: 'about', label: 'About' },
+      contact: { path: 'contact', label: 'Contact' },
+    },
+  },
+
+  rDynamic: {
+    petDetails: { route: 'pets/:lk_pet_code' },
+  },
 };
 
 // toDo: rename, because it confuses
@@ -24,4 +32,10 @@ export const SearchParams = {
       detailed: 'detailed',
     },
   },
+};
+
+export const unionValues = {
+  SPECIES: ['cat', 'dog', 'horse', 'farm-animal', 'other'] as const,
+  TRAINING_LEVELS: ['basic', 'intermediate', 'advanced'] as const,
+  ENERGY_LEVELS: ['low', 'moderate', 'high', 'very_high'] as const,
 };

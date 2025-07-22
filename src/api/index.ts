@@ -1,5 +1,5 @@
 import { createAxiosInstance } from './createAxiosInstance';
-import type { GetPetsParams } from './pets/createGetPetEndpoint';
+import type { GetPetsParams } from './pets/createGetPetsEndpoint';
 import { PetAPI } from './pets/PetAPI';
 import { useSyncPets } from './pets/useSyncPets';
 

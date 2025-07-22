@@ -1,3 +1,4 @@
+import { createGetQueryFn } from './createGetQueryFn';
 import { isValidParamValue } from './isValidParamValue';
 
-export { isValidParamValue };
+export { createGetQueryFn, isValidParamValue };

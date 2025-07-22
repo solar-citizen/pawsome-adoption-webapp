@@ -1,7 +1,7 @@
 import type { EnergyLevel, TrainingLevel } from './IDogDetails';
 import type { IPet, IPetMeta } from './IPet';
 
-export interface IPetWithDetails extends IPet {
+export type IPetWithDetails = IPet & {
   // Cat Details
   cat_is_litter_trained: boolean | null;
   cat_is_indoor_only: boolean | null;
@@ -40,9 +40,9 @@ export interface IPetWithDetails extends IPet {
   farm_needs_companion: boolean | null;
   farm_special_care_needs: string | null;
   farm_pasture_size_needed: number | null;
-}
+};
 
-export interface IPetWithDetailsResponse {
+export type IPetWithDetailsResponse = {
   data: IPetWithDetails[];
   meta: IPetMeta;
-}
+};

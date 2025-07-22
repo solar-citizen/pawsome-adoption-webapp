@@ -1,5 +1,6 @@
+import Carousel from './Carousel/Carousel';
 import Header from './Header';
 import HeroBanner from './HeroBanner/HeroBanner';
-import PetCard from './PetCard/PetCard';
+import SimilarPets from './SimilarPets';
 
-export { Header, HeroBanner, PetCard };
+export { Carousel, Header, HeroBanner, SimilarPets };

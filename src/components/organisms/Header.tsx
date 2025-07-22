@@ -9,7 +9,7 @@ function Header() {
         <Logo containerCls='text-2xl' />
 
         <nav className='flex gap-6'>
-          <NavItems items={routes} variant='main' />
+          <NavItems items={routes.rStatic.mainNav} variant='main' />
         </nav>
       </div>
     </header>

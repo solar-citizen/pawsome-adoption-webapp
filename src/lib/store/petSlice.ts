@@ -2,7 +2,14 @@ import { createApi } from '@reduxjs/toolkit/query/react';
 
 import type { GetPetsParams } from '#src/api';
 import { PetAPI } from '#src/api';
-import { type IPet, type IPetResponse, type IPetWithDetailsResponse } from '#src/lib';
+import type {
+  IPetByCodeResponse,
+  IPetByCodeWithSimilarPetsResponse,
+  IPetResponse,
+  IPetWithDetailsResponse,
+} from '#src/lib';
+
+import { createGetQueryFn } from './lib';
 
 export const petSlice = createApi({
   reducerPath: 'petSlice',
@@ -13,33 +20,30 @@ export const petSlice = createApi({
   baseQuery: () => ({ data: null }),
   endpoints: builder => ({
     getPets: builder.query<IPetResponse, GetPetsParams | undefined>({
-      queryFn: async params => {
-        try {
-          const data = await PetAPI.getPets(params);
-          return { data };
-        } catch (error) {
-          const message = error instanceof Error ? error.message : String(error);
-          return { error: { status: 'FETCH_ERROR', error: message } };
-        }
-      },
+      queryFn: createGetQueryFn(PetAPI.getPets),
     }),
     getPetsWithDetails: builder.query<IPetWithDetailsResponse, GetPetsParams | undefined>({
-      queryFn: async params => {
-        try {
-          const data = await PetAPI.getPetsWithDetails(params);
-          return { data };
-        } catch (error) {
-          const message = error instanceof Error ? error.message : String(error);
-          return { error: { status: 'FETCH_ERROR', error: message } };
-        }
-      },
+      queryFn: createGetQueryFn(PetAPI.getPetsWithDetails),
     }),
-
-    getPetById: builder.query<IPet, string>({
-      keepUnusedDataFor: 1200,
-      query: petCode => `pets/${petCode}`,
+    getPetByCode: builder.query<IPetByCodeResponse, string>({
+      queryFn: createGetQueryFn(PetAPI.getPetByCode),
+    }),
+    getPetByCodeWithSpeciesDetails: builder.query<IPetByCodeResponse, string>({
+      queryFn: createGetQueryFn(PetAPI.getPetByCodeWithSpeciesDetails),
+    }),
+    getPetByCodeWithSpeciesDetailsAndSimilarPets: builder.query<
+      IPetByCodeWithSimilarPetsResponse,
+      string
+    >({
+      queryFn: createGetQueryFn(PetAPI.getPetByCodeWithSpeciesDetailsAndSimilarPets),
     }),
   }),
 });
 
-export const { useGetPetsQuery, useGetPetsWithDetailsQuery, useGetPetByIdQuery } = petSlice;
+export const {
+  useGetPetsQuery,
+  useGetPetsWithDetailsQuery,
+  useGetPetByCodeQuery,
+  useGetPetByCodeWithSpeciesDetailsQuery,
+  useGetPetByCodeWithSpeciesDetailsAndSimilarPetsQuery,
+} = petSlice;
