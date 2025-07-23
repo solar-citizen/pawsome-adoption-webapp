@@ -1,0 +1,33 @@
+.shinyText {
+  display: inline-block;
+  color: #364153;
+  background: linear-gradient(
+    120deg,
+    #364153 25%,
+    rgba(138, 148, 166, 0.8) 40%,
+    rgba(200, 200, 200, 0.7) 50%,
+    rgba(138, 148, 166, 0.8) 60%,
+    #364153 75%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition:
+    background-position 0.2s ease-out,
+    color 0.2s ease-out;
+}
+
+.animate {
+  color: transparent;
+  animation: shine var(--animation-duration, 3s) linear infinite;
+}
+
+@keyframes shine {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
