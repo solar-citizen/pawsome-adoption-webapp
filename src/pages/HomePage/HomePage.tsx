@@ -1,17 +1,19 @@
 import { useSyncPets } from '#src/api';
-import { Pagination, PetCard, usePagination } from '#src/components/molecules';
+import { ActiveFilters, Pagination, PetCard, usePagination } from '#src/components/molecules';
 import { HeroBanner } from '#src/components/organisms';
-import { useResponsiveLazyLoad } from '#src/lib';
+import { SearchParams, useResponsiveLazyLoad } from '#src/lib';
 
 import styles from './HomePage.module.css';
+
+const { pagination } = SearchParams.herobanner;
 
 function HomePage() {
   const { pets, meta, isLoading, isError, errorMessage } = useSyncPets();
   const { currentPage, totalPages, handlePageChange } = usePagination({
     itemsPerPage: meta.perPage,
     totalItems: meta.total,
-    pageParam: 'page',
-    limitParam: 'limit',
+    pageParam: pagination.page,
+    limitParam: pagination.limit,
   });
   const lazyThreshold = useResponsiveLazyLoad();
 
@@ -24,6 +26,8 @@ function HomePage() {
 
       <section className={styles.container}>
         <h2 className={styles.title}>Available Pets</h2>
+
+        <ActiveFilters />
 
         {pets.length ? (
           <div className={styles.petGrid}>

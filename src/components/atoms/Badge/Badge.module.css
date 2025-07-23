@@ -29,4 +29,41 @@
   &.destructive {
     @apply border-transparent bg-red-500 text-white hover:bg-red-400;
   }
+
+  &.random {
+    @apply border-transparent;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .isClickable {
+    transition: all 0.2s ease-in-out;
+    user-select: none;
+  }
+
+  .isClickable:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .isClickable:active {
+    transform: translateY(0);
+  }
+
+  .isClickable:focus {
+    outline: 2px solid var(--focus-color, #007acc);
+    outline-offset: 2px;
+  }
+
+  /* Variant-specific hover effects */
+  .isClickable.primary:hover {
+    opacity: 0.9;
+  }
+
+  .isClickable.outline:hover {
+    background-color: var(--hover-bg, rgba(0, 0, 0, 0.05));
+  }
 }

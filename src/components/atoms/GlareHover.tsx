@@ -19,17 +19,17 @@ type GlareHoverProps = {
 };
 
 function GlareHover({
-  width = '500px',
-  height = '500px',
+  width = 'auto',
+  height = 'auto',
+  glareColor = '#fff',
   background = '#fff',
+  glareOpacity = 0.3,
+  glareAngle = -30,
+  transitionDuration = 800,
   borderRadius,
   borderColor,
   children,
-  glareColor = '#fff',
-  glareOpacity = 0.5,
-  glareAngle = -45,
   glareSize = 250,
-  transitionDuration = 650,
   playOnce = false,
   className = '',
   style = {},

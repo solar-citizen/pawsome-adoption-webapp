@@ -1,3 +1,4 @@
+import ActiveFilters from './ActiveFilters';
 import Icon from './Icon';
 import NavItems from './NavItems/NavItems';
 import { getPaginationRange, Pagination, usePagination } from './Pagination';
@@ -12,6 +13,7 @@ import {
 import SpinnerIcon from './SpinnerIcon/SpinnerIcon';
 
 export {
+  ActiveFilters,
   getPaginationRange,
   Icon,
   NavItems,

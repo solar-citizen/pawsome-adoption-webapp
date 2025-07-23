@@ -12,6 +12,7 @@ import GlareHover from './GlareHover';
 import Logo from './Logo';
 import MasterLink from './MasterLink';
 import { ReactIcon, type ReactIconProps } from './ReactIcon';
+import ShinyText from './ShinyText/ShinyText';
 import { type SvgElementProps, SvgIcon, type SvgIconProps } from './SvgIcon';
 
 export {
@@ -31,6 +32,7 @@ export {
   Logo,
   MasterLink,
   ReactIcon,
+  ShinyText,
   SvgIcon,
 };
 export type { ReactIconProps, SvgElementProps, SvgIconProps };
