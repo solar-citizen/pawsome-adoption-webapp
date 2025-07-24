@@ -2,7 +2,7 @@ import { startCase } from 'lodash-es';
 import { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { Badge } from '#src/components/atoms';
+import { Badge, useBadgeClickability } from '#src/components/atoms';
 import { useSyncURLParams } from '#src/lib';
 
 const BADGE_PARAM_KEYS = ['specie', 'breed', 'sex_txt', 'age_int'] as const;
@@ -10,6 +10,7 @@ const BADGE_PARAM_KEYS = ['specie', 'breed', 'sex_txt', 'age_int'] as const;
 function ActiveFilters() {
   const [searchParams] = useSearchParams();
   const syncParams = useSyncURLParams({ initialParams: useMemo(() => ({}), []) });
+  const { isClickable } = useBadgeClickability();
 
   const activeFilters = BADGE_PARAM_KEYS.map(key => {
     const val = searchParams.get(key);
@@ -34,7 +35,7 @@ function ActiveFilters() {
         <Badge
           key={key}
           variant='random'
-          isClickable
+          isClickable={isClickable}
           onClick={() => {
             syncParams({ [key]: null });
           }}

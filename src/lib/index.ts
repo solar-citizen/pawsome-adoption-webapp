@@ -1,6 +1,18 @@
 import { baseURL, routes, SearchParams, staticTxt, unionValues } from './constants';
-import { isNotEmptyString, resolveApiErrorMessage } from './helpers';
-import { useAdaptiveThumbnail, useResponsiveLazyLoad, useSyncURLParams } from './hooks';
+import {
+  getRandomHSL,
+  getRandomMutedHSL,
+  getRandomPastelHSL,
+  getRandomVibrantHSL,
+  isNotEmptyString,
+  resolveApiErrorMessage,
+} from './helpers';
+import {
+  useAdaptiveThumbnail,
+  useKeyboardEvent,
+  useResponsiveLazyLoad,
+  useSyncURLParams,
+} from './hooks';
 import type {
   ICatDetails,
   IDogDetails,
@@ -26,6 +38,10 @@ import {
 
 export {
   baseURL,
+  getRandomHSL,
+  getRandomMutedHSL,
+  getRandomPastelHSL,
+  getRandomVibrantHSL,
   isNotEmptyString,
   resolveApiErrorMessage,
   routes,
@@ -39,6 +55,7 @@ export {
   useGetPetByCodeWithSpeciesDetailsQuery,
   useGetPetsQuery,
   useGetPetsWithDetailsQuery,
+  useKeyboardEvent,
   useResponsiveLazyLoad,
   useSyncURLParams,
 };

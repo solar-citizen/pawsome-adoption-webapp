@@ -1,4 +1,4 @@
-import Badge from './Badge/Badge';
+import { Badge, useBadgeClickability } from './Badge';
 import {
   BtnTextPosition,
   Button,
@@ -34,5 +34,6 @@ export {
   ReactIcon,
   ShinyText,
   SvgIcon,
+  useBadgeClickability,
 };
 export type { ReactIconProps, SvgElementProps, SvgIconProps };
