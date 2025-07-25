@@ -1,4 +1,4 @@
-import ActiveFilters from './ActiveFilters';
+import ActiveFilters from './ActiveFilters/ActiveFilters';
 import Icon from './Icon';
 import NavItems from './NavItems/NavItems';
 import { getPaginationRange, Pagination, usePagination } from './Pagination';

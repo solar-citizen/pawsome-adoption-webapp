@@ -4,6 +4,7 @@ import {
   getRandomMutedHSL,
   getRandomPastelHSL,
   getRandomVibrantHSL,
+  humanizeParam,
   isNotEmptyString,
   resolveApiErrorMessage,
 } from './helpers';
@@ -42,6 +43,7 @@ export {
   getRandomMutedHSL,
   getRandomPastelHSL,
   getRandomVibrantHSL,
+  humanizeParam,
   isNotEmptyString,
   resolveApiErrorMessage,
   routes,

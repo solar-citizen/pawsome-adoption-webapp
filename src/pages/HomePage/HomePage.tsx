@@ -1,3 +1,5 @@
+import { useAutoAnimate } from '@formkit/auto-animate/react';
+
 import { useSyncPets } from '#src/api';
 import { ActiveFilters, Pagination, PetCard, usePagination } from '#src/components/molecules';
 import { HeroBanner } from '#src/components/organisms';
@@ -17,6 +19,11 @@ function HomePage() {
   });
   const lazyThreshold = useResponsiveLazyLoad();
 
+  const [gridRef] = useAutoAnimate<HTMLDivElement>({
+    duration: 300,
+    easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+  });
+
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error: {errorMessage}</p>;
 
@@ -29,8 +36,8 @@ function HomePage() {
 
         <ActiveFilters />
 
-        {pets.length ? (
-          <div className={styles.petGrid}>
+        {pets.length > 0 ? (
+          <div ref={gridRef} className={styles.petGrid}>
             {pets.map((pet, index) => (
               <PetCard key={pet.lk_pet_code} isLazyLoadImg={index > lazyThreshold} {...pet} />
             ))}
@@ -42,7 +49,6 @@ function HomePage() {
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
-          // displayedPages={isMatchMediumScreen ? 5 : 3}
           displayedPages={5}
           isDetacheableArrows
           onPageChange={handlePageChange}
