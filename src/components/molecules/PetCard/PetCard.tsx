@@ -8,6 +8,7 @@ import {
   ShinyText,
   useBadgeClickability,
 } from '#src/components/atoms';
+import { Image } from '#src/components/molecules';
 import { type IPet, useAdaptiveThumbnail, useSyncURLParams } from '#src/lib';
 
 import styles from './PetCard.module.css';
@@ -46,10 +47,12 @@ function PetCard(props: PetCardProps) {
     >
       <MasterLink type='link' to={`/pets/${lk_pet_code}`}>
         <GlareHover className='rounded-t-md'>
-          <img
+          <Image
+            isWrapped
+            aspectRatio='aspect-video'
             src={imageUrl}
             alt={startCase(name)}
-            className='w-full aspect-video object-cover rounded-t-md'
+            className='w-full object-cover rounded-t-md'
             loading={isLazyLoadImg ? 'lazy' : 'eager'}
           />
         </GlareHover>

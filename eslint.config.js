@@ -13,6 +13,7 @@ const customRules = {
   /* eslint */
   'max-len': ['warn', { code: 100 }],
   semi: [2, 'always'],
+  allowNumber: true,
 
   // eslint-plugin-simple-import-sort
   'simple-import-sort/imports': 'error',
