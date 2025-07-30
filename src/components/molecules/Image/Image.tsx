@@ -11,7 +11,6 @@ type ImageProps = {
   aspectRatio?: AspectRatio;
   fallbackSrc?: string;
   retryCount?: number;
-  isWrapped?: boolean;
   loading?: 'lazy' | 'eager';
 } & Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt' | 'onLoad' | 'onError'>;
 
@@ -23,7 +22,6 @@ function Image({
   style,
   fallbackSrc,
   retryCount,
-  isWrapped = false,
   loading,
   ...rest
 }: ImageProps) {
@@ -36,7 +34,7 @@ function Image({
   if (!src && !fallbackSrc) {
     return (
       <div
-        className={clsx('w-full h-full', !isWrapped && 'relative')}
+        className='relative w-full h-full'
         style={style}
         role='img'
         aria-label={alt}
@@ -49,7 +47,7 @@ function Image({
 
   return (
     <div
-      className={clsx('w-full h-full', !isWrapped && 'relative')}
+      className='relative w-full h-full'
       aria-busy={status === 'loading'}
       role='img'
       aria-label={alt}

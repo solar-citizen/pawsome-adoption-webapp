@@ -21,7 +21,7 @@ type PetCardProps = Pick<
 };
 
 function PetCard(props: PetCardProps) {
-  const [isHovered, setHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const { lk_pet_code, name, specie, breed, sex_txt, age_int, thumbnails, isLazyLoadImg } = props;
   const imageUrl = useAdaptiveThumbnail(thumbnails);
@@ -39,16 +39,15 @@ function PetCard(props: PetCardProps) {
     <div
       className={styles.wrapper}
       onMouseEnter={() => {
-        setHovered(true);
+        setIsHovered(true);
       }}
       onMouseLeave={() => {
-        setHovered(false);
+        setIsHovered(false);
       }}
     >
       <MasterLink type='link' to={`/pets/${lk_pet_code}`}>
         <GlareHover className='rounded-t-md'>
           <Image
-            isWrapped
             aspectRatio='aspect-video'
             src={imageUrl}
             alt={startCase(name)}
@@ -73,6 +72,7 @@ function PetCard(props: PetCardProps) {
           >
             {startCase(specie)}
           </Badge>
+
           <Badge
             variant='outline'
             isClickable={isClickable}
@@ -82,6 +82,7 @@ function PetCard(props: PetCardProps) {
           >
             {startCase(breed)}
           </Badge>
+
           <Badge
             variant='outline'
             isClickable={isClickable}
@@ -91,6 +92,7 @@ function PetCard(props: PetCardProps) {
           >
             {startCase(sex_txt)}
           </Badge>
+
           {age_int && (
             <Badge
               variant='outline'
