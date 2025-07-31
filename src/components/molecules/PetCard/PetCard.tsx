@@ -1,5 +1,5 @@
 import { startCase } from 'lodash-es';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 
 import {
   Badge,
@@ -9,7 +9,7 @@ import {
   useBadgeClickability,
 } from '#src/components/atoms';
 import { Image } from '#src/components/molecules';
-import { type IPet, useAdaptiveThumbnail, useSyncURLParams } from '#src/lib';
+import { type IPet, useAdaptiveThumbnail } from '#src/lib';
 
 import styles from './PetCard.module.css';
 
@@ -18,21 +18,29 @@ type PetCardProps = Pick<
   'lk_pet_code' | 'name' | 'specie' | 'breed' | 'sex_txt' | 'age_int' | 'thumbnails'
 > & {
   isLazyLoadImg: boolean;
+  onParamUpdate?: (paramKey: string, value: string | null) => void;
 };
 
 function PetCard(props: PetCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
-  const { lk_pet_code, name, specie, breed, sex_txt, age_int, thumbnails, isLazyLoadImg } = props;
+  const {
+    lk_pet_code,
+    name,
+    specie,
+    breed,
+    sex_txt,
+    age_int,
+    thumbnails,
+    isLazyLoadImg,
+    onParamUpdate,
+  } = props;
+
   const imageUrl = useAdaptiveThumbnail(thumbnails);
   const { isClickable } = useBadgeClickability();
 
-  const syncParams = useSyncURLParams({
-    initialParams: useMemo(() => ({}), []),
-  });
-
   const handleParamUpdate = (paramKey: string, value: string | null) => {
-    syncParams({ [paramKey]: value });
+    onParamUpdate?.(paramKey, value);
   };
 
   return (

@@ -3,9 +3,10 @@ import { useAutoAnimate } from '@formkit/auto-animate/react';
 import { useSyncPets } from '#src/api';
 import { ActiveFilters, Pagination, PetCard, usePagination } from '#src/components/molecules';
 import { HeroBanner } from '#src/components/organisms';
-import { SearchParams, useResponsiveLazyLoad } from '#src/lib';
+import { SearchParams, useResponsiveLazyLoad, useSyncURLParams } from '#src/lib';
 
 import styles from './HomePage.module.css';
+import { useMemo } from 'react';
 
 const { pagination } = SearchParams.herobanner;
 
@@ -24,6 +25,14 @@ function HomePage() {
     easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
   });
 
+  const syncParams = useSyncURLParams({
+    initialParams: useMemo(() => ({}), []),
+  });
+
+  const handleParamUpdate = (paramKey: string, value: string | null) => {
+    syncParams({ [paramKey]: value });
+  };
+
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error: {errorMessage}</p>;
 
@@ -39,7 +48,12 @@ function HomePage() {
         {pets.length > 0 ? (
           <div ref={gridRef} className={styles.petGrid}>
             {pets.map((pet, index) => (
-              <PetCard key={pet.lk_pet_code} isLazyLoadImg={index > lazyThreshold} {...pet} />
+              <PetCard
+                onParamUpdate={handleParamUpdate}
+                key={pet.lk_pet_code}
+                isLazyLoadImg={index > lazyThreshold}
+                {...pet}
+              />
             ))}
           </div>
         ) : (
