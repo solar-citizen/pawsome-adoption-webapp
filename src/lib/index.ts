@@ -13,6 +13,7 @@ import {
   useKeyboardEvent,
   useResponsiveLazyLoad,
   useSyncURLParams,
+  useScrollToTop,
 } from './hooks';
 import type {
   ICatDetails,
@@ -38,6 +39,7 @@ import {
 } from './store';
 
 export {
+  useScrollToTop,
   baseURL,
   getRandomHSL,
   getRandomMutedHSL,
