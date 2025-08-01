@@ -28,6 +28,7 @@ import type {
   IPetWithDetailsResponse,
   Thumbnails,
   ThumbnailSizes,
+  PetDetailsData,
 } from './interfaces';
 import {
   store,
@@ -64,6 +65,7 @@ export {
   useSyncURLParams,
 };
 export type {
+  PetDetailsData,
   ICatDetails,
   IDogDetails,
   IFarmAnimalsDetails,

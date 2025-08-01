@@ -5,8 +5,6 @@ import type { IDogDetails } from './IDogDetails';
 import type { IFarmAnimalsDetails } from './IFarmAnimalsDetails';
 import type { IHorseDetails } from './IHorseDetails';
 
-export type Specie = (typeof unionValues.SPECIES)[number];
-
 export type IPetWithDogDetails = IPet & {
   dogDetails: IDogDetails;
 };
@@ -77,3 +75,6 @@ export type IPetByCodeWithSimilarPetsResponse = {
   documents: string[];
   similar: IPet[];
 };
+
+export type PetDetailsData = ICatDetails | IDogDetails | IHorseDetails | IFarmAnimalsDetails;
+export type Specie = (typeof unionValues.SPECIES)[number];
