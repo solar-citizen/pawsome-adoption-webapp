@@ -1,7 +1,7 @@
 {
   "name": "pawsome-adoption-webapp",
   "private": true,
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "solar_c",
   "license": "ISC",
   "type": "module",
