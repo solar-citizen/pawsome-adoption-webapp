@@ -12,8 +12,8 @@ import {
   useAdaptiveThumbnail,
   useKeyboardEvent,
   useResponsiveLazyLoad,
-  useSyncURLParams,
   useScrollToTop,
+  useSyncURLParams,
 } from './hooks';
 import type {
   ICatDetails,
@@ -26,9 +26,9 @@ import type {
   IPetMeta,
   IPetResponse,
   IPetWithDetailsResponse,
+  PetDetailsData,
   Thumbnails,
   ThumbnailSizes,
-  PetDetailsData,
 } from './interfaces';
 import {
   store,
@@ -40,7 +40,6 @@ import {
 } from './store';
 
 export {
-  useScrollToTop,
   baseURL,
   getRandomHSL,
   getRandomMutedHSL,
@@ -62,10 +61,10 @@ export {
   useGetPetsWithDetailsQuery,
   useKeyboardEvent,
   useResponsiveLazyLoad,
+  useScrollToTop,
   useSyncURLParams,
 };
 export type {
-  PetDetailsData,
   ICatDetails,
   IDogDetails,
   IFarmAnimalsDetails,
@@ -76,6 +75,7 @@ export type {
   IPetMeta,
   IPetResponse,
   IPetWithDetailsResponse,
+  PetDetailsData,
   Thumbnails,
   ThumbnailSizes,
 };

@@ -8,9 +8,9 @@ import type {
   IPetByCodeWithSimilarPetsResponse,
   IPetMeta,
   IPetResponse,
+  PetDetailsData,
   Thumbnails,
   ThumbnailSizes,
-  PetDetailsData,
 } from './IPet';
 import type { IPetWithDetails, IPetWithDetailsResponse } from './IPetWithDetails';
 
@@ -26,7 +26,7 @@ export type {
   IPetResponse,
   IPetWithDetails,
   IPetWithDetailsResponse,
+  PetDetailsData,
   Thumbnails,
   ThumbnailSizes,
-  PetDetailsData,
 };

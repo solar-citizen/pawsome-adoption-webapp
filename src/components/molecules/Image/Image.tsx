@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { Img } from 'react-image';
 import type { ImgHTMLAttributes } from 'react';
+import { Img } from 'react-image';
 
 import { type AspectRatio, ImageSkeleton, NoImgPlaceholder } from '#src/components/atoms';
 

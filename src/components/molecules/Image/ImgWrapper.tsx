@@ -1,6 +1,7 @@
-import type { ReactNode } from 'react';
-import type { ImageProps } from './Image';
 import clsx from 'clsx';
+import type { ReactNode } from 'react';
+
+import type { ImageProps } from './Image';
 
 type ImgWrapperProps = Pick<ImageProps, 'aspectRatio' | 'style' | 'alt'> & {
   children: ReactNode;

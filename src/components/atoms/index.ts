@@ -1,12 +1,21 @@
+import { GlareHover, ShinyText } from './_effects';
 import {
+  PawIcon,
   ReactIcon,
   type ReactIconProps,
   type SvgElementProps,
   SvgIcon,
   type SvgIconProps,
-  PawIcon,
 } from './_icons';
-import { ImageSkeleton, NoImgPlaceholder, type AspectRatio } from './_image';
+import { type AspectRatio, ImageSkeleton, NoImgPlaceholder } from './_image';
+import {
+  CatDetails,
+  DetailGrid,
+  DogDetails,
+  FarmAnimalDetails,
+  FeatureTags,
+  HorseDetails,
+} from './_pet-details';
 import { Badge, useBadgeClickability } from './Badge';
 import {
   BtnTextPosition,
@@ -19,23 +28,8 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './Card';
 import Logo from './Logo';
 import MasterLink from './MasterLink';
-import {
-  CatDetails,
-  DetailGrid,
-  DogDetails,
-  FeatureTags,
-  FarmAnimalDetails,
-  HorseDetails,
-} from './_pet-details';
-import { ShinyText, GlareHover } from './_effects';
 
 export {
-  FarmAnimalDetails,
-  HorseDetails,
-  DogDetails,
-  DetailGrid,
-  FeatureTags,
-  CatDetails,
   Badge,
   BtnTextPosition,
   Button,
@@ -47,16 +41,22 @@ export {
   CardDescription,
   CardHeader,
   CardTitle,
+  CatDetails,
+  DetailGrid,
+  DogDetails,
+  FarmAnimalDetails,
+  FeatureTags,
   GlareHover,
+  HorseDetails,
   IconPositions,
   ImageSkeleton,
   Logo,
   MasterLink,
   NoImgPlaceholder,
+  PawIcon,
   ReactIcon,
   ShinyText,
   SvgIcon,
   useBadgeClickability,
-  PawIcon,
 };
 export type { AspectRatio, ReactIconProps, SvgElementProps, SvgIconProps };

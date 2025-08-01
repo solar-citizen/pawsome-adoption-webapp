@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { useState, type CSSProperties, type ReactNode } from 'react';
+import { type CSSProperties, type ReactNode, useState } from 'react';
 
 type GlareHoverProps = {
   width?: string;

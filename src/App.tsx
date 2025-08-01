@@ -1,6 +1,6 @@
 // TODO: add multilang support
-import AppRouter from '#src/routes/AppRouter';
 import { useScrollToTop } from '#src/lib';
+import AppRouter from '#src/routes/AppRouter';
 
 export default function App() {
   useScrollToTop();

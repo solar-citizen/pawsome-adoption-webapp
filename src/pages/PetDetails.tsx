@@ -1,3 +1,4 @@
+import { startCase } from 'lodash-es';
 import { useParams } from 'react-router-dom';
 
 import {
@@ -12,14 +13,13 @@ import {
   FarmAnimalDetails,
   HorseDetails,
 } from '#src/components/atoms';
+import { Image } from '#src/components/molecules';
 import { SimilarPets } from '#src/components/organisms';
 import {
   resolveApiErrorMessage,
   useAdaptiveThumbnail,
   useGetPetByCodeWithSpeciesDetailsAndSimilarPetsQuery,
 } from '#src/lib';
-import { Image } from '#src/components/molecules';
-import { startCase } from 'lodash-es';
 
 function PetDetails() {
   const { lk_pet_code } = useParams();

@@ -1,4 +1,5 @@
 import { useAutoAnimate } from '@formkit/auto-animate/react';
+import { useMemo } from 'react';
 
 import { useSyncPets } from '#src/api';
 import { ActiveFilters, Pagination, PetCard, usePagination } from '#src/components/molecules';
@@ -6,7 +7,6 @@ import { HeroBanner } from '#src/components/organisms';
 import { SearchParams, useResponsiveLazyLoad, useSyncURLParams } from '#src/lib';
 
 import styles from './HomePage.module.css';
-import { useMemo } from 'react';
 
 const { pagination } = SearchParams.herobanner;
 

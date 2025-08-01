@@ -10,10 +10,9 @@ import globals from 'globals';
 import tsEslint from 'typescript-eslint';
 
 const customRules = {
-  /* eslint */
+  // base
   'max-len': ['warn', { code: 100 }],
   semi: [2, 'always'],
-  allowNumber: true,
 
   // eslint-plugin-simple-import-sort
   'simple-import-sort/imports': 'error',
@@ -95,4 +94,18 @@ const tsTypeCheckedConfig = tsEslint.configs.strictTypeChecked.map(config => {
 
 const ignoreConfig = { ignores: ['dist/**/*'] };
 
-export default [ignoreConfig, baseConfig, js.configs.recommended, tsConfig, ...tsTypeCheckedConfig];
+const overrideConfig = {
+  files: ['**/*.{ts,tsx}'],
+  rules: {
+    '@typescript-eslint/restrict-template-expressions': ['error', { allowNumber: true }],
+  },
+};
+
+export default [
+  ignoreConfig,
+  baseConfig,
+  js.configs.recommended,
+  tsConfig,
+  ...tsTypeCheckedConfig,
+  overrideConfig,
+];

@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { type HTMLAttributes, type MouseEvent, type JSX, useMemo, useRef } from 'react';
+import { type HTMLAttributes, type JSX, type MouseEvent, useMemo, useRef } from 'react';
 
 import { isNotEmptyString, useKeyboardEvent } from '#src/lib';
 

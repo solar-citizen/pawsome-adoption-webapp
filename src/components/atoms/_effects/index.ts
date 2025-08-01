@@ -1,4 +1,4 @@
-import ShinyText from './ShinyText/ShinyText';
 import GlareHover from './GlareHover';
+import ShinyText from './ShinyText/ShinyText';
 
-export { ShinyText, GlareHover };
+export { GlareHover, ShinyText };
