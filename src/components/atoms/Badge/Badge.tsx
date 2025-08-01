@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { type HTMLAttributes, type MouseEvent, useMemo, useRef } from 'react';
+import { type HTMLAttributes, type MouseEvent, type JSX, useMemo, useRef } from 'react';
 
 import { isNotEmptyString, useKeyboardEvent } from '#src/lib';
 
@@ -22,6 +22,37 @@ type BadgeProps = HTMLAttributes<HTMLDivElement> & {
   paramValue?: string | number | null;
 };
 
+/**
+ * A flexible Badge component for displaying labels or tags.
+ *
+ * Features:
+ * - Supports multiple visual variants (default, primary, secondary, etc.).
+ * - Optional clickable behavior with keyboard support (Enter and Space keys).
+ * - Ability to call back with a URL parameter update when clicked.
+ * - Randomized styles when using the 'random' variant (computed once per mount).
+ *
+ * @param {BadgeProps} props The properties for the Badge component.
+ * @returns {JSX.Element} A styled <div> acting as a badge or clickable button.
+ *
+ * @example
+ * // Default badge
+ * <Badge>New</Badge>
+ *
+ * @example
+ * // Primary clickable badge that updates a URL parameter
+ * <Badge
+ *   variant="primary"
+ *   isClickable
+ *   paramKey="filter"
+ *   paramValue={123}
+ *   onParamUpdate={(key, value) => {
+ *     // update logic here
+ *     console.log(`Set ${key} to ${value}`);
+ *   }}
+ * >
+ *   Filter by ID
+ * </Badge>
+ */
 function Badge({
   className,
   variant = 'default',
@@ -31,10 +62,9 @@ function Badge({
   paramValue,
   onClick,
   ...props
-}: BadgeProps) {
+}: BadgeProps): JSX.Element {
   const badgeRef = useRef<HTMLDivElement>(null);
 
-  // for 'random' variant, compute a style once per badge:
   const randomStyles = useMemo(
     () => (variant === 'random' ? getRandomBadgeStyles() : {}),
     [variant],
