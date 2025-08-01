@@ -1,4 +1,19 @@
+import {
+  getRandomHSL,
+  getRandomMutedHSL,
+  getRandomPastelHSL,
+  getRandomVibrantHSL,
+} from './getRandomHSL';
+import { humanizeParam } from './humanizeParam';
 import { isNotEmptyString } from './isNotEmptyString';
 import { resolveApiErrorMessage } from './resolveApiErrorMessage';
 
-export { isNotEmptyString, resolveApiErrorMessage };
+export {
+  getRandomHSL,
+  getRandomMutedHSL,
+  getRandomPastelHSL,
+  getRandomVibrantHSL,
+  humanizeParam,
+  isNotEmptyString,
+  resolveApiErrorMessage,
+};

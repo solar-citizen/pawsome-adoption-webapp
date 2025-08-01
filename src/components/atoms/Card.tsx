@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import type { HTMLAttributes, ReactNode } from 'react';
 
 export type CardPartProps = HTMLAttributes<HTMLDivElement> & {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 function Card({ className, children, ...props }: CardPartProps) {
@@ -34,12 +34,12 @@ function CardContent({ className, children, ...props }: CardPartProps) {
 
 function CardTitle({ className, children, ...props }: CardPartProps) {
   return (
-    <h3
+    <h2
       className={clsx('text-2xl font-semibold leading-none tracking-tight', className)}
       {...props}
     >
-      {children}
-    </h3>
+      {children ?? 'Details'}
+    </h2>
   );
 }
 

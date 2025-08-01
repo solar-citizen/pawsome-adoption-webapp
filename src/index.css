@@ -40,3 +40,29 @@
     cursor: pointer;
   }
 }
+
+@layer utilities {
+  .glare-effect::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none z-50;
+    background: linear-gradient(
+      var(--glare-angle),
+      transparent 60%,
+      var(--glare-color) 70%,
+      transparent 100%
+    );
+    background-size: var(--glare-size) var(--glare-size);
+    background-repeat: no-repeat;
+    background-position: -100% -100%;
+    transition: background-position var(--transition-duration) ease;
+  }
+
+  .glare-effect:hover::before {
+    background-position: 100% 100%;
+  }
+
+  .glare-effect.glare-played::before {
+    transition: none !important;
+    background-position: 100% 100% !important;
+  }
+}

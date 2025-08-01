@@ -2,7 +2,7 @@ import clsx from 'clsx';
 
 import { Button, ButtonVariants } from '#src/components/atoms';
 import { Icon } from '#src/components/molecules';
-import { staticTxt } from '#src/lib';
+import { staticTxt, useScrollToTop } from '#src/lib';
 
 import { getPaginationRange } from './getPaginationRange';
 import styles from './Pagination.module.css';
@@ -26,11 +26,13 @@ function Pagination({
   isVisibleOnOnePageCount,
   isDetacheableArrows,
 }: PaginationProps) {
+  const scrollToTop = useScrollToTop();
   const paginationRange = getPaginationRange(currentPage, totalPages, displayedPages);
 
   const handlePageChange = (page: number) => {
     if (page > 0 && page <= totalPages && page !== currentPage) {
       onPageChange(page);
+      scrollToTop();
     }
   };
 

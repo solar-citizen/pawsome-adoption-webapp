@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 type UseSyncURLParamsProps = {
@@ -7,7 +7,7 @@ type UseSyncURLParamsProps = {
 };
 
 /**
- * Synchronizes a set of key/value pairs with the URL’s query string.
+ * Synchronizes a set of key/value pairs with the URL's query string.
  *
  * On mount (and whenever `initialParams` or `replace` change), writes all
  * entries in `initialParams` into the URL—deleting any whose value is
@@ -25,21 +25,29 @@ type UseSyncURLParamsProps = {
  *   overrides the default `replace` behavior.
  */
 export function useSyncURLParams({ initialParams, replace = false }: UseSyncURLParamsProps) {
-  const [, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const lastParamsRef = useRef<string>('');
 
   const syncParams = useCallback(
     (params: Record<string, string | null | undefined>, replaceOverride?: boolean) => {
       setSearchParams(
         prev => {
           const next = new URLSearchParams(prev);
+          let hasChanges = false;
+
           for (const [key, value] of Object.entries(params)) {
             if (value == null || value === '') {
-              next.delete(key);
+              if (next.has(key)) {
+                next.delete(key);
+                hasChanges = true;
+              }
             } else if (next.get(key) !== value) {
               next.set(key, value);
+              hasChanges = true;
             }
           }
-          return next;
+
+          return hasChanges ? next : prev;
         },
         { replace: replaceOverride ?? replace },
       );
@@ -48,8 +56,47 @@ export function useSyncURLParams({ initialParams, replace = false }: UseSyncURLP
   );
 
   useEffect(() => {
-    syncParams(initialParams, replace);
-  }, [initialParams, replace, syncParams]);
+    const paramsString = JSON.stringify(
+      Object.entries(initialParams)
+        .sort(([a], [b]) => a.localeCompare(b))
+        .filter(([, value]) => value != null && value !== ''),
+    );
+
+    if (paramsString !== lastParamsRef.current) {
+      lastParamsRef.current = paramsString;
+
+      const needsUpdate = Object.entries(initialParams).some(([key, value]) => {
+        if (value == null || value === '') {
+          return searchParams.has(key);
+        }
+        return searchParams.get(key) !== value;
+      });
+
+      if (needsUpdate) {
+        setSearchParams(
+          prev => {
+            const next = new URLSearchParams(prev);
+            let hasChanges = false;
+
+            for (const [key, value] of Object.entries(initialParams)) {
+              if (value == null || value === '') {
+                if (next.has(key)) {
+                  next.delete(key);
+                  hasChanges = true;
+                }
+              } else if (next.get(key) !== value) {
+                next.set(key, value);
+                hasChanges = true;
+              }
+            }
+
+            return hasChanges ? next : prev;
+          },
+          { replace },
+        );
+      }
+    }
+  }, [initialParams, replace, setSearchParams, searchParams]);
 
   return syncParams;
 }

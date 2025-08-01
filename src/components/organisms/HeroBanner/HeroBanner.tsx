@@ -21,7 +21,7 @@ function HeroBanner() {
   return (
     <section className={styles.heroBanner}>
       <div className={styles.heroContainer}>
-        <h2 className={styles.heading}>Find Your Perfect Companion</h2>
+        <h1 className={styles.heading}>Find Your Perfect Companion</h1>
         <p className={styles.subheading}>Explore thousands of pets waiting for a loving home.</p>
 
         <Search
