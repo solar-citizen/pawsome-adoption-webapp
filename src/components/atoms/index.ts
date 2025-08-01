@@ -6,7 +6,7 @@ import {
   type SvgIconProps,
   PawIcon,
 } from './_icons';
-import { type AspectRatio, ImageSkeleton, NoImgPlaceholder } from './_image';
+import { ImageSkeleton, NoImgPlaceholder, type AspectRatio } from './_image';
 import { Badge, useBadgeClickability } from './Badge';
 import {
   BtnTextPosition,
@@ -17,12 +17,25 @@ import {
   IconPositions,
 } from './Button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './Card';
-import GlareHover from './GlareHover';
 import Logo from './Logo';
 import MasterLink from './MasterLink';
-import ShinyText from './ShinyText/ShinyText';
+import {
+  CatDetails,
+  DetailGrid,
+  DogDetails,
+  FeatureTags,
+  FarmAnimalDetails,
+  HorseDetails,
+} from './_pet-details';
+import { ShinyText, GlareHover } from './_effects';
 
 export {
+  FarmAnimalDetails,
+  HorseDetails,
+  DogDetails,
+  DetailGrid,
+  FeatureTags,
+  CatDetails,
   Badge,
   BtnTextPosition,
   Button,
