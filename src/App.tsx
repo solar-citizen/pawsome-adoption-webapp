@@ -3,6 +3,6 @@ import { useScrollToTop } from '#src/lib';
 import AppRouter from '#src/routes/AppRouter';
 
 export default function App() {
-  useScrollToTop();
+  useScrollToTop({ watchParams: ['page'] });
   return <AppRouter />;
 }

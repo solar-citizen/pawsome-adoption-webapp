@@ -1,42 +1,53 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect, useMemo } from 'react';
+import { useLocation, useSearchParams } from 'react-router-dom';
+
+type ScrollToTopOptions = {
+  watchParams?: string[];
+};
 
 /**
- * Automatically scrolls the window to the top-left (0,0) whenever
- * the React Router location (pathname) changes.
+ * Custom hook that scrolls to the top of the page when navigation state changes.
  *
- * If you prefer no scroll animation, change `behavior: 'smooth'`
- * to `behavior: 'instant'`.
+ * @param options - Configuration options for when to trigger scroll
+ * @param options.watchParams - Array of URL search parameter keys to watch for changes
  *
- * Usage: Invoke this hook from any component that is mounted within
- * a <BrowserRouter> (or similar). Typically, you'd put this at the
- * root of your app or inside your main layout so that every route change
- * triggers it.
- *
- * @returns A function that can be called to manually scroll to top
+ * @returns A function to manually trigger scroll to top
  *
  * @example
  * ```tsx
- * function App() {
- *   const scrollToTop = useScrollToTop()
+ * // Basic usage - scroll on pathname changes only
+ * useScrollToTop();
  *
- *   // Automatically scrolls on route changes
- *   // Can also call scrollToTop() manually if needed
+ * // Watch specific search params
+ * useScrollToTop({
+ *   watchParams: ['page', 'filter'],
+ * });
  *
- *   return <div>...</div>
- * }
+ * // Get manual scroll function
+ * const scrollToTop = useScrollToTop();
+ * // Later: scrollToTop();
  * ```
  */
-export function useScrollToTop(): () => void {
-  const { pathname } = useLocation();
+export function useScrollToTop({ watchParams = [] }: ScrollToTopOptions = {}): () => void {
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
 
   function scrollToTop() {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }
 
+  const dependencyKey = useMemo(() => {
+    const deps: (string | null)[] = [
+      location.pathname,
+      ...watchParams.map(key => searchParams.get(key)),
+    ];
+
+    return JSON.stringify(deps);
+  }, [location.pathname, searchParams, watchParams]);
+
   useEffect(() => {
     scrollToTop();
-  }, [pathname]);
+  }, [dependencyKey]);
 
   return scrollToTop;
 }
