@@ -15,7 +15,7 @@ type CustomCSSProperties = CSSProperties & {
 type CarouselProps<T> = {
   items: T[];
   renderItem: (item: T, index: number) => ReactNode;
-  getItemKey: (item: T, index: number) => string | number;
+  getItemKey: (item: T) => string | number;
   options?: EmblaOptionsType;
   className?: string;
   showControls?: boolean;

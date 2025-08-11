@@ -29,8 +29,8 @@ function FeatureTags<T extends PetDetailsData>({
 
       {representation === 'badges' ? (
         <div className='flex flex-wrap gap-2'>
-          {activeTags.map((tag, index) => (
-            <Badge key={index} variant='random'>
+          {activeTags.map(tag => (
+            <Badge key={tag} variant='random'>
               {tag}
             </Badge>
           ))}
