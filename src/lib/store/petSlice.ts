@@ -22,15 +22,19 @@ export const petSlice = createApi({
     getPets: builder.query<IPetResponse, GetPetsParams | undefined>({
       queryFn: createGetQueryFn(PetAPI.getPets),
     }),
+
     getPetsWithDetails: builder.query<IPetWithDetailsResponse, GetPetsParams | undefined>({
       queryFn: createGetQueryFn(PetAPI.getPetsWithDetails),
     }),
+
     getPetByCode: builder.query<IPetByCodeResponse, string>({
       queryFn: createGetQueryFn(PetAPI.getPetByCode),
     }),
+
     getPetByCodeWithSpeciesDetails: builder.query<IPetByCodeResponse, string>({
       queryFn: createGetQueryFn(PetAPI.getPetByCodeWithSpeciesDetails),
     }),
+
     getPetByCodeWithSpeciesDetailsAndSimilarPets: builder.query<
       IPetByCodeWithSimilarPetsResponse,
       string

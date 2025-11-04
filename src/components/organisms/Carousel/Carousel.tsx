@@ -162,7 +162,7 @@ function Carousel<T>({
       <div className='overflow-hidden w-full p-2.5' ref={emblaRef}>
         <div className={clsx('flex touch-pan-y touch-pinch-zoom', styles.emblaContainer)}>
           {items.map((item, index) => (
-            <div key={getItemKey(item, index)} className={clsx('min-w-0', styles.emblaSlide)}>
+            <div key={getItemKey(item)} className={clsx('min-w-0', styles.emblaSlide)}>
               {renderItem(item, index)}
             </div>
           ))}
@@ -197,6 +197,7 @@ function Carousel<T>({
         </div>
       )}
 
+      {/* Currently Broken */}
       {showDots && (
         <div className='flex justify-center gap-2 mt-4'>
           {items.map((_, index) => (
