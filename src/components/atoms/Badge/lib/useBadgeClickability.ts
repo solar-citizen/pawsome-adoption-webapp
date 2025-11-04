@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 
 const CLICKABLE_ROUTES = ['/home'] as const;
 
+// TODO: REMOVE
+
 /**
  * A hook that determines whether badge elements should be clickable
  * based on the current URL pathname.

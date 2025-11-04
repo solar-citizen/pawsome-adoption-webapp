@@ -10,7 +10,7 @@ import styles from './ActiveFilters.module.css';
 
 const BADGE_PARAM_KEYS = ['specie', 'breed', 'sex_txt', 'age_int'] as const;
 
-export default function ActiveFilters() {
+function ActiveFilters() {
   const [searchParams] = useSearchParams();
   const syncParams = useSyncURLParams({ initialParams: useMemo(() => ({}), []) });
   const { isClickable } = useBadgeClickability();
@@ -58,3 +58,5 @@ export default function ActiveFilters() {
     </div>
   );
 }
+
+export default ActiveFilters;

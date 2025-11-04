@@ -12,7 +12,7 @@ const { pagination } = SearchParams.herobanner;
 
 function HomePage() {
   const { pets, meta, isLoading, isError, errorMessage } = useSyncPets();
-  const { currentPage, totalPages, handlePageChange } = usePagination({
+  const { currentPage, totalPages } = usePagination({
     itemsPerPage: meta.perPage,
     totalItems: meta.total,
     pageParam: pagination.page,
@@ -61,11 +61,11 @@ function HomePage() {
         )}
 
         <Pagination
+          pageParam='page'
           currentPage={currentPage}
           totalPages={totalPages}
           displayedPages={5}
           isDetacheableArrows
-          onPageChange={handlePageChange}
         />
       </section>
     </>

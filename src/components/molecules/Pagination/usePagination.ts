@@ -28,7 +28,6 @@ type UsePaginationProps = {
  *    An object containing:
  *    - currentPage: The current page number from the URL (defaults to 1)
  *    - totalPages: The total number of pages calculated from totalItems/itemsPerPage
- *    - handlePageChange: Function to navigate to a given page (updates URL param)
  */
 export function usePagination({
   itemsPerPage,
@@ -37,10 +36,11 @@ export function usePagination({
   limitParam,
 }: UsePaginationProps) {
   const [searchParams] = useSearchParams();
+
   const currentPage = Number(searchParams.get(pageParam)) || 1;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-  const syncParams = useSyncURLParams({
+  useSyncURLParams({
     initialParams: useMemo(
       () => ({
         [limitParam]: itemsPerPage.toString(),
@@ -51,11 +51,23 @@ export function usePagination({
     replace: true,
   });
 
-  const handlePageChange = (pageNumber: number) => {
-    if (pageNumber >= 1 && pageNumber <= totalPages) {
-      syncParams({ [pageParam]: pageNumber.toString() });
-    }
-  };
-
-  return { currentPage, totalPages, handlePageChange };
+  return { currentPage, totalPages };
 }
+
+/*
+
+Alternative: No param sync
+
+export function usePagination({
+  itemsPerPage,
+  totalItems,
+  pageParam,
+}: UsePaginationProps) {
+  const [searchParams] = useSearchParams();
+  const currentPage = Number(searchParams.get(pageParam)) || 1;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  return { currentPage, totalPages };
+}
+
+*/
